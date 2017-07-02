@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "group_p", uniqueConstraints = @UniqueConstraint(columnNames = {"name"}))
+@Table(name = "group_p")
 public class Group {
 
     @Id
@@ -19,7 +19,7 @@ public class Group {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy="groups")
+    @ManyToMany(mappedBy = "groups", fetch = FetchType.EAGER)
     private Set<Lesson> lessons = new HashSet<>();
 
     public Group() {
@@ -43,6 +43,10 @@ public class Group {
 
     public Group(String name) {
         this.name = name;
+    }
+
+    public boolean addLesson(Lesson lesson){
+        return lessons.add(lesson);
     }
 
     public String getName() {

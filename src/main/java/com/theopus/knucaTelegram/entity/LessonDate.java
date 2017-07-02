@@ -24,8 +24,7 @@ public class LessonDate {
     @Column
     private Date toDate;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "roomTimePeriod_id")
+    @ManyToOne
     private RoomTimePeriod roomTimePeriod;
 
     public LessonDate() {

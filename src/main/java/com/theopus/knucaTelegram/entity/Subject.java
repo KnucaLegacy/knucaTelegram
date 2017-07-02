@@ -3,9 +3,10 @@ package com.theopus.knucaTelegram.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name = "subject", uniqueConstraints = @UniqueConstraint(columnNames = {"id", "name"}))
+@Table(name = "subject")
 public class Subject {
 
     @Id
@@ -16,6 +17,9 @@ public class Subject {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
+    private Set<Lesson> lessons;
 
     public Subject() {
     }

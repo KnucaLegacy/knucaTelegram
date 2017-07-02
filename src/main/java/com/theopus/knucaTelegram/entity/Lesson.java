@@ -13,6 +13,7 @@ import javax.persistence.Id;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -28,27 +29,24 @@ public class Lesson {
     @Column(name = "lesson_order")
     private LessonOrder order;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "subject_id")
     private Subject subject;
 
     @Column(name = "lesson_type")
     private LessonType lessonType;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lesson", cascade = CascadeType.ALL)
-    private Set<RoomTimePeriod> roomTimePeriod;
+    @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<RoomTimePeriod> roomTimePeriod = new HashSet<>();
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="teacher_group",
-            joinColumns={@JoinColumn(name="l_id")},
-            inverseJoinColumns={@JoinColumn(name="t_id")})
-    private Set<Teacher> teachers;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Teacher> teachers = new HashSet<>();
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="lesson_group",
-            joinColumns={@JoinColumn(name="l_id")},
-            inverseJoinColumns={@JoinColumn(name = "g_id")})
-    private Set<Group> groups;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Group> groups = new HashSet<>();
+
+    public Lesson() {
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -74,6 +72,16 @@ public class Lesson {
         result = 31 * result + (teachers != null ? teachers.hashCode() : 0);
         result = 31 * result + (groups != null ? groups.hashCode() : 0);
         return result;
+    }
+
+    public boolean addGroup(Group add){
+        if (groups.contains(add))
+            groups.remove(add);
+        return groups.add(add);
+    }
+
+    public boolean addTeacher(Teacher add){
+        return teachers.add(add);
     }
 
     public long getId() {
@@ -131,6 +139,8 @@ public class Lesson {
     public void setGroups(Set<Group> groups) {
         this.groups = groups;
     }
+
+
 
     @Override
     public String toString() {

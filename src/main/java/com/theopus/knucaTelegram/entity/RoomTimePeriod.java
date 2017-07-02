@@ -19,16 +19,15 @@ public class RoomTimePeriod {
     @Column(name = "id", length = 6, nullable = false)
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room;
 
-    @ManyToOne
-    @JoinColumn(name="lesson_id")
+    @ManyToOne(cascade = CascadeType.ALL)
     private Lesson lesson;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "roomTimePeriod", cascade = CascadeType.ALL)
-    private Set<LessonDate> lessonDate;
+    @OneToMany(mappedBy = "roomTimePeriod", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<LessonDate> lessonDate = new HashSet<>();
 
     public RoomTimePeriod() {
         lessonDate = new HashSet<>();
@@ -36,7 +35,6 @@ public class RoomTimePeriod {
 
     public RoomTimePeriod(Room room) {
         this.room = room;
-        lessonDate = new HashSet<>();
     }
 
     public Room getRoom() {

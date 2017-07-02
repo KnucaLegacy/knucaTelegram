@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Component
 public class FolderParser {
@@ -25,8 +22,10 @@ public class FolderParser {
     public void parseFolder(String path){
         File folder = new File(path);
         Set<ParserPDF> parserPDFSet = new HashSet<>();
+        int i = 0;
         for (File file : folder.listFiles()){
             parserPDFSet.add(new ParserPDF(file));
+            i++;
         }
 
         List<Lesson> lessonList = new ArrayList<>();
@@ -35,9 +34,11 @@ public class FolderParser {
             parser.parseLessonList(lessonList);
         }
 
+        long before = new Date().getTime();
         for (Lesson les: lessonList) {
             lessonService.addLesson(les);
         }
+
 
         System.out.println("----------------RESULT-----------------");
         System.out.println("----------------RESULT-----------------");

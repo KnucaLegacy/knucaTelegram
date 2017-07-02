@@ -347,7 +347,7 @@ public class ParserPDF {
         Set<Teacher> result = new HashSet<>();
         String[] tmp = lessonLine.split("]");
         String teacherGroupline = tmp[tmp.length-1];
-        Pattern pattern = Pattern.compile("\\b(([^.,\\s]{2,5}\\.[^.,\\s]{2,}\\.?)|[^.,\\s]{2,}\\.)\\s[^.,\\s]+(\\s[^.,\\s]\\.)?([^.,\\s]\\.?)?");
+        Pattern pattern = Pattern.compile("\\b(([^.,\\s]{2,5}\\.[^.,\\s]{2,}\\.?)|[^.,\\d\\s]{3,}\\.)\\s[^.,\\s]+(\\s[^.,\\s]\\.)?([^.,\\s]\\.?)?");
         Matcher matcher = pattern.matcher(teacherGroupline);
         while (matcher.find()){
             result.add(new Teacher(teacherGroupline.substring(matcher.start(),matcher.end())));

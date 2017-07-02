@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "teacher", uniqueConstraints = @UniqueConstraint(columnNames = {"name"}))
+@Table(name = "teacher")
 public class Teacher {
 
     @Id
@@ -19,7 +19,7 @@ public class Teacher {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(mappedBy="groups")
+    @ManyToMany(mappedBy = "teachers", fetch = FetchType.EAGER)
     private Set<Lesson> lessons = new HashSet<>();
 
     public Teacher() {
@@ -49,6 +49,10 @@ public class Teacher {
 
     public long getId() {
         return id;
+    }
+
+    public boolean addLesson(Lesson lesson){
+        return lessons.add(lesson);
     }
 
     public void setId(long id) {
