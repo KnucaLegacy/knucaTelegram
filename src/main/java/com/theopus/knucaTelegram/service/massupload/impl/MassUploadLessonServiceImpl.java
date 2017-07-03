@@ -2,15 +2,11 @@ package com.theopus.knucaTelegram.service.massupload.impl;
 
 import com.theopus.knucaTelegram.entity.Lesson;
 import com.theopus.knucaTelegram.repository.LessonRepository;
-import com.theopus.knucaTelegram.repository.TeacherRepository;
-import com.theopus.knucaTelegram.service.massupload.MassUploadGroupService;
+import com.theopus.knucaTelegram.service.massupload.GroupService;
 import com.theopus.knucaTelegram.service.massupload.MassUploadLessonService;
-import com.theopus.knucaTelegram.service.massupload.MassUploadTeacherService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
+import com.theopus.knucaTelegram.service.massupload.SubjectService;
+import com.theopus.knucaTelegram.service.massupload.TeacherService;
 import org.springframework.stereotype.Service;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -22,13 +18,13 @@ import java.util.List;
 public class MassUploadLessonServiceImpl implements MassUploadLessonService {
 
     @Resource
-    private MassUploadGroupService groupService;
+    private GroupService groupService;
     @Resource
-    private MassUploadTeacherService teacherService;
+    private TeacherService teacherService;
     @Resource
-    private MUSubjectService subjectService;
+    private SubjectService subjectService;
     @Resource
-    private MURoomService roomService;
+    private RoomServiceImpl roomService;
 
     @Resource
     private LessonRepository lessonRepository;
@@ -43,7 +39,20 @@ public class MassUploadLessonServiceImpl implements MassUploadLessonService {
             l.setRoomTimePeriod(roomService.saveRooms(l.getRoomTimePeriod()));
             lessonRepository.save(l);
         }
-
+        this.flush();
         return lessons;
+    }
+
+    @Override
+    public List<Lesson> getAll() {
+        return lessonRepository.findAll();
+    }
+
+    @Override
+    public void flush() {
+        groupService.flush();
+        teacherService.flush();
+        subjectService.flush();
+        roomService.flush();
     }
 }

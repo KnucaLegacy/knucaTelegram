@@ -15,4 +15,8 @@ import java.util.List;
 public interface MassUploadLessonService {
 
     List<Lesson> saveAll(List<Lesson> lessons);
+
+    List<Lesson> getAll();
+
+    void flush();
 }

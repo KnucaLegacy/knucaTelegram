@@ -1,9 +1,8 @@
 package com.theopus.knucaTelegram.service.massupload.impl;
 
 import com.theopus.knucaTelegram.entity.Teacher;
-import com.theopus.knucaTelegram.repository.GroupRepository;
 import com.theopus.knucaTelegram.repository.TeacherRepository;
-import com.theopus.knucaTelegram.service.massupload.MassUploadTeacherService;
+import com.theopus.knucaTelegram.service.massupload.TeacherService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,7 +13,7 @@ import java.util.Set;
  * Created by irina on 03.07.17.
  */
 @Service
-public class MassUploadTeacherServiceImpl implements MassUploadTeacherService {
+public class TeacherServiceImpl implements TeacherService {
 
     @Resource
     private TeacherRepository teacherRepository;
@@ -42,6 +41,11 @@ public class MassUploadTeacherServiceImpl implements MassUploadTeacherService {
             }
         }
         return result;
+    }
+
+    @Override
+    public void flush() {
+        teachersCache = null;
     }
 
     private Teacher getTeacher(Teacher teacher){

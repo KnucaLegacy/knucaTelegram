@@ -7,9 +7,10 @@ import java.util.Set;
 /**
  * Created by irina on 03.07.17.
  */
-public interface MassUploadSubjectService {
+public interface SubjectService {
 
     Set<Subject> saveAll(Set<Subject> subjects);
     Subject saveOne(Subject subject);
+    void flush();
 
 }

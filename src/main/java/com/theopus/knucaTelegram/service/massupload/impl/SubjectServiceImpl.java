@@ -1,9 +1,8 @@
 package com.theopus.knucaTelegram.service.massupload.impl;
 
 import com.theopus.knucaTelegram.entity.Subject;
-import com.theopus.knucaTelegram.entity.Subject;
 import com.theopus.knucaTelegram.repository.SubjectRepository;
-import com.theopus.knucaTelegram.service.massupload.MassUploadSubjectService;
+import com.theopus.knucaTelegram.service.massupload.SubjectService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,7 +13,7 @@ import java.util.Set;
  * Created by irina on 03.07.17.
  */
 @Service
-public class MUSubjectService implements MassUploadSubjectService {
+public class SubjectServiceImpl implements SubjectService {
 
     private Set<Subject> subjectsCache = new HashSet<>();
 
@@ -43,6 +42,11 @@ public class MUSubjectService implements MassUploadSubjectService {
                 return saveS;
             }
         }
+    }
+
+    @Override
+    public void flush() {
+        subjectsCache = null;
     }
 
     private Subject getSubject(Subject subject){

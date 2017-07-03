@@ -7,7 +7,8 @@ import java.util.Set;
 /**
  * Created by irina on 03.07.17.
  */
-public interface MassUploadRoomService {
+public interface RoomService {
 
     Set<Room> saveAll(Set<Room> rooms);
+    void flush();
 }

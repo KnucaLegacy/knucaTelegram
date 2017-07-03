@@ -40,5 +40,11 @@ public class FolderParser {
 
         long before = new Date().getTime();
         KNUCAUtil.print(lessonService.saveAll(lessonList));
+        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
+        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
+        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
+        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
+        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
+        KNUCAUtil.print(lessonService.getAll());
     }
 }

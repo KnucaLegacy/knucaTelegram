@@ -4,7 +4,7 @@ import com.theopus.knucaTelegram.entity.LessonDate;
 import com.theopus.knucaTelegram.entity.Room;
 import com.theopus.knucaTelegram.entity.RoomTimePeriod;
 import com.theopus.knucaTelegram.repository.RoomRepository;
-import com.theopus.knucaTelegram.service.massupload.MassUploadRoomService;
+import com.theopus.knucaTelegram.service.massupload.RoomService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,7 +15,7 @@ import java.util.Set;
  * Created by irina on 03.07.17.
  */
 @Service
-public class MURoomService implements MassUploadRoomService {
+public class RoomServiceImpl implements RoomService {
 
     private Set<Room> roomCache = new HashSet<>();
 
@@ -44,14 +44,13 @@ public class MURoomService implements MassUploadRoomService {
                     rtp.setRoom(saveRoom);
                 }
 
-                if (rtp.getLessonDate() != null) {
-                    for (LessonDate ld : rtp.getLessonDate()) {
-                        ld.setRoomTimePeriod(rtp);
+            }
+            if (rtp.getLessonDate() != null) {
+                for (LessonDate ld : rtp.getLessonDate()) {
+                    ld.setRoomTimePeriod(rtp);
 
-                    }
                 }
             }
-
         }
         return rtm;
     }
@@ -62,5 +61,10 @@ public class MURoomService implements MassUploadRoomService {
                 return r;
         }
         return null;
+    }
+
+    @Override
+    public void flush() {
+        roomCache = null;
     }
 }
