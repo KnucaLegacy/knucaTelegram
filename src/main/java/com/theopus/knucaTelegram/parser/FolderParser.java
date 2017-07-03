@@ -2,12 +2,13 @@ package com.theopus.knucaTelegram.parser;
 
 import com.theopus.knucaTelegram.entity.Lesson;
 import com.theopus.knucaTelegram.entity.utils.KNUCAUtil;
-import com.theopus.knucaTelegram.service.LessonService;
-import com.theopus.knucaTelegram.service.impl.LessonServiceImpl;
+import com.theopus.knucaTelegram.service.datasevice.LessonService;
+import com.theopus.knucaTelegram.service.massupload.MassUploadLessonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.util.*;
 
@@ -15,9 +16,12 @@ import java.util.*;
 public class FolderParser {
 
 
-    @Qualifier("lessonServiceImpl")
-    @Autowired
-    private LessonService lessonService;
+//    @Qualifier("lessonServiceImpl")
+//    @Autowired
+//    private LessonService lessonService;
+
+    @Resource
+    private MassUploadLessonService lessonService;
 
     public void parseFolder(String path){
         File folder = new File(path);
@@ -35,16 +39,6 @@ public class FolderParser {
         }
 
         long before = new Date().getTime();
-        for (Lesson les: lessonList) {
-            lessonService.addLesson(les);
-        }
-
-
-        System.out.println("----------------RESULT-----------------");
-        System.out.println("----------------RESULT-----------------");
-        System.out.println("----------------RESULT-----------------");
-        System.out.println("----------------RESULT-----------------");
-        System.out.println("----------------RESULT-----------------");
-        KNUCAUtil.print(lessonList);
+        KNUCAUtil.print(lessonService.saveAll(lessonList));
     }
 }

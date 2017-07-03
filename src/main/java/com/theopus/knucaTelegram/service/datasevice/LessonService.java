@@ -1,4 +1,4 @@
-package com.theopus.knucaTelegram.service;
+package com.theopus.knucaTelegram.service.datasevice;
 
 import com.theopus.knucaTelegram.entity.Lesson;
 

@@ -1,19 +1,12 @@
-package com.theopus.knucaTelegram.service.impl;
+package com.theopus.knucaTelegram.service.datasevice.impl;
 
 import com.theopus.knucaTelegram.entity.*;
 import com.theopus.knucaTelegram.repository.*;
-import com.theopus.knucaTelegram.service.LessonService;
-import org.hibernate.dialect.MySQL5Dialect;
+import com.theopus.knucaTelegram.service.datasevice.LessonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.orm.jpa.JpaSystemException;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;

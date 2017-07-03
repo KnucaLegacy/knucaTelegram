@@ -122,6 +122,9 @@ public class Lesson {
 
     public void setRoomTimePeriod(Set<RoomTimePeriod> roomTimePeriod) {
         this.roomTimePeriod = roomTimePeriod;
+        for (RoomTimePeriod rtp: this.roomTimePeriod) {
+            rtp.setLesson(this);
+        }
     }
 
     public Set<Teacher> getTeachers() {
