@@ -1,11 +1,7 @@
 package com.theopus.knucaTelegram.parser;
 
-import com.theopus.knucaTelegram.entity.Lesson;
-import com.theopus.knucaTelegram.entity.utils.KNUCAUtil;
-import com.theopus.knucaTelegram.service.datasevice.LessonService;
-import com.theopus.knucaTelegram.service.massupload.MassUploadLessonService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.theopus.knucaTelegram.data.entity.Lesson;
+import com.theopus.knucaTelegram.data.service.LessonService;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -21,7 +17,7 @@ public class FolderParser {
 //    private LessonService lessonService;
 
     @Resource
-    private MassUploadLessonService lessonService;
+    private LessonService lessonService;
 
     public void parseFolder(String path){
         File folder = new File(path);
@@ -39,12 +35,12 @@ public class FolderParser {
         }
 
         long before = new Date().getTime();
-        KNUCAUtil.print(lessonService.saveAll(lessonList));
+        ParserPDF.print(lessonService.saveAll(lessonList));
         System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
         System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
         System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
         System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
         System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
-        KNUCAUtil.print(lessonService.getAll());
+        ParserPDF.print(lessonService.getAll());
     }
 }

@@ -1,8 +1,10 @@
 package com.theopus.knucaTelegram.parser;
 
-import com.theopus.knucaTelegram.entity.*;
-import com.theopus.knucaTelegram.entity.enums.LessonType;
-import com.theopus.knucaTelegram.entity.utils.KNUCAUtil;
+import com.theopus.knucaTelegram.data.entity.*;
+import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
+import com.theopus.knucaTelegram.data.entity.enums.LessonOrder;
+import com.theopus.knucaTelegram.data.entity.enums.LessonType;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -14,8 +16,6 @@ import java.io.IOException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.theopus.knucaTelegram.entity.utils.KNUCAUtil.printMap;
 
 /**
  PDF Schedule Parser for KNUCA University Ukraine
@@ -85,7 +85,7 @@ public class ParserPDF {
         if (matcher.find())
             dateString = text.substring(matcher.start(),matcher.end());
         int day = Integer.parseInt(dateString.split(" ")[0]);
-        int month = KNUCAUtil.ukrMothToNumber(dateString.split(" ")[1]);
+        int month = ukrMothToNumber(dateString.split(" ")[1]);
         int year = Integer.parseInt(dateString.split(" ")[2]);
 
         GregorianCalendar gregorianCalendar = new GregorianCalendar(year,month,day);
@@ -98,12 +98,19 @@ public class ParserPDF {
     public Map<String, String> parseToLessonGroupMap(){
 
         String text = this.parsedText;
+        text = StringUtils.replaceChars(text,"ACEHIKMOPTaceikoptXx","АСЕНІКМОРТасеікортХх");
         text = text.replaceAll("\n", "");
         text = text.replaceAll("\r", "");
         text = text.replaceAll("=", " ");
         text = text.replaceAll("\\s+",  " ");
         System.out.println(text);
-        Pattern dayOfAWeek = Pattern.compile("([^|]Понедiлок)|([^|]Вiвторок)|([^|]Середа)|([^|]Четвер)|([^|]П'ятниця)|([^|]Субота)");
+        Pattern dayOfAWeek = Pattern.compile("" +
+                "([^|]Понеділок)|" +
+                "([^|]Вівторок)|" +
+                "([^|]Середа)|" +
+                "([^|]Четвер)|" +
+                "([^|]П'ятниця)" +
+                "|([^|]Субота)");
         Matcher mworkdayBegin = dayOfAWeek.matcher(text);
         Matcher mworkdayFinish = dayOfAWeek.matcher(text);
 
@@ -228,8 +235,8 @@ public class ParserPDF {
         String labeledDayOfWeek = labeledGroupPlusDay.split(" ")[1].trim();
 
         Lesson lesson = new Lesson();
-        lesson.setDayOfWeek(labeledDayOfWeek);
-        lesson.setOrder(KNUCAUtil.timeToOrder(lessonTime));
+        lesson.setDayOfWeek(stringToDayOfWeek(labeledDayOfWeek));
+        lesson.setOrder(timeToOrder(lessonTime));
         lesson.setSubject(new Subject(parseSubjName(lessonLine)));
         lesson.setLessonType(parseLessonType(lessonLine));
         lesson.setRoomTimePeriod(parseRoomTimePeriod(lessonLine));
@@ -345,6 +352,7 @@ public class ParserPDF {
                         Date parsedToDate = stringToDate(notParsedToDate);
                         roomTimePeriod.addLessonDate(new LessonDate(parsedFromDate,parsedToDate));
                         toDates.add(notParsedToDate);
+                        fromDates.add(notParsedFromDate);
 //                        System.out.println(" to date: " + notParsedToDate);
                     }
                 }while (matcher.find());
@@ -359,6 +367,14 @@ public class ParserPDF {
 //                    System.out.println("only to date: " + notParsedDate);
                 }
             }
+            matcher = fromDate.matcher(s);
+            if (matcher.find()){
+                String notParsedFromDate = s.substring(matcher.start() + 2,matcher.end()).trim();
+                if (!fromDates.contains(notParsedFromDate)){
+                    Date parsedDate = stringToDate(notParsedFromDate);
+                    roomTimePeriod.addLessonDate(new LessonDate(parsedDate,true));
+                }
+            }
             if ((roomTimePeriod.getLessonDate().isEmpty() || roomTimePeriod.getLessonDate() == null) && (lessonDates != null)){
                 for (LessonDate l: lessonDates) {
                     roomTimePeriod.addLessonDate(new LessonDate(l.getSingleDate(),l.getFromDate(),l.getToDate()));
@@ -371,13 +387,16 @@ public class ParserPDF {
         //TODO: MAKE IT NORM
         for (RoomTimePeriod rtp :result) {
             if (rtp.getLessonDate() == null || rtp.getLessonDate().isEmpty()){
-                if (lessonDates != null)
+                if (lessonDates != null && !lessonDates.isEmpty())
                 {
                     for (LessonDate s : lessonDates) {
                         if (s != null) {
                             rtp.addLessonDate(new LessonDate(s.getSingleDate(), s.getFromDate(), s.getToDate()));
                         }
                     }
+                }
+                else {
+                    rtp.addLessonDate(new LessonDate(upDate, true));
                 }
             }
         }
@@ -427,6 +446,77 @@ public class ParserPDF {
         int month = Integer.parseInt(dateMonth[1]);
         int year = calendar.get(Calendar.YEAR);
         return new GregorianCalendar(year,month,day).getTime();
+    }
+
+    private DayOfWeek stringToDayOfWeek(String s){
+        Pattern dayOfAWeek = Pattern.compile("" +
+                "([^|]Понеділок)|" +
+                "([^|]Вівторок)|" +
+                "([^|]Середа)|" +
+                "([^|]Четвер)|" +
+                "([^|]П'ятниця)" +
+                "|([^|]Субота)");
+        switch (s){
+            case "Понеділок":
+                return DayOfWeek.MONDAY;
+            case "Вівторок":
+                return DayOfWeek.TUESDAY;
+            case "Середа":
+                return DayOfWeek.WEDNESDAY;
+            case "Четвер":
+                return DayOfWeek.THURSDAY;
+            case "П'ятниця":
+                return DayOfWeek.FRIDAY;
+            case "Субота":
+                return DayOfWeek.SATURDAY;
+            default:
+                return DayOfWeek.SUNDAY;
+        }
+    }
+
+    public static LessonOrder timeToOrder(String string){
+        switch (string){
+            case "9:00": return LessonOrder.FIRST;
+            case "10:30": return LessonOrder.SECOND;
+            case "12:20": return LessonOrder.THIRD;
+            case "13:50": return LessonOrder.FOURTH;
+            case "15:20": return LessonOrder.FIFTH;
+            case "16:50": return LessonOrder.SIXTH;
+            case "18:20": return LessonOrder.SEVENTH;
+            default: return LessonOrder.OUT_OF_SCHEDULE;
+        }
+    }
+
+    public static void printMap(Map<String,String> map){
+        for (Map.Entry<String, String> pair: map.entrySet()) {
+            System.out.println(pair.getKey() + " " + pair.getValue());
+        }
+    }
+
+    public static void print(Collection strings){
+        for (Object o :
+                strings) {
+            System.out.println(o);
+        }
+    }
+
+    public static int ukrMothToNumber(String month){
+        month = month.toLowerCase();
+        switch (month){
+            case "січня": return 0;
+            case "лютого": return 1;
+            case "березня": return 2;
+            case "квітня": return 3;
+            case "травня": return 4;
+            case "червня": return 5;
+            case "липня": return 6;
+            case "серпня": return 7;
+            case "вересня": return 8;
+            case "жовтня": return 9;
+            case "листопада": return 10;
+            case "грудня": return 11;
+            default:return 0;
+        }
     }
 
 }

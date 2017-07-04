@@ -2,22 +2,113 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90be4398-c130-4619-a09f-1373d69c8630" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/DayOfWeek.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pdfs/КН-3.pdf" afterPath="$PROJECT_DIR$/pdfs/КН-3.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_8_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_8_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_8_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_xabgesagtx_telegram_spring_boot_starter_0_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_inject_guice_4_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_grizzly_grizzly_framework_2_3_28.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_grizzly_grizzly_http_2_3_28.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_grizzly_grizzly_http_server_2_3_28.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_5_0_b32.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_javax_inject_2_5_0_b32.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_5_0_b32.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_locator_2_5_0_b32.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_5_0_b32.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_bundles_repackaged_jersey_guava_2_25_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_containers_jersey_container_grizzly2_http_2_25_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_client_2_25_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_25_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_server_2_25_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_25_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_jaxb_2_25_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_json_jackson_2_25_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20140107.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_1_5_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_4_2_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_4_2_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_4_2_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_telegram_telegrambots_3_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_telegram_telegrambots_meta_3_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sshd_shell_spring_boot_starter_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/ScheduleBot.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/commands/EchoCommand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/StartupRunner.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/TelegramConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/Utils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/theopus/knucaTelegram/parser/ParserPDFTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/utils/KNUCAUtil.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity2/Note.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity2/Persone.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/datasevice/LessonService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/datasevice/impl/LessonServiceImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/Group.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/Lesson.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/LessonDate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/Room.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/RoomTimePeriod.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/Subject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/Teacher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/enums/LessonOrder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/enums/LessonType.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/enums/RoomLocation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/utils/KNUCAUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity2/Note.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity2/Persone.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/repository/GroupRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/repository/LessonRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/repository/RoomRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/repository/SubjectRepository.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/repository/TeacherRepository.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Group.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Group.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Lesson.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Lesson.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/LessonDate.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/LessonDate.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Room.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Room.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/RoomTimePeriod.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/RoomTimePeriod.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Subject.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Subject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Teacher.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Teacher.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/DayOfWeek.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/enums/DayOfWeek.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/LessonOrder.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/enums/LessonOrder.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/LessonType.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/enums/LessonType.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/RoomLocation.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/enums/RoomLocation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/GroupRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/GroupRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/LessonRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/RoomRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/RoomRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/SubjectRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/SubjectRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/TeacherRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/TeacherRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/GroupService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/GroupService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/MassUploadLessonService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/RoomService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/SubjectService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/SubjectService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/TeacherService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/TeacherService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/GroupServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/GroupServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/MassUploadLessonServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/RoomServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/RoomServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/SubjectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/SubjectServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/TeacherServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/TeacherServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/KnucaTelegramApplication.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/KnucaTelegramApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/Lesson.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/Lesson.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/LessonDate.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/LessonDate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/RoomTimePeriod.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/entity/RoomTimePeriod.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/config/PersistenceConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/config/PersistenceConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/parser/FolderParser.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/parser/FolderParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/parser/ParserPDF.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/parser/ParserPDF.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knucaTelegram.iml" afterPath="$PROJECT_DIR$/knucaTelegram.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Lesson.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Lesson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/LessonDate.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/LessonDate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/RoomTimePeriod.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/RoomTimePeriod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/MassUploadLessonServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/MassUploadLessonServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/RoomServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/RoomServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/presistence-mysql.properties" afterPath="$PROJECT_DIR$/src/main/resources/presistence-mysql.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/presistence-mysql.properties" afterPath="$PROJECT_DIR$/target/classes/presistence-mysql.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,88 +119,135 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="knuca@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KnucaTelegramApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java">
+      <file leaf-file-name="ScheduleBot.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/ScheduleBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="9" column="76" lean-forward="true" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="presistence-mysql.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/presistence-mysql.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParserPDF.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="230" column="46" lean-forward="false" selection-start-line="230" selection-start-column="46" selection-end-line="230" selection-end-column="46" />
-              <folding>
-                <element signature="docComment;class#ParserPDF#0" expanded="false" />
-                <element signature="method#ParserPDF#1;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseToText#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseUpDate#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#getGroups#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseLessonList#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseSubjName#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseLessonType#0;class#ParserPDF#0" expanded="false" />
-                <element signature="e#15362#15399#0" expanded="false" />
-                <element signature="method#parseGroups#0;class#ParserPDF#0" expanded="false" />
-                <element signature="docComment;method#stringToDate#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#stringToDate#0;class#ParserPDF#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Subject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Subject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lesson.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Lesson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="274">
+              <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Lesson#0;class#Lesson#0" expanded="false" />
-                <element signature="method#equals#0;class#Lesson#0" expanded="false" />
-                <element signature="method#hashCode#0;class#Lesson#0" expanded="false" />
-                <element signature="method#addGroup#0;class#Lesson#0" expanded="false" />
-                <element signature="e#2381#2382#0" expanded="true" />
-                <element signature="e#2413#2414#0" expanded="true" />
-                <element signature="method#setRoomTimePeriod#0;class#Lesson#0" expanded="false" />
-                <element signature="e#3380#3437#0" expanded="false" />
+                <element signature="e#1829#1830#0" expanded="true" />
+                <element signature="e#1868#1869#0" expanded="true" />
+                <element signature="e#1917#1918#0" expanded="true" />
+                <element signature="e#1987#1988#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DayOfWeek.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/DayOfWeek.java">
+      <file leaf-file-name="LessonServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LessonService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="61" lean-forward="false" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartupRunner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/StartupRunner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/25873c32-93fd-462d-b408-e41f75ed37f9/console.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+              <caret line="5" column="47" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="47" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LessonRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="17" column="61" lean-forward="false" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+              <folding>
+                <marker date="1499199495000" expanded="true" signature="509:742" ph="select les.*... lesson" />
+                <marker date="1499199495000" expanded="true" signature="509:768" ph="select les.*... lesson" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/RoomServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-159">
+              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersistenceConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TelegramConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/TelegramConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,19 +258,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Cau</find>
-      <find>groups_id</find>
-      <find>ауд.8&lt;3&gt;</find>
-      <find>Кадастр(ЗI</find>
-      <find>ауд.301</find>
-      <find>groups=[Group{name='ОЗНМ-32'}, Group{name='ЗIK-31'}]</find>
       <find>add</find>
       <find>Teacher</find>
       <find>time:</find>
@@ -153,10 +286,16 @@
       <find>ас. Март</find>
       <find>teachers</find>
       <find>teachers=[]</find>
-      <find>lesson</find>
-      <find>lessonDate=[]</find>
       <find>toDates</find>
       <find>l</find>
+      <find>lessonDate=[]</find>
+      <find>lesson</find>
+      <find>System</find>
+      <find>lesso</find>
+      <find>s</find>
+      <find>shell</find>
+      <find>SUN</find>
+      <find>ІТП-41</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,29 +310,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/utils/KNUCAUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity2/Teacher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/LessonRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/LessonService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity2/Note.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity2/Persone.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/QualityParserControl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/RoomRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/SubjectRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/TeacherRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/GroupRepository.java" />
-        <option value="$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.9.RELEASE/spring-tx-4.3.9.RELEASE.jar!/org/springframework/dao/support/PersistenceExceptionTranslationInterceptor.class" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Room.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Subject.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Group.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Teacher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/impl/LessonServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/MassLessonUploadService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/datasevice/LessonService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/MassUploadLessonService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/MassUploadGroupService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/MassUploadSubjcetService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/MassUploadSubjetService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/MassUploadGroupServiceImpl.java" />
@@ -211,17 +327,40 @@
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/SubjectServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/TeacherServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/RoomServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/MassUploadLessonServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/RoomTimePeriod.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/LessonDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/DayOfWeek.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/String.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/LessonService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Lesson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/RoomTimePeriod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/TeacherService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/LessonDate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/impl/LessonServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/theopus/knucaTelegram/parser/ParserPDFTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/utils/KNUCAUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/CommadnsDealer.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/custom.groovy" />
+        <option value="$PROJECT_DIR$/src/main/resources/commands/custom.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/commands/EchoCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/GroupService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/impl/GroupServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/BotInitilizer.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/TelegramConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Group.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/StartupRunner.java" />
         <option value="$PROJECT_DIR$/src/main/resources/presistence-mysql.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/util/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/25873c32-93fd-462d-b408-e41f75ed37f9/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/ScheduleBot.java" />
       </list>
     </option>
   </component>
@@ -275,8 +414,60 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: com.github.xabgesagtx:telegram-spring-boot-starter:0.8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="telegram-spring-boot-starter-0.8.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: com.github.xabgesagtx:telegram-spring-boot-starter:0.8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="telegram-spring-boot-starter-0.8.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bots" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="knucaTelegram" />
@@ -298,18 +489,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -357,6 +536,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="knucaTelegram" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -387,11 +592,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="massupload" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -421,11 +626,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="massupload" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -459,75 +664,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datasevice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datasevice" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -561,101 +698,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="knucaTelegram" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="enums" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -699,40 +746,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pdfs" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="#keymap&#9;null&#9;null&#10;#smart&#9;null&#9;null&#10;keymap&#9;ACTION&#9;Help.KeymapReference&#10;roll&#9;ACTION&#9;ChangesView.Revert" />
-    <property name="last.edited.regexp" value="Четвер" />
+    <property name="SearchEverywhereHistoryKey" value="io.&#9;null&#9;null&#10;org.crsh.vfs.Resource&#9;null&#9;null&#10;#keymap&#9;null&#9;null&#10;#smart&#9;null&#9;null&#10;keymap&#9;ACTION&#9;Help.KeymapReference&#10;roll&#9;ACTION&#9;ChangesView.Revert" />
+    <property name="last.edited.regexp" value=" Понедiлок" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.theopus.knucaTelegram.entity2" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.theopus.knucaTelegram.parser" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.theopus.knucaTelegram.config" />
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Cаня\Desktop\gitProject\knucaTelegram" />
       <recent name="C:\Users\Cаня\Desktop\gitProject\knucaTelegram\src\main\java\com\theopus\knucaTelegram\parser" />
       <recent name="C:\Users\Cаня\Desktop\gitProject\knucaTelegram\src\main\java\com\theopus\knucaTelegram" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.theopus.knucaTelegram.config" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.theopus.knucaTelegram.entity2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -748,6 +817,32 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.KnucaTelegramApplication">
+    <configuration default="false" name="ParserPDFTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.theopus.knucaTelegram.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="knucaTelegram" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.theopus.knucaTelegram.parser" />
+      <option name="MAIN_CLASS_NAME" value="com.theopus.knucaTelegram.parser.ParserPDFTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -1142,9 +1237,15 @@
       <envs />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.KnucaTelegramApplication" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ParserPDFTest" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ParserPDFTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -1162,7 +1263,8 @@
       <workItem from="1498843943101" duration="21878000" />
       <workItem from="1499001182492" duration="2443000" />
       <workItem from="1499005008479" duration="19535000" />
-      <workItem from="1499079941463" duration="22843000" />
+      <workItem from="1499079941463" duration="29694000" />
+      <workItem from="1499189632714" duration="9958000" />
     </task>
     <task id="LOCAL-00001" summary="hibernate duplicate control">
       <created>1499024649619</created>
@@ -1185,11 +1287,35 @@
       <option name="project" value="LOCAL" />
       <updated>1499088941419</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="dayofWeek update">
+      <created>1499169166634</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1499169166634</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ParserPDFTest - 2017.07.04 at 17h 53m 03s.xml">
+      <configuration name="ParserPDFTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserPDFTest - 2017.07.04 at 17h 53m 26s.xml">
+      <configuration name="ParserPDFTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserPDFTest - 2017.07.04 at 17h 54m 20s.xml">
+      <configuration name="ParserPDFTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserPDFTest - 2017.07.04 at 17h 54m 58s.xml">
+      <configuration name="ParserPDFTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserPDFTest - 2017.07.04 at 17h 56m 43s.xml">
+      <configuration name="ParserPDFTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66699000" />
+    <option name="totallyTimeSpent" value="83508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1201,7 +1327,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="719" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="719" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1210,23 +1337,24 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05977383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57256776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41626793" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50239235" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28708133" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5057283" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3085622" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31340873" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1250,11 +1378,11 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48803827" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57256776" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1262,11 +1390,11 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.9553429" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28708133" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5057283" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26171243" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31340873" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1312,25 +1440,86 @@
     <MESSAGE value="hibernate duplicate control" />
     <MESSAGE value="hibernate duplicate control(performance fix)" />
     <MESSAGE value="hibernate duplicate control(1.1,lessonDateTable need ifx)" />
-    <option name="LAST_COMMIT_MESSAGE" value="hibernate duplicate control(1.1,lessonDateTable need ifx)" />
+    <MESSAGE value="dayofWeek update" />
+    <option name="LAST_COMMIT_MESSAGE" value="dayofWeek update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Lesson.java</url>
-          <line>151</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>387</line>
           <properties />
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/RoomTimePeriod.java</url>
-          <line>25</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>388</line>
           <properties />
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>389</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>391</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>392</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>393</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>396</line>
+          <properties />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>398</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>397</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>395</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>394</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java</url>
+          <line>390</line>
+          <properties />
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1339,107 +1528,35 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/LessonType.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-actuator/1.5.4.RELEASE/spring-boot-actuator-1.5.4.RELEASE.jar!/org/springframework/boot/actuate/autoconfigure/CrshAutoConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="80" column="51" lean-forward="false" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/RoomLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/commands/custom.groovy" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-actuator/1.5.4.RELEASE/spring-boot-actuator-1.5.4.RELEASE-sources.jar!/org/springframework/boot/actuate/autoconfigure/CrshAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/utils/KNUCAUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state relative-caret-position="960">
+          <caret line="141" column="5" lean-forward="false" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity2/Teacher.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.9.RELEASE/spring-aop-4.3.9.RELEASE.jar!/org/springframework/aop/interceptor/ExposeInvocationInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.4.RELEASE/spring-data-commons-1.13.4.RELEASE.jar!/org/springframework/data/repository/core/support/RepositoryFactorySupport.class" />
-    <entry file="uml://JAVA/com.theopus.knucaTelegram.entity">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.theopus.knucaTelegram.entity</OriginalElement>
-          <nodes>
-            <node x="" y="">com.theopus.knucaTelegram.entity.Teacher</node>
-            <node x="" y="">com.theopus.knucaTelegram.entity.utils</node>
-            <node x="" y="">com.theopus.knucaTelegram.entity.RoomTimePeriod</node>
-            <node x="" y="">com.theopus.knucaTelegram.entity.enums</node>
-            <node x="" y="">com.theopus.knucaTelegram.entity.Lesson</node>
-            <node x="" y="">com.theopus.knucaTelegram.entity.LessonDate</node>
-            <node x="" y="">com.theopus.knucaTelegram.entity.Group</node>
-            <node x="" y="">com.theopus.knucaTelegram.entity.Room</node>
-            <node x="" y="">com.theopus.knucaTelegram.entity.Subject</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="151.0" y="123.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity2/Persone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="87" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity2/Note.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="21" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.4.RELEASE/spring-data-commons-1.13.4.RELEASE.jar!/org/springframework/data/repository/core/support/SurroundingTransactionDetectorMethodInterceptor.class" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/QualityParserControl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/SubjectRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/RoomRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/RoomRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="48" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="11" selection-end-column="48" />
@@ -1447,338 +1564,425 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.9.RELEASE/spring-tx-4.3.9.RELEASE.jar!/org/springframework/dao/support/PersistenceExceptionTranslationInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1266">
-          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/LessonRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar!/javax/persistence/CascadeType.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final-sources.jar!/javax/persistence/CascadeType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.9.RELEASE/spring-aop-4.3.9.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="method#Group#0;class#Group#0" expanded="false" />
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="e#1069#1070#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="method#equals#0;class#Group#0" expanded="false" />
-            <element signature="method#toString#0;class#Group#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-          <folding>
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1239#1240#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/MassLessonUploadService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/GroupRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="8" column="67" lean-forward="false" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/repository/TeacherRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/TeacherService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/SubjectService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/commands/EchoCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="17" />
+          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/MassUploadLessonService.java">
+    <entry file="jar://$USER_HOME$/Downloads/sshd-shell-spring-boot-starter-1.3.jar!/sshd/shell/springboot/autoconfiguration/Banners.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="90">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/sshd-shell-spring-boot-starter-1.3.jar!/sshd/shell/springboot/autoconfiguration/ShellBannerDecorator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/sshd-shell-spring-boot-starter-1.3.jar!/sshd/shell/springboot/autoconfiguration/SshdShellAutoConfiguration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="54" column="6" lean-forward="false" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/sshd-shell-spring-boot-starter-1.3.jar!/sshd/shell/springboot/autoconfiguration/SshdShellCommand.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/sshd-shell-spring-boot-starter-1.3.jar!/sshd/shell/springboot/autoconfiguration/SshdShellProperties.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/sshd-shell-spring-boot-starter-1.3.jar!/sshd/shell/springboot/autoconfiguration/SshSessionContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/sshd-shell-spring-boot-starter-1.3.jar!/sshd/shell/springboot/autoconfiguration/SshSessionFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/sshd-shell-spring-boot-starter-1.3-sources.jar!/sshd/shell/springboot/autoconfiguration/ShellBannerDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/sshd-shell-spring-boot-starter-1.3-sources.jar!/sshd/shell/springboot/autoconfiguration/SshdShellAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/sshd-shell-spring-boot-starter-1.3-sources.jar!/sshd/shell/springboot/autoconfiguration/SshdShellCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/sshd-shell-spring-boot-starter-1.3-sources.jar!/sshd/shell/springboot/autoconfiguration/SshdShellProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/sshd-shell-spring-boot-starter-1.3-sources.jar!/sshd/shell/springboot/autoconfiguration/SshSessionContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/sshd-shell-spring-boot-starter-1.3-sources.jar!/sshd/shell/springboot/autoconfiguration/SshSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/sshd-shell-spring-boot-starter-1.3.jar!/sshd/shell/springboot/autoconfiguration/SshSessionInstance.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1650">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#5680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/sshd-shell-spring-boot-starter-1.3-sources.jar!/sshd/shell/springboot/autoconfiguration/Banners.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots/3.1.0/telegrambots-3.1.0.jar!/org/telegram/telegrambots/ApiContextInitializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/sshd-shell-spring-boot-starter-1.3-sources.jar!/sshd/shell/springboot/autoconfiguration/SshSessionInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="52" column="21" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots/3.1.0/telegrambots-3.1.0-sources.jar!/org/telegram/telegrambots/ApiContextInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/GroupService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/GroupService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/RoomService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/GroupServiceImpl.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/1.5.4.RELEASE/spring-boot-test-1.5.4.RELEASE.jar!/org/springframework/boot/test/mock/mockito/MockitoAopProxyTargetInterceptor.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
-          <folding>
-            <element signature="e#1321#1322#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/TeacherServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-          <folding>
-            <element signature="e#1367#1368#0" expanded="true" />
-            <element signature="e#1403#1404#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/SubjectServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#674#675#0" expanded="false" />
-            <element signature="e#701#702#0" expanded="false" />
-            <element signature="e#1297#1298#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/datasevice/LessonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="188">
+          <caret line="44" column="23" lean-forward="false" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/datasevice/impl/LessonServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="102" column="5" lean-forward="false" selection-start-line="99" selection-start-column="4" selection-end-line="102" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/RoomServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="54" column="40" lean-forward="false" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="76" column="132" lean-forward="false" selection-start-line="76" selection-start-column="132" selection-end-line="76" selection-end-column="132" />
+        <state relative-caret-position="460">
+          <caret line="87" column="21" lean-forward="false" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/massupload/impl/MassUploadLessonServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/BotInitilizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="35" column="32" lean-forward="false" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+        <state relative-caret-position="270">
+          <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Room.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/xabgesagtx/telegram-spring-boot-starter/0.8/telegram-spring-boot-starter-0.8.jar!/com/github/xabgesagtx/bots/TelegramBotAutoConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        <state relative-caret-position="135">
+          <caret line="27" column="94" lean-forward="true" selection-start-line="27" selection-start-column="94" selection-end-line="27" selection-end-column="94" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Subject.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots-meta/3.1.0/telegrambots-meta-3.1.0.jar!/org/telegram/telegrambots/api/methods/updates/GetUpdates.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        <state relative-caret-position="635">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/RoomTimePeriod.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambots/3.1.0/telegrambots-3.1.0-sources.jar!/org/telegram/telegrambots/updatesreceivers/DefaultBotSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        <state relative-caret-position="140">
+          <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/LessonDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="method#LessonDate#0;class#LessonDate#0" expanded="false" />
-            <element signature="e#1270#1271#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="29" column="45" lean-forward="false" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+        <state relative-caret-position="26">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvnw">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="116" column="4" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/enums/DayOfWeek.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="230" column="46" lean-forward="false" selection-start-line="230" selection-start-column="46" selection-end-line="230" selection-end-column="46" />
-          <folding>
-            <element signature="docComment;class#ParserPDF#0" expanded="false" />
-            <element signature="method#ParserPDF#1;class#ParserPDF#0" expanded="false" />
-            <element signature="method#parseToText#0;class#ParserPDF#0" expanded="false" />
-            <element signature="method#parseUpDate#0;class#ParserPDF#0" expanded="false" />
-            <element signature="method#getGroups#0;class#ParserPDF#0" expanded="false" />
-            <element signature="method#parseLessonList#0;class#ParserPDF#0" expanded="false" />
-            <element signature="method#parseSubjName#0;class#ParserPDF#0" expanded="false" />
-            <element signature="method#parseLessonType#0;class#ParserPDF#0" expanded="false" />
-            <element signature="e#15362#15399#0" expanded="false" />
-            <element signature="method#parseGroups#0;class#ParserPDF#0" expanded="false" />
-            <element signature="docComment;method#stringToDate#0;class#ParserPDF#0" expanded="false" />
-            <element signature="method#stringToDate#0;class#ParserPDF#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="9" column="76" lean-forward="true" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/entity/Lesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="13" column="105" lean-forward="false" selection-start-line="13" selection-start-column="105" selection-end-line="13" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Lesson#0;class#Lesson#0" expanded="false" />
-            <element signature="method#equals#0;class#Lesson#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Lesson#0" expanded="false" />
-            <element signature="method#addGroup#0;class#Lesson#0" expanded="false" />
-            <element signature="e#2381#2382#0" expanded="true" />
-            <element signature="e#2413#2414#0" expanded="true" />
-            <element signature="method#setRoomTimePeriod#0;class#Lesson#0" expanded="false" />
-            <element signature="e#3380#3437#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/presistence-mysql.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="150">
+          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding>
+            <element signature="method#Group#0;class#Group#0" expanded="false" />
+            <element signature="method#equals#0;class#Group#0" expanded="false" />
+            <element signature="method#toString#0;class#Group#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Lesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Lesson#0;class#Lesson#0" expanded="false" />
+            <element signature="method#equals#0;class#Lesson#0" expanded="false" />
+            <element signature="method#hashCode#0;class#Lesson#0" expanded="false" />
+            <element signature="method#addGroup#0;class#Lesson#0" expanded="false" />
+            <element signature="method#setRoomTimePeriod#0;class#Lesson#0" expanded="false" />
+            <element signature="e#3466#3523#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-384">
+          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+          <folding>
+            <element signature="docComment;class#ParserPDF#0" expanded="false" />
+            <element signature="method#ParserPDF#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#ParserPDF#1;class#ParserPDF#0" expanded="false" />
+            <element signature="method#getGroups#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#parseLessonList#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#parseSubjName#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#parseLessonType#0;class#ParserPDF#0" expanded="false" />
+            <element signature="e#16245#16282#0" expanded="false" />
+            <element signature="method#parseTeachers#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#parseGroups#0;class#ParserPDF#0" expanded="false" />
+            <element signature="docComment;method#stringToDate#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#stringToDate#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#timeToOrder#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#printMap#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#print#0;class#ParserPDF#0" expanded="false" />
+            <element signature="method#ukrMothToNumber#0;class#ParserPDF#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/GroupRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="49" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="10" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/GroupServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#1390#1391#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/RoomServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-159">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="61" lean-forward="false" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+          <folding>
+            <marker date="1499199495000" expanded="true" signature="509:742" ph="select les.*... lesson" />
+            <marker date="1499199495000" expanded="true" signature="509:768" ph="select les.*... lesson" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/25873c32-93fd-462d-b408-e41f75ed37f9/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="47" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="61" lean-forward="false" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/TelegramConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/StartupRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/ScheduleBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1829#1830#0" expanded="true" />
+            <element signature="e#1868#1869#0" expanded="true" />
+            <element signature="e#1917#1918#0" expanded="true" />
+            <element signature="e#1987#1988#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1859,7 +2063,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <last-edited>sshd-shell-spring-boot-starter-1.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

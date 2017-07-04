@@ -18,9 +18,9 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.theopus.knucaTelegram")
+@ComponentScan("com.theopus.knucaTelegram.data")
 @PropertySource("classpath:presistence-mysql.properties")
-@EnableJpaRepositories("com.theopus.knucaTelegram.repository")
+@EnableJpaRepositories("com.theopus.knucaTelegram.data.repository")
 public class PersistenceConfig {
 
     @Autowired
@@ -53,7 +53,7 @@ public class PersistenceConfig {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource());
         entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        entityManagerFactoryBean.setPackagesToScan("com.theopus.knucaTelegram.entity");
+        entityManagerFactoryBean.setPackagesToScan("com.theopus.knucaTelegram.data.entity");
 
         entityManagerFactoryBean.setJpaProperties(getHibernateProperties());
 
@@ -75,6 +75,7 @@ public class PersistenceConfig {
         properties.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
         properties.put("hibernate.hbm2ddl.auto", env.getRequiredProperty("hibernate.hbm2ddl.auto"));
         properties.put("hibernate.connection.characterEncoding", env.getRequiredProperty("hibernate.connection.characterEncoding"));
+        properties.put("hibernate.enable_lazy_load_no_trans", env.getRequiredProperty("hibernate.enable_lazy_load_no_trans"));
         return properties;
     }
 
