@@ -95,13 +95,17 @@ public class ParserPDF {
         return date;
     }
 
-    private Map<String, String> parseToLessonGroupMap(){
+    public Map<String, String> parseToLessonGroupMap(){
 
         String text = this.parsedText;
         text = text.replaceAll("\n", "");
         text = text.replaceAll("\r", "");
         text = text.replaceAll("=", " ");
         text = text.replaceAll("\\s+",  " ");
+        System.out.println(text);
+        Pattern dayOfAWeek = Pattern.compile("([^|]Понедiлок)|([^|]Вiвторок)|([^|]Середа)|([^|]Четвер)|([^|]П'ятниця)|([^|]Субота)");
+        Matcher mworkdayBegin = dayOfAWeek.matcher(text);
+        Matcher mworkdayFinish = dayOfAWeek.matcher(text);
 
         Pattern begin = Pattern.compile("((\\d?\\d:\\d\\d)|(--\"--))");
         Pattern finish = Pattern.compile("((\\d?\\d:\\d\\d)|(--\"--)|(-{4,5}))");
@@ -109,7 +113,7 @@ public class ParserPDF {
         Matcher mf = finish.matcher(text);
 
         List<Integer> groupsIndexes = new ArrayList<Integer>();
-        Map<Integer, String> groupMap = new HashMap<Integer, String>();
+        Map<Integer, String> groupMap = new LinkedHashMap<Integer, String>();
         Pattern groupLinePattern = Pattern.compile("(академгрупа)(\\s)([\\S]+)");
         Matcher groupMatcher = groupLinePattern.matcher(text);
         while (groupMatcher.find()){
@@ -119,16 +123,39 @@ public class ParserPDF {
 
         Map<String, String> lessonGroup = new LinkedHashMap<String, String>();
         List<String> strings = new ArrayList<>();
+
+        String currentDay = "";
+        if (mworkdayBegin.find()){
+            currentDay = text.substring(mworkdayBegin.start(),mworkdayBegin.end());
+            System.out.println(currentDay);
+            mworkdayFinish.find();
+            System.out.println(text.substring(mworkdayFinish.start(),mworkdayFinish.end()));
+            mworkdayFinish.find();
+            System.out.println(text.substring(mworkdayFinish.start(),mworkdayFinish.end()));
+        }
+
+        boolean isOk = true;
+
         for (int i = 0;mb.find();){
             if (mf.find(mb.end())) {
+                if(isOk) {
+                    if ((mf.end() > mworkdayBegin.start()) && (mf.end() < mworkdayFinish.start())) {
+
+                    } else {
+                        isOk = mworkdayBegin.find();
+                        isOk = mworkdayFinish.find();
+                        currentDay = text.substring(mworkdayBegin.start(), mworkdayBegin.end());
+                        System.out.println(currentDay);
+                    }
+                }
                 if (i != groupsIndexes.size() - 1) {
                     if (mf.start() > groupsIndexes.get(i) && mf.start() < groupsIndexes.get(i + 1)) ;
                     else i++;
-                    lessonGroup.put(text.substring(mb.start(), mf.start()).trim(),groupMap.get(groupsIndexes.get(i)));
+                    lessonGroup.put(text.substring(mb.start(), mf.start()).trim(),groupMap.get(groupsIndexes.get(i)) + currentDay);
                     strings.add(text.substring(mb.start(), mf.start()).trim());
                 }
                 else {
-                    lessonGroup.put(text.substring(mb.start(), mf.start()).trim(),groupMap.get(groupsIndexes.get(i)));
+                    lessonGroup.put(text.substring(mb.start(), mf.start()).trim(),groupMap.get(groupsIndexes.get(i)) + currentDay);
                     strings.add(text.substring(mb.start(), mf.start()).trim());
                 }
             }
@@ -194,11 +221,14 @@ public class ParserPDF {
         return lessonList;
     }
 
-    private Lesson parseLesson(String lessonLine, String labeledGroup, String previousTime){
+    public Lesson parseLesson(String lessonLine, String labeledGroupPlusDay, String previousTime){
         String lessonTime = (previousTime == null ? lessonLine.split(" ")[0] : previousTime);
-        System.out.println( lessonTime + " " + lessonLine + " " + labeledGroup);
+        System.out.println( lessonTime + " " + lessonLine + " " + labeledGroupPlusDay);
+        String labeledGroup = labeledGroupPlusDay.split(" ")[0].trim();
+        String labeledDayOfWeek = labeledGroupPlusDay.split(" ")[1].trim();
 
         Lesson lesson = new Lesson();
+        lesson.setDayOfWeek(labeledDayOfWeek);
         lesson.setOrder(KNUCAUtil.timeToOrder(lessonTime));
         lesson.setSubject(new Subject(parseSubjName(lessonLine)));
         lesson.setLessonType(parseLessonType(lessonLine));
@@ -301,6 +331,7 @@ public class ParserPDF {
             }
 
             List<String> toDates = new ArrayList<>();
+            List<String> fromDates = new ArrayList<>();
 
             matcher = fromDate.matcher(s);
             if (matcher.find()){
@@ -328,11 +359,27 @@ public class ParserPDF {
 //                    System.out.println("only to date: " + notParsedDate);
                 }
             }
-            if (roomTimePeriod.getLessonDate().isEmpty()){
-                roomTimePeriod.setLessonDate(lessonDates);
+            if ((roomTimePeriod.getLessonDate().isEmpty() || roomTimePeriod.getLessonDate() == null) && (lessonDates != null)){
+                for (LessonDate l: lessonDates) {
+                    roomTimePeriod.addLessonDate(new LessonDate(l.getSingleDate(),l.getFromDate(),l.getToDate()));
+                }
             }
             result.add(roomTimePeriod);
             lessonDates = roomTimePeriod.getLessonDate();
+        }
+
+        //TODO: MAKE IT NORM
+        for (RoomTimePeriod rtp :result) {
+            if (rtp.getLessonDate() == null || rtp.getLessonDate().isEmpty()){
+                if (lessonDates != null)
+                {
+                    for (LessonDate s : lessonDates) {
+                        if (s != null) {
+                            rtp.addLessonDate(new LessonDate(s.getSingleDate(), s.getFromDate(), s.getToDate()));
+                        }
+                    }
+                }
+            }
         }
 
         Collections.reverse(a);

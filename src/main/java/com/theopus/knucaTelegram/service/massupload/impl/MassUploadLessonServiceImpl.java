@@ -33,10 +33,12 @@ public class MassUploadLessonServiceImpl implements MassUploadLessonService {
     @Override
     public List<Lesson> saveAll(List<Lesson> lessons) {
         for (Lesson l : lessons) {
+            System.out.println(l);
             l.setGroups(groupService.saveAll(l.getGroups()));
             l.setTeachers(teacherService.saveAll(l.getTeachers()));
             l.setSubject(subjectService.saveOne(l.getSubject()));
             l.setRoomTimePeriod(roomService.saveRooms(l.getRoomTimePeriod()));
+            System.out.println(l);
             lessonRepository.save(l);
         }
         this.flush();

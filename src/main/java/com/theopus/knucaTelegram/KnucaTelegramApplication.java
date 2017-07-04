@@ -5,6 +5,7 @@ import com.theopus.knucaTelegram.entity.Lesson;
 import com.theopus.knucaTelegram.entity.Teacher;
 import com.theopus.knucaTelegram.entity.utils.KNUCAUtil;
 import com.theopus.knucaTelegram.parser.FolderParser;
+import com.theopus.knucaTelegram.parser.ParserPDF;
 import com.theopus.knucaTelegram.service.datasevice.LessonService;
 import com.theopus.knucaTelegram.service.massupload.MassUploadLessonService;
 import org.springframework.boot.SpringApplication;
@@ -24,16 +25,10 @@ public class KnucaTelegramApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(KnucaTelegramApplication.class, args);
         run.getBean(FolderParser.class).parseFolder("pdfs");
-        Lesson lesson1 = new Lesson();
-        lesson1.addGroup(new Group("test-123"));
-//        lesson1.addTeacher(new Teacher("loh"));
-        Lesson lesson2 = new Lesson();
-        lesson2.addGroup(new Group("test-123"));
-//        lesson2.addTeacher(new Teacher("тыхуй"));
 
-//        List<Lesson> lessons = new ArrayList<>();
-//        lessons.add(lesson1);
-//        lessons.add(lesson2);
-//        run.getBean(MassUploadLessonService.class).saveAll(lessons);
+//        String s = "13:50 Оцiнка нерухомостi(ЗIК) (Практ.з.); [до 26.04 ауд.340]; [ ауд.301] доц. Кузнецова Д.С. ЗIK-41";
+//        ParserPDF p = new ParserPDF("pdfs/З_К-3.pdf");
+//        KNUCAUtil.print(p.parseLessonList(new ArrayList<>()));
+//        System.out.println(p.parseLesson(s,"ЗIK-41",null));
     }
 }

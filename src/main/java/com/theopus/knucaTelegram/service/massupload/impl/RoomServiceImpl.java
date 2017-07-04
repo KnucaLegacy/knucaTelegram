@@ -45,12 +45,16 @@ public class RoomServiceImpl implements RoomService {
                 }
 
             }
-            if (rtp.getLessonDate() != null) {
-                for (LessonDate ld : rtp.getLessonDate()) {
-                    ld.setRoomTimePeriod(rtp);
+                try {
+                    for (LessonDate ld : rtp.getLessonDate()) {
+                        ld.setRoomTimePeriod(rtp);
 
+                    }
+                }catch (NullPointerException e){
+                    System.out.println(rtp);
+                    e.printStackTrace();
                 }
-            }
+
         }
         return rtm;
     }

@@ -26,7 +26,7 @@ public class RoomTimePeriod {
     @ManyToOne(cascade = CascadeType.ALL)
     private Lesson lesson;
 
-    @OneToMany(mappedBy = "roomTimePeriod", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<LessonDate> lessonDate = new HashSet<>();
 
     public RoomTimePeriod() {
@@ -47,6 +47,8 @@ public class RoomTimePeriod {
     }
 
     public boolean addLessonDate(LessonDate lessonDate){
+        if (this.lessonDate == null)
+            this.lessonDate = new HashSet<>();
         return this.lessonDate.add(lessonDate);
     }
 

@@ -24,7 +24,7 @@ public class LessonDate {
     @Column
     private Date toDate;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private RoomTimePeriod roomTimePeriod;
 
     public LessonDate() {
@@ -39,6 +39,12 @@ public class LessonDate {
     }
 
     public LessonDate(Date fromDate, Date toDate) {
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+    }
+
+    public LessonDate(Date singleDate, Date fromDate, Date toDate) {
+        this.singleDate = singleDate;
         this.fromDate = fromDate;
         this.toDate = toDate;
     }

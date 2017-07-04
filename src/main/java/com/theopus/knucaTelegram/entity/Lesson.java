@@ -4,15 +4,9 @@ package com.theopus.knucaTelegram.entity;
 
 import com.theopus.knucaTelegram.entity.enums.LessonOrder;
 import com.theopus.knucaTelegram.entity.enums.LessonType;
-import org.hibernate.annotations.*;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,8 +14,7 @@ import java.util.Set;
 @Table(name = "lesson")
 public class Lesson {
 
-    @Id
-    @GeneratedValue(generator = "increment")
+    @Id @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
     @Column(name = "id", length = 6, nullable = false)
     private long id;
@@ -36,7 +29,10 @@ public class Lesson {
     @Column(name = "lesson_type")
     private LessonType lessonType;
 
-    @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Column
+    private String dayofWeek;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<RoomTimePeriod> roomTimePeriod = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -78,6 +74,14 @@ public class Lesson {
         if (groups.contains(add))
             groups.remove(add);
         return groups.add(add);
+    }
+
+    public String getDayOfWeek() {
+        return dayofWeek;
+    }
+
+    public void setDayOfWeek(String string) {
+        this.dayofWeek = string;
     }
 
     public boolean addTeacher(Teacher add){
@@ -122,9 +126,9 @@ public class Lesson {
 
     public void setRoomTimePeriod(Set<RoomTimePeriod> roomTimePeriod) {
         this.roomTimePeriod = roomTimePeriod;
-        for (RoomTimePeriod rtp: this.roomTimePeriod) {
-            rtp.setLesson(this);
-        }
+//        for (RoomTimePeriod rtp: this.roomTimePeriod) {
+//            rtp.setLesson(this);
+//        }
     }
 
     public Set<Teacher> getTeachers() {
@@ -143,12 +147,11 @@ public class Lesson {
         this.groups = groups;
     }
 
-
-
     @Override
     public String toString() {
         return "Lesson{" +
                 "order=" + order +
+                ", dayOfweek=" + dayofWeek +
                 ", subject=" + subject +
                 ", lessonType=" + lessonType +
                 ", roomTimePeriod=" + roomTimePeriod +
