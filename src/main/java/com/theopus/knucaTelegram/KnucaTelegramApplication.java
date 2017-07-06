@@ -12,7 +12,7 @@ public class KnucaTelegramApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(KnucaTelegramApplication.class, args);
-        run.getBean(FolderParser.class).parseFolder("pdfs");
+//        run.getBean(FolderParser.class).parseFolder("pdfs");
 //        ParserPDF parserPDF = new ParserPDF("pdfs/НОЗ-1.pdf");
 //        parserPDF.parseLessonList(null);
     }

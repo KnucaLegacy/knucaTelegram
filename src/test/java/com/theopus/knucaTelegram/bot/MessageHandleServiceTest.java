@@ -15,7 +15,7 @@ public class MessageHandleServiceTest {
     public void lessonToString() throws Exception {
         ParserPDF parserPDF = new ParserPDF("pdfs/КСМ-3.pdf");
         Lesson l = parserPDF.parseLesson("12:20 Вища математика (Практ.з.); [ ауд.349] ас. Мартинюк О.Г.", "КН-11 Понеділок", null);
-        System.out.println(new MessageHandleService().lessonToString(l, new Date()));
+//        System.out.println(new MessageHandleService().lessonToString(l, new Date()));
     }
 
     @Test
