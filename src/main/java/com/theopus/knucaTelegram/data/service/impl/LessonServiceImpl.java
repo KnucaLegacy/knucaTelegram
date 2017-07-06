@@ -1,21 +1,25 @@
 package com.theopus.knucaTelegram.data.service.impl;
 
 import com.theopus.knucaTelegram.data.entity.Lesson;
+import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.repository.LessonRepository;
 import com.theopus.knucaTelegram.data.service.GroupService;
 import com.theopus.knucaTelegram.data.service.LessonService;
 import com.theopus.knucaTelegram.data.service.SubjectService;
 import com.theopus.knucaTelegram.data.service.TeacherService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-/**
- * Created by irina on 03.07.17.
- */
 @Service
 public class LessonServiceImpl implements LessonService {
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Resource
     private GroupService groupService;
@@ -48,10 +52,27 @@ public class LessonServiceImpl implements LessonService {
         return lessonRepository.findAll();
     }
 
+    @Override
+    public List<Lesson> getTodayByGroupName(String name) {
+        return null;
+    }
 
     @Override
-    public List<Lesson> getByWeekDayGroupName(int day, String name) {
-        return lessonRepository.findDayGroupName(day, name);
+    public List<Lesson> getByExactDayByGroupName(Date date, String name) {
+        List<Lesson> result = new ArrayList<>();
+
+        int dayOfweek = DayOfWeek.dateToDayOfWeek(date).ordinal();
+
+        List<Lesson> tmp = lessonRepository.findDayGroupName(dayOfweek, name);
+        System.out.println(tmp);
+
+        tmp.forEach(lesson -> {
+            if (lesson.isAtDate(date))
+                result.add(lesson);
+        });
+        System.out.println(result);
+        result.sort((o1, o2) -> o1.getOrder().ordinal() - o2.getOrder().ordinal());
+        return result;
     }
 
     @Override

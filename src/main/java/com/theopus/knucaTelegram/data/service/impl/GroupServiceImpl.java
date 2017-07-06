@@ -3,6 +3,8 @@ package com.theopus.knucaTelegram.data.service.impl;
 import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.repository.GroupRepository;
 import com.theopus.knucaTelegram.data.service.GroupService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,6 +16,8 @@ import java.util.Set;
  */
 @Service
 public class GroupServiceImpl implements GroupService {
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Resource
     private GroupRepository groupRepository;
@@ -44,8 +48,18 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Group getByName(String name) {
+    public Group getByExactName(String name) {
         return groupRepository.findByName(name);
+    }
+
+    @Override
+    public Set<Group> getByAlliesName(String name) {
+        return groupRepository.findNameAlies(name);
+    }
+
+    @Override
+    public long getCount() {
+        return groupRepository.count();
     }
 
     @Override

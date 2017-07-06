@@ -10,7 +10,14 @@ import java.util.Set;
 public interface GroupService {
 
     Set<Group> saveAll(Set<Group> group);
-    Group getByName(String name);
+
+    Group getByExactName(String name);
+
+    Set<Group> getByAlliesName(String name);
+
+    long getCount();
+
     void flush();
+
     Set<Group> getAll();
 }

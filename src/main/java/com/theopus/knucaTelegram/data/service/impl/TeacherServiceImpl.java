@@ -3,6 +3,8 @@ package com.theopus.knucaTelegram.data.service.impl;
 import com.theopus.knucaTelegram.data.entity.Teacher;
 import com.theopus.knucaTelegram.data.repository.TeacherRepository;
 import com.theopus.knucaTelegram.data.service.TeacherService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,6 +16,8 @@ import java.util.Set;
  */
 @Service
 public class TeacherServiceImpl implements TeacherService {
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Resource
     private TeacherRepository teacherRepository;

@@ -3,6 +3,8 @@ package com.theopus.knucaTelegram.data.service.impl;
 import com.theopus.knucaTelegram.data.entity.Subject;
 import com.theopus.knucaTelegram.data.repository.SubjectRepository;
 import com.theopus.knucaTelegram.data.service.SubjectService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,6 +16,8 @@ import java.util.Set;
  */
 @Service
 public class SubjectServiceImpl implements SubjectService {
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     private Set<Subject> subjectsCache = new HashSet<>();
 

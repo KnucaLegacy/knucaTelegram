@@ -3,6 +3,7 @@ package com.theopus.knucaTelegram.data.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -33,10 +34,17 @@ public class RoomTimePeriod {
         this.room = room;
     }
 
+    public boolean isAtDate(Date date){
+        for (LessonDate ld: lessonDate) {
+            if (ld.isAtDate(date))
+                return true;
+        }
+        return false;
+    }
+
     public Room getRoom() {
         return room;
     }
-
 
     public void setRoom(Room room) {
         this.room = room;

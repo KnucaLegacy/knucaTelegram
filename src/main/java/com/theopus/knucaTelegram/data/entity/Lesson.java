@@ -1,13 +1,13 @@
 package com.theopus.knucaTelegram.data.entity;
 
 
-
-import com.theopus.knucaTelegram.data.entity.enums.LessonType;
 import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.entity.enums.LessonOrder;
+import com.theopus.knucaTelegram.data.entity.enums.LessonType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,6 +45,27 @@ public class Lesson {
     public Lesson() {
     }
 
+    public boolean isAtDate(Date date){
+        for (RoomTimePeriod rtp : roomTimePeriod) {
+            if (rtp.isAtDate(date))
+                return true;
+        }
+        return false;
+    }
+
+    public Set<Room> getTodayRoom(){
+        return getRoomByDate(new Date());
+    }
+
+    public Set<Room> getRoomByDate(Date date){
+        Set<Room> result = new HashSet<>();
+        for (RoomTimePeriod rtp: roomTimePeriod) {
+            if (rtp.isAtDate(date))
+                result.add(rtp.getRoom());
+        }
+        return result;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -57,6 +78,7 @@ public class Lesson {
         if (lessonType != lesson.lessonType) return false;
         if (!roomTimePeriod.equals(lesson.roomTimePeriod)) return false;
         if (teachers != null ? !teachers.equals(lesson.teachers) : lesson.teachers != null) return false;
+        if (groups.containsAll(lesson.getGroups())) return true;
         return groups != null ? groups.equals(lesson.groups) : lesson.groups == null;
     }
 
@@ -147,7 +169,6 @@ public class Lesson {
     public void setGroups(Set<Group> groups) {
         this.groups = groups;
     }
-
     @Override
     public String toString() {
         return "Lesson{" +

@@ -5,6 +5,8 @@ import com.theopus.knucaTelegram.data.entity.Room;
 import com.theopus.knucaTelegram.data.entity.RoomTimePeriod;
 import com.theopus.knucaTelegram.data.repository.RoomRepository;
 import com.theopus.knucaTelegram.data.service.RoomService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,6 +18,8 @@ import java.util.Set;
  */
 @Service
 public class RoomServiceImpl implements RoomService {
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     private Set<Room> roomCache = new HashSet<>();
 

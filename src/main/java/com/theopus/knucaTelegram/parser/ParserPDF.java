@@ -9,6 +9,8 @@ import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,9 +24,11 @@ import java.util.regex.Pattern;
  */
 public class ParserPDF {
 
-    public String parsedText;
+    private static final Logger log = LoggerFactory.getLogger(ParserPDF.class);
+
+    private String parsedText;
     public Date upDate;
-    public Calendar calendar;
+    private Calendar calendar;
 
     public ParserPDF(String path) {
         this.parsedText = parseToText(new File(path));
@@ -407,14 +411,15 @@ public class ParserPDF {
 //        System.out.println("----initial-----");
 //        KNUCAUtil.print(a);
         return new HashSet<>(result);
+
     }
 
     private Set<Teacher> parseTeachers(String lessonLine){
         Set<Teacher> result = new HashSet<>();
         String[] tmp = lessonLine.split("]");
         String teacherGroupline = tmp[tmp.length-1];
-        Pattern pattern = Pattern.compile("\\b((([^.,\\s\\d]{2,5}\\.)?[^.,\\s\\d]{2,6}\\.?)|[^.,\\d\\s]{3,}\\.)\\s[^.,\\s\\d]+(\\s[^.,\\d\\s]\\.)?([^.,\\d\\s]\\.?)?");
-        Matcher matcher = pattern.matcher(teacherGroupline);
+        Pattern teacherPattern = Pattern.compile("\\b((([^.,\\s\\d\\p{Punct}]{2,5}.)?[^.,\\s\\d\\p{Punct}]{2,4}\\.)|[^.,\\d\\s]{3,}\\.)\\s[^.,\\s\\d]+(\\s[^.,\\d\\s]\\.)?([^.,\\d\\s]\\.?)?");
+        Matcher matcher = teacherPattern.matcher(teacherGroupline);
         while (matcher.find()){
             result.add(new Teacher(teacherGroupline.substring(matcher.start(),matcher.end())));
         }
@@ -425,7 +430,7 @@ public class ParserPDF {
         Set<Group> result = new HashSet<>();
         String[] tmp = lessonLine.split("]");
         String teacherGroupline = tmp[tmp.length-1];
-        Pattern pattern = Pattern.compile("\\b[А-я]{1,6}-(\\S){1,6}\\b");
+        Pattern pattern = Pattern.compile("\\b[А-яІіЇїЄє]{1,6}-(\\S){1,6}\\b");
         Matcher matcher = pattern.matcher(teacherGroupline);
         while (matcher.find()){
             result.add(new Group(teacherGroupline.substring(matcher.start(),matcher.end())));
@@ -445,7 +450,7 @@ public class ParserPDF {
         int day = Integer.parseInt(dateMonth[0]);
         int month = Integer.parseInt(dateMonth[1]);
         int year = calendar.get(Calendar.YEAR);
-        return new GregorianCalendar(year,month,day).getTime();
+        return new GregorianCalendar(year,month - 1,day).getTime();
     }
 
     private DayOfWeek stringToDayOfWeek(String s){

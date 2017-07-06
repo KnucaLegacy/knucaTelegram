@@ -1,14 +1,13 @@
 package com.theopus.knucaTelegram.bot.command;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Chat;
 import org.telegram.telegrambots.api.objects.User;
 import org.telegram.telegrambots.bots.AbsSender;
 import org.telegram.telegrambots.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
-import org.telegram.telegrambots.logging.BotLogger;
 
 /**
  * Created by irina on 05.07.17.
@@ -16,7 +15,7 @@ import org.telegram.telegrambots.logging.BotLogger;
 
 public class HelloCommand extends BotCommand {
 
-    private static final String LOGTAG = "HELLOCOMMAND";
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     public HelloCommand() {
         super("hello", "Say hallo to this bot");
@@ -44,7 +43,7 @@ public class HelloCommand extends BotCommand {
         try {
             absSender.sendMessage(answer);
         } catch (TelegramApiException e) {
-            BotLogger.error(LOGTAG, e);
+            log.error("errorSendingHelloMessage",e);
         }
     }
 

@@ -3,7 +3,9 @@ package com.theopus.knucaTelegram.data.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 @Entity
 @Table(name = "lessonDate")
@@ -123,5 +125,35 @@ public class LessonDate {
             result.append(" toDate=").append(toDate).append(";");
         result.append("}");
         return result.toString();
+    }
+
+    public boolean isAtDate(Date date) {
+        if (fromDate == null && singleDate == null && toDate == null)
+            return false;
+        if (singleDate != null){
+            GregorianCalendar gc = new GregorianCalendar();
+            gc.setTime(date);
+
+            Date tmp = new GregorianCalendar(gc.get(Calendar.YEAR), gc.get(Calendar.MONTH), gc.get(Calendar.DAY_OF_MONTH)).getTime();
+            if ((tmp.getTime() >= singleDate.getTime()) && (tmp.getTime() <= (singleDate.getTime() + 86400000)))
+                return true;
+        }
+        if (fromDate != null && toDate != null){
+            System.out.println("testing - " + date) ;
+            System.out.println("from " + fromDate + " - to " + toDate);
+            if ((date.getTime() >= fromDate.getTime() && (date.getTime() < toDate.getTime())))
+                return true;
+        }
+        if (fromDate == null && toDate != null){
+            System.out.println(date);
+            System.out.println(toDate);
+            if (date.getTime() < toDate.getTime())
+                return true;
+        }
+        if (fromDate != null && toDate == null){
+            if (fromDate.getTime() <= date.getTime())
+                return true;
+        }
+        return false;
     }
 }

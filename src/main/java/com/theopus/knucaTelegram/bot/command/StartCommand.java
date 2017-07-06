@@ -1,16 +1,19 @@
 package com.theopus.knucaTelegram.bot.command;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.telegram.telegrambots.api.objects.Chat;
 import org.telegram.telegrambots.api.objects.User;
 import org.telegram.telegrambots.bots.AbsSender;
 import org.telegram.telegrambots.bots.commandbot.commands.BotCommand;
-import org.telegram.telegrambots.bots.commandbot.commands.CommandRegistry;
 import org.telegram.telegrambots.bots.commandbot.commands.ICommandRegistry;
 
 /**
  * Created by irina on 05.07.17.
  */
 public class StartCommand extends BotCommand {
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     private ICommandRegistry commandRegistry;
 

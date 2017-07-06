@@ -2,6 +2,8 @@ package com.theopus.knucaTelegram.parser;
 
 import com.theopus.knucaTelegram.data.entity.Lesson;
 import com.theopus.knucaTelegram.data.service.LessonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -11,10 +13,7 @@ import java.util.*;
 @Component
 public class FolderParser {
 
-
-//    @Qualifier("lessonServiceImpl")
-//    @Autowired
-//    private LessonService lessonService;
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Resource
     private LessonService lessonService;
