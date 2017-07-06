@@ -54,7 +54,14 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public Set<Group> getByAlliesName(String name) {
-        return groupRepository.findNameAlies(name);
+        System.out.println(name);
+        try {
+            return groupRepository.findNameAlies(name);
+        }catch (Exception e){
+            log.error("GETALLIESBYNAME", e);
+        }
+        return null;
+
     }
 
     @Override

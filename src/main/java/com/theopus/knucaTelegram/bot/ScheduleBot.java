@@ -58,7 +58,9 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
     @Override
     public void processNonCommandUpdate(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
-            messageHandleService.handle(update, this);
+            messageHandleService.handle(update.getMessage(), null, this);
+        } else if (update.hasCallbackQuery()){
+            messageHandleService.handle(update.getCallbackQuery().getMessage(), update.getCallbackQuery().getData(), this);
         }
     }
 

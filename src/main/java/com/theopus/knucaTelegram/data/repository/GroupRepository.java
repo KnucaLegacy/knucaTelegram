@@ -12,8 +12,8 @@ public interface GroupRepository extends JpaRepository<Group, Long> {
     @Query("select g from Group g where g.name = :name")
     Group findByName(@Param("name") String name);
 
-    @Query(value = "select g from Group g where g.name LIKE concat('%', name, '%') ")
-    Set<Group> findNameAlies(@Param("name") String name);
+    @Query(value = "select g from Group g where g.name LIKE concat('%', ?1, '%') ")
+    Set<Group> findNameAlies(String name);
 
 
 }
