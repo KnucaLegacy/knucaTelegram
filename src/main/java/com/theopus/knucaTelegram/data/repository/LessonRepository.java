@@ -1,12 +1,10 @@
 package com.theopus.knucaTelegram.data.repository;
 
-import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Lesson;
-import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
+import java.util.Date;
 import java.util.List;
 
 public interface LessonRepository extends JpaRepository<Lesson, Long> {
@@ -18,5 +16,6 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
             "INNER JOIN group_p gro ON lg.groups_id = gro.id " +
             "WHERE (gro.name=?2 AND les.dayofWeek = ?1)", nativeQuery = true)
     List<Lesson> findDayGroupName(int day, String name);
+
 
 }

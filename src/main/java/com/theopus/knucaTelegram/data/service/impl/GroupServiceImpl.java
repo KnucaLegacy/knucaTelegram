@@ -53,6 +53,11 @@ public class GroupServiceImpl implements GroupService {
         groupsCache = null;
     }
 
+    @Override
+    public Set<Group> getAll() {
+        return new HashSet<>(groupRepository.findAll());
+    }
+
     private Group getGroup(Group group){
         for (Group g: groupsCache) {
             if (g.equals(group))

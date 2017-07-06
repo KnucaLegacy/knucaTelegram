@@ -1,14 +1,22 @@
 package com.theopus.knucaTelegram.bot;
 
+import com.theopus.knucaTelegram.bot.command.HelloCommand;
+import com.theopus.knucaTelegram.bot.command.HelpCommand;
+import com.theopus.knucaTelegram.bot.command.StartCommand;
 import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Lesson;
+import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.service.GroupService;
 import com.theopus.knucaTelegram.data.service.LessonService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
+import org.telegram.telegrambots.logging.BotLogger;
 import util.Utils;
 
 import javax.annotation.Resource;
@@ -21,44 +29,51 @@ import java.util.List;
  */
 
 @Component
-public class ScheduleBot extends TelegramLongPollingBot {
+public class ScheduleBot extends TelegramLongPollingCommandBot {
+
+    public static final String LOGTAG = "SCHEDULEBOTHADLER";
 
     @Resource
-    private LessonService lessonService;
+    MessageHandleService messageHandleService;
 
+    @Value("${botName}")
+    private String botName;
 
-    @Override
-    public void onUpdateReceived(Update update) {
-        if (update.hasMessage() && update.getMessage().hasText()) {
-            String messageText = update.getMessage().getText();
-            GregorianCalendar gc = new GregorianCalendar();
-            int month = gc.get(Calendar.DAY_OF_WEEK);
-            System.out.println(month);
-            month--;
-            month--;
-            System.out.println(month);
+    @Value("${botToken}")
+    private String token;
 
-            List<Lesson> lsit = lessonService.getByWeekDayGroupName(month, messageText);
-
+    public ScheduleBot() {
+        register(new HelloCommand());
+        HelpCommand helpCommand = new HelpCommand(this);
+        register(helpCommand);
+        register(new StartCommand(this));
+        registerDefaultAction((absSender, message) -> {
+            SendMessage commandUnknownMessage = new SendMessage();
+            commandUnknownMessage.setChatId(message.getChatId());
+            commandUnknownMessage.setText("The command '" + message.getText() + "' is not known by this bot. Here comes some help ");
             try {
-                for (Lesson l: lsit) {
-                    sendMessage(new SendMessage(update.getMessage().getChatId(),
-                            l.toString()));
-                }
-//                sendMessage(message); // Call method to send the message
+                absSender.sendMessage(commandUnknownMessage);
             } catch (TelegramApiException e) {
-                e.printStackTrace();
+                BotLogger.error(LOGTAG, e);
             }
-        }
+            helpCommand.execute(absSender, message.getFrom(), message.getChat(), new String[] {});
+        });
     }
 
     @Override
     public String getBotUsername() {
-        return "KNUCA_Schedule";
+        return botName;
+    }
+
+    @Override
+    public void processNonCommandUpdate(Update update) {
+        if (update.hasMessage() && update.getMessage().hasText()) {
+            messageHandleService.handle(update, this);
+        }
     }
 
     @Override
     public String getBotToken() {
-        return "400574726:AAHx1FPNAQyAI3JgqExZNuyZ8KuFIDhYGd4";
+        return token;
     }
 }

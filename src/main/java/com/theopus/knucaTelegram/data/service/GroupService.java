@@ -12,4 +12,5 @@ public interface GroupService {
     Set<Group> saveAll(Set<Group> group);
     Group getByName(String name);
     void flush();
+    Set<Group> getAll();
 }
