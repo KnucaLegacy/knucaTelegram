@@ -19,7 +19,7 @@ public class Group {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(mappedBy = "groups", fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.REMOVE ,mappedBy = "groups", fetch = FetchType.LAZY)
     private Set<Lesson> lessons = new HashSet<>();
 
     public Group() {

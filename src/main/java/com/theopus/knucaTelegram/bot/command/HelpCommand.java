@@ -10,9 +10,7 @@ import org.telegram.telegrambots.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.bots.commandbot.commands.ICommandRegistry;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
-/**
- * Created by irina on 05.07.17.
- */
+
 public class HelpCommand extends BotCommand {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());

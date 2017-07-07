@@ -4,9 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * Created by irina on 03.07.17.
- */
+
 public enum DayOfWeek {
     MONDAY,
     TUESDAY,

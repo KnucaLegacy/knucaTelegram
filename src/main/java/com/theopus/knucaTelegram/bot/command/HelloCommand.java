@@ -9,9 +9,6 @@ import org.telegram.telegrambots.bots.AbsSender;
 import org.telegram.telegrambots.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
-/**
- * Created by irina on 05.07.17.
- */
 
 public class HelloCommand extends BotCommand {
 

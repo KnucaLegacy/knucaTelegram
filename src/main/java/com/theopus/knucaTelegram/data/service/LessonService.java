@@ -5,9 +5,6 @@ import com.theopus.knucaTelegram.data.entity.Lesson;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by irina on 03.07.17.
- */
 
 public interface LessonService {
 

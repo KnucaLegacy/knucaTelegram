@@ -14,9 +14,6 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import javax.annotation.Resource;
 
-/**
- * Created by irina on 04.07.17.
- */
 
 @Component
 public class ScheduleBot extends TelegramLongPollingCommandBot {

@@ -36,10 +36,10 @@ public class Lesson {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<RoomTimePeriod> roomTimePeriod = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.REMOVE ,fetch = FetchType.EAGER)
     private Set<Teacher> teachers = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.REMOVE ,fetch = FetchType.EAGER)
     private Set<Group> groups = new HashSet<>();
 
     public Lesson() {
@@ -76,6 +76,7 @@ public class Lesson {
         if (order != lesson.order) return false;
         if (!subject.equals(lesson.subject)) return false;
         if (lessonType != lesson.lessonType) return false;
+        //TODO: FIGUREOUT
         if (!roomTimePeriod.equals(lesson.roomTimePeriod)) return false;
         if (teachers != null ? !teachers.equals(lesson.teachers) : lesson.teachers != null) return false;
         if (groups.containsAll(lesson.getGroups())) return true;

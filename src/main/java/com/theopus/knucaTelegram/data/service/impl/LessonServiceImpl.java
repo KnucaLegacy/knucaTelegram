@@ -2,6 +2,7 @@ package com.theopus.knucaTelegram.data.service.impl;
 
 import com.theopus.knucaTelegram.data.entity.Lesson;
 import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
+import com.theopus.knucaTelegram.data.entity.enums.LessonOrder;
 import com.theopus.knucaTelegram.data.repository.LessonRepository;
 import com.theopus.knucaTelegram.data.service.GroupService;
 import com.theopus.knucaTelegram.data.service.LessonService;
@@ -12,9 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class LessonServiceImpl implements LessonService {
@@ -64,15 +63,37 @@ public class LessonServiceImpl implements LessonService {
         int dayOfweek = DayOfWeek.dateToDayOfWeek(date).ordinal();
 
         List<Lesson> tmp = lessonRepository.findDayGroupName(dayOfweek, name);
-        System.out.println(tmp);
 
         tmp.forEach(lesson -> {
             if (lesson.isAtDate(date))
                 result.add(lesson);
         });
-        System.out.println(result);
+
+        controlDuplicates(result);
+
         result.sort((o1, o2) -> o1.getOrder().ordinal() - o2.getOrder().ordinal());
         return result;
+    }
+
+    private Set<Lesson> controlDuplicates(List<Lesson> result){
+        Map<LessonOrder, Integer> integerMap = new HashMap<>();
+        result.forEach(lesson -> {
+            if (integerMap.containsKey(lesson.getOrder()))
+                integerMap.put(lesson.getOrder(), integerMap.get(lesson.getOrder()) + 1);
+            else
+                integerMap.put(lesson.getOrder(), 1);
+        });
+        integerMap.forEach((lessonOrder, integer) -> {
+            if (integer >= 2){
+                log.warn("--------------suspicious-----------");
+                result.forEach(lesson -> {
+                    if (lesson.getOrder().equals(lessonOrder))
+                        log.warn(lesson.toString());
+                });
+                log.warn("--------------suspicious-----------");
+            }
+        });
+        return null;
     }
 
     @Override

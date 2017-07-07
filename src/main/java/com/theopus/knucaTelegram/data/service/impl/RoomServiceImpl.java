@@ -13,9 +13,7 @@ import javax.annotation.Resource;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by irina on 03.07.17.
- */
+
 @Service
 public class RoomServiceImpl implements RoomService {
 

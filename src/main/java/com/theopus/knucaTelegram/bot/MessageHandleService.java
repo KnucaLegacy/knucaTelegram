@@ -62,6 +62,7 @@ public class MessageHandleService {
                     .setChatId(msg.getChatId())
                     .setText("Похожие на " + message + " ");
             InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+
             List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
             List<InlineKeyboardButton> rowInline = new ArrayList<>();
 
@@ -114,7 +115,6 @@ public class MessageHandleService {
             textMessage.append(formater.lessonsToString(lessons,today.getTime()));
             sendMessage.setChatId(message.getChatId()).setText(textMessage.toString());
             sendMessage.enableHtml(true);
-            System.out.println(sendMessage.getText());
             try {
                 bot.sendMessage(sendMessage);
             } catch (TelegramApiException e) {
