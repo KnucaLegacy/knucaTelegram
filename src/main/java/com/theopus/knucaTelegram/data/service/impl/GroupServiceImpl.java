@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,7 +24,17 @@ public class GroupServiceImpl implements GroupService {
     private Set<Group> groupsCache = new HashSet<>();
 
     @Override
-    public Set<Group> saveAll(Set<Group> groupSet) {
+    public Group saveOne(Group group) {
+        return groupRepository.save(group);
+    }
+
+    @Override
+    public Group getById(long id) {
+        return groupRepository.getOne(id);
+    }
+
+    @Override
+    public Set<Group> saveAll(Collection<Group> groupSet) {
         Set<Group> result = new HashSet<>();
         for (Group g : groupSet) {
             if (groupsCache.contains(g))

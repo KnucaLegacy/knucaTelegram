@@ -4,18 +4,26 @@
     <bookmark url="jar://$MAVEN_REPOSITORY$/org/telegram/telegrambotsextensions/3.0.2/telegrambotsextensions-3.0.2-sources.jar!/org/telegram/telegrambots/bots/commandbot/TelegramLongPollingCommandBot.java" description="public final void onUpdateReceived(Update update) ..." line="101" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90be4398-c130-4619-a09f-1373d69c8630" name="Default" comment="adddet inline callback feature">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/theopus/knucaTelegram/parser/FolderParserTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/KnucaTelegramApplication.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/parser/FolderParser.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/parser/FolderParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/parser/ParserPDF.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/parser/ParserPDF.class" />
+    <list default="true" id="90be4398-c130-4619-a09f-1373d69c8630" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/CustomService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/KnucaTelegramApplication.class" afterPath="$PROJECT_DIR$/target/classes/com/theopus/knucaTelegram/KnucaTelegramApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/StartCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/StartCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/GroupRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/GroupRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/theopus/knucaTelegram/parser/ParserPDFTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/theopus/knucaTelegram/parser/ParserPDFTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/MessageHandleService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/MessageHandleService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Lesson.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Lesson.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/TeacherRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/TeacherRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/GroupService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/GroupService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/SubjectService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/SubjectService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/TeacherService.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/TeacherService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/GroupServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/GroupServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/RoomServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/RoomServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/SubjectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/SubjectServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/TeacherServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/TeacherServiceImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="C:\Users\Cаня\Desktop\gitProject\knucaTelegram\.idea\shelf/" />
@@ -44,6 +52,20 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="knuca@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="knuca" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -51,47 +73,138 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="GroupRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/GroupRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="15" column="42" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="42" />
+              <folding>
+                <marker date="1499630137091" expanded="true" signature="499:539" ph="select g fro... Group" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeacherRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/TeacherRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LessonRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1499805552317" expanded="false" signature="339:598" ph="select les.*... lesson" />
+                <marker date="1499805552317" expanded="false" signature="699:956" ph="select les.*... lesson" />
+                <marker date="1499805552317" expanded="false" signature="1051:1306" ph="select les.*... lesson" />
+                <marker date="1499805552317" expanded="false" signature="1409:1662" ph="select les.*... lesson" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LessonServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="425">
+              <caret line="123" column="59" lean-forward="true" selection-start-line="123" selection-start-column="59" selection-end-line="123" selection-end-column="59" />
               <folding>
-                <element signature="e#2522#2763#0" expanded="false" />
+                <element signature="method#saveAll#0;class#LessonServiceImpl#0" expanded="false" />
+                <element signature="e#2320#2321#0" expanded="true" />
+                <element signature="e#2347#2348#0" expanded="true" />
+                <element signature="e#3348#3349#0" expanded="true" />
+                <element signature="e#3410#3411#0" expanded="true" />
+                <element signature="e#4323#4324#0" expanded="true" />
+                <element signature="e#4350#4351#0" expanded="true" />
+                <element signature="e#4429#4430#0" expanded="true" />
+                <element signature="e#4456#4457#0" expanded="true" />
+                <element signature="e#4536#4537#0" expanded="true" />
+                <element signature="e#4563#4564#0" expanded="true" />
+                <element signature="e#4647#4648#0" expanded="true" />
+                <element signature="e#4674#4675#0" expanded="true" />
+                <element signature="e#4749#4750#0" expanded="true" />
+                <element signature="e#4776#4777#0" expanded="true" />
+                <element signature="e#4861#4862#0" expanded="true" />
+                <element signature="e#4888#4889#0" expanded="true" />
+                <element signature="e#4972#4973#0" expanded="true" />
+                <element signature="e#4999#5000#0" expanded="true" />
+                <element signature="e#5087#5088#0" expanded="true" />
+                <element signature="e#5114#5115#0" expanded="true" />
+                <element signature="method#controlDuplicates#0;class#LessonServiceImpl#0" expanded="false" />
+                <element signature="e#5291#5532#0" expanded="false" />
+                <element signature="e#5562#5941#0" expanded="false" />
+                <element signature="e#5711#5856#0" expanded="false" />
+                <element signature="method#flush#0;class#LessonServiceImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TelegramMessageFormater.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/TelegramMessageFormater.java">
+      <file leaf-file-name="TeacherService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/TeacherService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubjectService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/SubjectService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoomService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/GroupService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeacherServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/TeacherServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-629">
+              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
               <folding>
-                <element signature="e#1897#1898#0" expanded="true" />
-                <element signature="e#1965#1966#0" expanded="true" />
+                <element signature="e#780#781#0" expanded="true" />
+                <element signature="e#834#835#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+                <element signature="e#938#939#0" expanded="true" />
+                <element signature="e#1734#1735#0" expanded="true" />
+                <element signature="e#1796#1797#0" expanded="true" />
+                <element signature="e#1853#1854#0" expanded="true" />
+                <element signature="e#1903#1904#0" expanded="true" />
+                <element signature="e#1947#1948#0" expanded="true" />
+                <element signature="e#1995#1996#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FolderParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KnucaTelegramApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -99,79 +212,8 @@
       <file leaf-file-name="LessonService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParserPDF.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="402" column="84" lean-forward="false" selection-start-line="402" selection-start-column="84" selection-end-line="402" selection-end-column="84" />
-              <folding>
-                <element signature="docComment;class#ParserPDF#0" expanded="false" />
-                <element signature="method#ParserPDF#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#ParserPDF#1;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseToText#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseUpDate#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#getGroups#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseSubjName#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseLessonType#0;class#ParserPDF#0" expanded="false" />
-                <element signature="e#17497#17534#0" expanded="false" />
-                <element signature="method#parseTeachers#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#parseGroups#0;class#ParserPDF#0" expanded="false" />
-                <element signature="docComment;method#stringToDate#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#stringToDayOfWeek#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#timeToOrder#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#printMap#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#print#0;class#ParserPDF#0" expanded="false" />
-                <element signature="method#ukrMothToNumber#0;class#ParserPDF#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DayOfWeek.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/enums/DayOfWeek.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Matcher.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/regex/Matcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="494" column="18" lean-forward="false" selection-start-line="494" selection-start-column="18" selection-end-line="494" selection-end-column="18" />
-              <folding>
-                <element signature="e#17066#17067#0" expanded="true" />
-                <element signature="e#17097#17098#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/StartCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelloCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/HelloCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="408">
+              <caret line="30" column="60" lean-forward="false" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -192,7 +234,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>[ ауд.349]</find>
       <find>ас. Март</find>
       <find>teachers</find>
       <find>teachers=[]</find>
@@ -222,6 +263,7 @@
       <find>toDate=</find>
       <find>fromDate=</find>
       <find>fromDate=.+{1,60}toDate=</find>
+      <find>tmp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -236,8 +278,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/custom.groovy" />
-        <option value="$PROJECT_DIR$/src/main/resources/commands/custom.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/commands/EchoCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/GroupService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/service/impl/GroupServiceImpl.java" />
@@ -248,7 +288,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/presistence-mysql.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/25873c32-93fd-462d-b408-e41f75ed37f9/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Teacher.java" />
@@ -263,22 +302,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/TelegramMessageFormater.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/theopus/knucaTelegram/bot/MessageHandleServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/MessageHandleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Lesson.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Group.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/HelpCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/HelloCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/ScheduleBot.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/enums/DayOfWeek.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/TeacherService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/SubjectService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/GroupService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/TeacherServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/SubjectServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/RoomServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/GroupServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/GroupRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/StartCommand.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/theopus/knucaTelegram/parser/ParserPDFTest.java" />
@@ -287,6 +315,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/GroupService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/CustomService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/RoomServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/SubjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/SubjectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Lesson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/GroupServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/TeacherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/TeacherRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/TeacherService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -586,6 +628,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knucaTelegram" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1300,7 +1380,7 @@
       <workItem from="1499346531001" duration="19000" />
       <workItem from="1499423267676" duration="6448000" />
       <workItem from="1499598644689" duration="2034000" />
-      <workItem from="1499760815674" duration="8306000" />
+      <workItem from="1499760815674" duration="14533000" />
     </task>
     <task id="LOCAL-00001" summary="hibernate duplicate control">
       <created>1499024649619</created>
@@ -1365,7 +1445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499428754306</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="parser: fixed toDate issue">
+      <created>1499793484522</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1499793484522</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1401,7 +1488,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136747000" />
+    <option name="totallyTimeSpent" value="142974000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1423,23 +1510,23 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28513733" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.088905774" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41606885" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32568148" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6987088" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5681492" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854864" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5057283" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34954408" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32294834" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1532,7 +1619,8 @@
     <MESSAGE value="smal pdf parser regEx fixes, messageFormater for Telegram" />
     <MESSAGE value="added TelegramFormater" />
     <MESSAGE value="adddet inline callback feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="adddet inline callback feature" />
+    <MESSAGE value="parser: fixed toDate issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="parser: fixed toDate issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1550,7 +1638,7 @@
           <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="61" />
+      <option name="time" value="63" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1559,22 +1647,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="100" column="21" lean-forward="true" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/config/AdditionalConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1640,14 +1712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/LessonDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="153" column="37" lean-forward="false" selection-start-line="153" selection-start-column="37" selection-end-line="153" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Iterable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1685,16 +1749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/MessageHandleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/ScheduleBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -1713,90 +1767,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/TeacherService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/SubjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/GroupService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/TeacherServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/SubjectServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#763#764#0" expanded="false" />
-            <element signature="e#790#791#0" expanded="false" />
-            <element signature="e#1386#1387#0" expanded="false" />
-            <element signature="e#1422#1423#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/RoomServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#786#787#0" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
-            <element signature="e#2102#2103#0" expanded="false" />
-            <element signature="e#2134#2135#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/GroupServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="method#getGroup#0;class#GroupServiceImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1810,42 +1784,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/GroupRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1499630137091" expanded="true" signature="499:539" ph="select g fro... Group" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/TeacherRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/SubjectRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1499374588710" expanded="true" signature="339:598" ph="select les.*... lesson" />
           </folding>
         </state>
       </provider>
@@ -1893,41 +1837,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Lesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="71" column="66" lean-forward="true" selection-start-line="71" selection-start-column="66" selection-end-line="71" selection-end-column="66" />
-          <folding>
-            <element signature="e#390#397#0" expanded="false" />
-            <element signature="e#449#452#0" expanded="false" />
-            <element signature="method#isAtDate#0;class#Lesson#0" expanded="false" />
-            <element signature="method#hashCode#0;class#Lesson#0" expanded="false" />
-            <element signature="method#addGroup#0;class#Lesson#0" expanded="false" />
-            <element signature="method#setRoomTimePeriod#0;class#Lesson#0" expanded="false" />
-            <element signature="e#4182#4239#0" expanded="false" />
-            <element signature="method#toString#0;class#Lesson#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/regex/Matcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="494" column="18" lean-forward="false" selection-start-line="494" selection-start-column="18" selection-end-line="494" selection-end-column="18" />
           <folding>
-            <element signature="e#17066#17067#0" expanded="true" />
-            <element signature="e#17097#17098#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/TelegramMessageFormater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#1897#1898#0" expanded="true" />
-            <element signature="e#1965#1966#0" expanded="true" />
+            <element signature="e#17066#17067#0" expanded="false" />
+            <element signature="e#17097#17098#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1964,14 +1880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/ParserPDF.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -2000,26 +1908,241 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="221">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/parser/FolderParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/command/TelegramMessageFormater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#1897#1898#0" expanded="false" />
+            <element signature="e#1965#1966#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/LessonDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1091">
+          <caret line="153" column="37" lean-forward="false" selection-start-line="153" selection-start-column="37" selection-end-line="153" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/RoomServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="87" column="13" lean-forward="true" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+          <folding>
+            <element signature="method#saveRooms#0;class#RoomServiceImpl#0" expanded="false" />
+            <element signature="method#getRoom#0;class#RoomServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/bot/MessageHandleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="107" column="49" lean-forward="false" selection-start-line="107" selection-start-column="49" selection-end-line="107" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/CustomService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/SubjectServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+          <folding>
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#933#934#0" expanded="true" />
+            <element signature="e#977#978#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1633#1634#0" expanded="true" />
+            <element signature="e#1684#1685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/GroupServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+          <folding>
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="method#getGroup#0;class#GroupServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/69bbced2-75be-4ad2-8aef-9b4e6c7b2ea8/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/entity/Lesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="42" column="49" lean-forward="false" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
+          <folding>
+            <element signature="e#419#426#0" expanded="false" />
+            <element signature="e#478#481#0" expanded="false" />
+            <element signature="e#1852#1853#0" expanded="true" />
+            <element signature="e#1900#1901#0" expanded="true" />
+            <element signature="method#hashCode#0;class#Lesson#0" expanded="false" />
+            <element signature="method#addGroup#0;class#Lesson#0" expanded="false" />
+            <element signature="method#setRoomTimePeriod#0;class#Lesson#0" expanded="false" />
+            <element signature="e#4494#4551#0" expanded="false" />
+            <element signature="method#toString#0;class#Lesson#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/LessonService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="408">
+          <caret line="30" column="60" lean-forward="false" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/LessonRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1499805552317" expanded="false" signature="339:598" ph="select les.*... lesson" />
+            <marker date="1499805552317" expanded="false" signature="699:956" ph="select les.*... lesson" />
+            <marker date="1499805552317" expanded="false" signature="1051:1306" ph="select les.*... lesson" />
+            <marker date="1499805552317" expanded="false" signature="1409:1662" ph="select les.*... lesson" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/GroupRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="42" />
+          <folding>
+            <marker date="1499630137091" expanded="true" signature="499:539" ph="select g fro... Group" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/TeacherServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-629">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding>
+            <element signature="e#780#781#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
+            <element signature="e#1796#1797#0" expanded="true" />
+            <element signature="e#1853#1854#0" expanded="true" />
+            <element signature="e#1903#1904#0" expanded="true" />
+            <element signature="e#1947#1948#0" expanded="true" />
+            <element signature="e#1995#1996#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/repository/TeacherRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/SubjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/RoomService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/GroupService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/TeacherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/theopus/knucaTelegram/data/service/impl/LessonServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="123" column="59" lean-forward="true" selection-start-line="123" selection-start-column="59" selection-end-line="123" selection-end-column="59" />
           <folding>
-            <element signature="e#2522#2763#0" expanded="false" />
+            <element signature="method#saveAll#0;class#LessonServiceImpl#0" expanded="false" />
+            <element signature="e#2320#2321#0" expanded="true" />
+            <element signature="e#2347#2348#0" expanded="true" />
+            <element signature="e#3348#3349#0" expanded="true" />
+            <element signature="e#3410#3411#0" expanded="true" />
+            <element signature="e#4323#4324#0" expanded="true" />
+            <element signature="e#4350#4351#0" expanded="true" />
+            <element signature="e#4429#4430#0" expanded="true" />
+            <element signature="e#4456#4457#0" expanded="true" />
+            <element signature="e#4536#4537#0" expanded="true" />
+            <element signature="e#4563#4564#0" expanded="true" />
+            <element signature="e#4647#4648#0" expanded="true" />
+            <element signature="e#4674#4675#0" expanded="true" />
+            <element signature="e#4749#4750#0" expanded="true" />
+            <element signature="e#4776#4777#0" expanded="true" />
+            <element signature="e#4861#4862#0" expanded="true" />
+            <element signature="e#4888#4889#0" expanded="true" />
+            <element signature="e#4972#4973#0" expanded="true" />
+            <element signature="e#4999#5000#0" expanded="true" />
+            <element signature="e#5087#5088#0" expanded="true" />
+            <element signature="e#5114#5115#0" expanded="true" />
+            <element signature="method#controlDuplicates#0;class#LessonServiceImpl#0" expanded="false" />
+            <element signature="e#5291#5532#0" expanded="false" />
+            <element signature="e#5562#5941#0" expanded="false" />
+            <element signature="e#5711#5856#0" expanded="false" />
+            <element signature="method#flush#0;class#LessonServiceImpl#0" expanded="false" />
           </folding>
         </state>
       </provider>

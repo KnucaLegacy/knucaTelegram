@@ -2,19 +2,16 @@ package com.theopus.knucaTelegram.data.service;
 
 import com.theopus.knucaTelegram.data.entity.Group;
 
+import java.util.Collection;
 import java.util.Set;
 
-public interface GroupService {
+public interface GroupService extends CustomService<Group> {
 
-    Set<Group> saveAll(Set<Group> group);
+    Set<Group> saveAll(Collection<Group> group);
 
     Group getByExactName(String name);
 
     Set<Group> getByAlliesName(String name);
-
-    long getCount();
-
-    void flush();
-
+    
     Set<Group> getAll();
 }

@@ -10,8 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 
 @Service
@@ -21,10 +20,7 @@ public class RoomServiceImpl implements RoomService {
 
     private Set<Room> roomCache = new HashSet<>();
 
-    @Override
-    public Set<Room> saveAll(Set<Room> rooms) {
-        return null;
-    }
+
     @Resource
     private RoomRepository roomRepository;
 
@@ -70,7 +66,32 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
+    public Room saveOne(Room room) {
+        return roomRepository.save(room);
+    }
+
+    @Override
+    public Room getById(long id) {
+        return roomRepository.getOne(id);
+    }
+
+    @Override
+    public Collection<Room> getAll() {
+        return roomRepository.findAll();
+    }
+
+    @Override
+    public long getCount() {
+        return roomRepository.count();
+    }
+
+    @Override
     public void flush() {
         roomCache = null;
+    }
+
+    @Override
+    public Set<Room> saveAll(Collection<Room> rooms) {
+        return new HashSet<>(roomRepository.save(rooms));
     }
 }

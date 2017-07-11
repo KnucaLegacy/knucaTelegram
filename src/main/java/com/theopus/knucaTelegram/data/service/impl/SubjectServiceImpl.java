@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,8 +24,18 @@ public class SubjectServiceImpl implements SubjectService {
     private SubjectRepository subjectRepository;
 
     @Override
-    public Set<Subject> saveAll(Set<Subject> subjects) {
+    public Set<Subject> saveAll(Collection<Subject> subjects) {
         return null;
+    }
+
+    @Override
+    public Collection<Subject> getAll() {
+        return subjectRepository.findAll();
+    }
+
+    @Override
+    public long getCount() {
+        return subjectRepository.count();
     }
 
     @Override
@@ -44,6 +55,11 @@ public class SubjectServiceImpl implements SubjectService {
                 return saveS;
             }
         }
+    }
+
+    @Override
+    public Subject getById(long id) {
+        return subjectRepository.getOne(id);
     }
 
     @Override

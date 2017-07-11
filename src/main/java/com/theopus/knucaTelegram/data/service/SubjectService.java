@@ -2,13 +2,12 @@ package com.theopus.knucaTelegram.data.service;
 
 import com.theopus.knucaTelegram.data.entity.Subject;
 
+import java.util.Collection;
 import java.util.Set;
 
 
-public interface SubjectService {
+public interface SubjectService extends CustomService<Subject> {
 
-    Set<Subject> saveAll(Set<Subject> subjects);
-    Subject saveOne(Subject subject);
-    void flush();
+    Set<Subject> saveAll(Collection<Subject> subjects);
 
 }

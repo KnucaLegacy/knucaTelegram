@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,13 +23,23 @@ public class TeacherServiceImpl implements TeacherService {
     private Set<Teacher> teachersCache = new HashSet<>();
 
     @Override
-    public Set<Teacher> saveAll(Set<Teacher> TeacherSet) {
+    public Teacher saveOne(Teacher teacher) {
+        return teacherRepository.save(teacher);
+    }
+
+    @Override
+    public Teacher getById(long id) {
+        return teacherRepository.getOne(id);
+    }
+
+    @Override
+    public Set<Teacher> saveAll(Collection<Teacher> TeacherSet) {
         Set<Teacher> result = new HashSet<>();
         for (Teacher t : TeacherSet) {
             if (teachersCache.contains(t))
                 result.add(getTeacher(t));
             else {
-                Teacher findT = teacherRepository.findByName(t.getName());
+                Teacher findT = teacherRepository.findByExactName(t.getName());
                 if (findT != null){
                     result.add(findT);
                     teachersCache.add(findT);
@@ -42,6 +53,21 @@ public class TeacherServiceImpl implements TeacherService {
             }
         }
         return result;
+    }
+
+    @Override
+    public Teacher findByName(String name) {
+        return teacherRepository.findByExactName(name);
+    }
+
+    @Override
+    public Collection<Teacher> getAll() {
+        return teacherRepository.findAll();
+    }
+
+    @Override
+    public long getCount() {
+        return teacherRepository.count();
     }
 
     @Override

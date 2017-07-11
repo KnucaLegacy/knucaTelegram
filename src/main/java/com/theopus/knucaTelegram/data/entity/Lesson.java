@@ -7,6 +7,7 @@ import com.theopus.knucaTelegram.data.entity.enums.LessonType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -43,6 +44,15 @@ public class Lesson {
     private Set<Group> groups = new HashSet<>();
 
     public Lesson() {
+    }
+
+    public static Collection<Lesson> atDate(Collection<Lesson> lessons, Date date){
+        Set<Lesson> result = new HashSet<>();
+        lessons.forEach(lesson -> {
+            if (lesson.isAtDate(date))
+                result.add(lesson);
+        });
+        return result;
     }
 
     public boolean isAtDate(Date date){

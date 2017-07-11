@@ -105,7 +105,7 @@ public class MessageHandleService {
         System.out.println("exact group" + exactGroup);
         if (exactGroup != null) {
             GregorianCalendar today = mockToday;
-            List<Lesson> lessons = lessonService.getByExactDayByGroupName(today.getTime(), exactGroup.getName());
+            List<Lesson> lessons = lessonService.getExactDayByGroup(today.getTime(), exactGroup.getName());
 
             SendMessage sendMessage = new SendMessage();
             StringBuilder textMessage = new StringBuilder();
