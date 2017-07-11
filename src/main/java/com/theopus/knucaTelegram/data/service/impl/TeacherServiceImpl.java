@@ -56,6 +56,11 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
+    public Set<Teacher> getByAlliesName(String name) {
+        return null;
+    }
+
+    @Override
     public Teacher findByName(String name) {
         return teacherRepository.findByExactName(name);
     }
