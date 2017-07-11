@@ -102,7 +102,7 @@ public class ParserPDF {
     public Map<String, String> parseToLessonGroupMap(){
 
         String text = this.parsedText;
-        text = StringUtils.replaceChars(text,"ACEHIKMOPTaceikoptXx","АСЕНІКМОРТасеікортХх");
+        text = StringUtils.replaceChars(text,"ACEHIKMOPTaceikoptXxBb","АСЕНІКМОРТасеікортХхВв");
         text = text.replaceAll("\n", "");
         text = text.replaceAll("\r", "");
         text = text.replaceAll("=", " ");
@@ -127,13 +127,30 @@ public class ParserPDF {
         Map<Integer, String> groupMap = new LinkedHashMap<Integer, String>();
         Pattern groupLinePattern = Pattern.compile("(академгрупа)(\\s)([\\S]+)");
         Matcher groupMatcher = groupLinePattern.matcher(text);
+
+        Pattern pattern = Pattern.compile("\\d?\\d\\.\\d\\d.{1,100}((В|в)сього)");
+        Matcher toDayGroupMathcer = pattern.matcher(text);
+
+        String currentMaxtoDate = null;
+
         while (groupMatcher.find()){
+//            if (toDayGroupMathcer.find())
+//                System.out.println("---------------today--------------" + toDayGroupMathcer.group());
             groupsIndexes.add(groupMatcher.end());
             groupMap.put(groupMatcher.end(),text.substring(groupMatcher.start(),groupMatcher.end()).split(" ")[1]);
         }
 
         Map<String, String> lessonGroup = new LinkedHashMap<String, String>();
         List<String> strings = new ArrayList<>();
+
+
+        if (toDayGroupMathcer.find()){
+            String tmp = toDayGroupMathcer.group().trim();
+            String[] test = tmp.split("\\|");
+            currentMaxtoDate = test[0];
+        }
+
+
 
         String currentDay = "";
         if (mworkdayBegin.find()){
@@ -161,12 +178,16 @@ public class ParserPDF {
                 }
                 if (i != groupsIndexes.size() - 1) {
                     if (mf.start() > groupsIndexes.get(i) && mf.start() < groupsIndexes.get(i + 1)) ;
-                    else i++;
-                    lessonGroup.put(text.substring(mb.start(), mf.start()).trim(),groupMap.get(groupsIndexes.get(i)) + currentDay);
+                    else {
+                        if (toDayGroupMathcer.find())
+                            currentMaxtoDate = toDayGroupMathcer.group().trim().split("\\|")[0];
+                        i++;
+                    }
+                    lessonGroup.put(text.substring(mb.start(), mf.start()).trim(),groupMap.get(groupsIndexes.get(i)) + currentDay + " " + currentMaxtoDate);
                     strings.add(text.substring(mb.start(), mf.start()).trim());
                 }
                 else {
-                    lessonGroup.put(text.substring(mb.start(), mf.start()).trim(),groupMap.get(groupsIndexes.get(i)) + currentDay);
+                    lessonGroup.put(text.substring(mb.start(), mf.start()).trim(),groupMap.get(groupsIndexes.get(i)) + currentDay + " " + currentMaxtoDate);
                     strings.add(text.substring(mb.start(), mf.start()).trim());
                 }
             }
@@ -232,18 +253,20 @@ public class ParserPDF {
         return lessonList;
     }
 
-    public Lesson parseLesson(String lessonLine, String labeledGroupPlusDay, String previousTime){
+    public Lesson parseLesson(String lessonLine, String labeledGroupPlusDayPlusMaxToDay, String previousTime){
         String lessonTime = (previousTime == null ? lessonLine.split(" ")[0] : previousTime);
-        System.out.println( lessonTime + " " + lessonLine + " " + labeledGroupPlusDay);
-        String labeledGroup = labeledGroupPlusDay.split(" ")[0].trim();
-        String labeledDayOfWeek = labeledGroupPlusDay.split(" ")[1].trim();
+        System.out.println( lessonTime + " " + lessonLine + " " + labeledGroupPlusDayPlusMaxToDay);
+
+        String labeledGroup = labeledGroupPlusDayPlusMaxToDay.split(" ")[0].trim();
+        String labeledDayOfWeek = labeledGroupPlusDayPlusMaxToDay.split(" ")[1].trim();
+        String labeledMaxToDay = labeledGroupPlusDayPlusMaxToDay.split(" ")[2].trim();
 
         Lesson lesson = new Lesson();
         lesson.setDayOfWeek(stringToDayOfWeek(labeledDayOfWeek));
         lesson.setOrder(timeToOrder(lessonTime));
         lesson.setSubject(new Subject(parseSubjName(lessonLine)));
         lesson.setLessonType(parseLessonType(lessonLine));
-        lesson.setRoomTimePeriod(parseRoomTimePeriod(lessonLine));
+        lesson.setRoomTimePeriod(parseRoomTimePeriod(lessonLine, labeledMaxToDay, lesson.getDayOfWeek()));
         lesson.setGroups(parseGroups(lessonLine,labeledGroup));
         lesson.setTeachers(parseTeachers(lessonLine));
         System.out.println(lesson);
@@ -286,8 +309,9 @@ public class ParserPDF {
         return LessonType.ELSE;
     }
 
-    private Set<RoomTimePeriod> parseRoomTimePeriod(String lessonLine){
+    private Set<RoomTimePeriod> parseRoomTimePeriod(String lessonLine, String labeledMaxToDate, DayOfWeek dayOfWeek){
         List<RoomTimePeriod> result = new ArrayList<>();
+        Date maxToDate = stringToDate(labeledMaxToDate, dayOfWeek);
 
         List<String> a = new ArrayList<>();
         Pattern leftBrace = Pattern.compile("\\[");
@@ -335,7 +359,7 @@ public class ParserPDF {
                 matcher2 = singlePureDate.matcher(s);
                 if (matcher2.find(matcher.start())) {
                     String notParsedDate = s.substring(matcher2.start(), matcher2.end()).trim();
-                    Date parsedDate = stringToDate(notParsedDate);
+                    Date parsedDate = stringToDate(notParsedDate,null);
                     roomTimePeriod.addLessonDate(new LessonDate(parsedDate));
 //                    System.out.println("single date: " + notParsedDate);
                 }
@@ -348,12 +372,12 @@ public class ParserPDF {
             if (matcher.find()){
                 do {
                     String notParsedFromDate = s.substring(matcher.start() + 2,matcher.end()).trim();
-                    Date parsedFromDate = stringToDate(notParsedFromDate);
+                    Date parsedFromDate = stringToDate(notParsedFromDate,null);
 //                    System.out.print("from date: " + notParsedFromDate);
                     matcher2 = toDate.matcher(s);
                     if (matcher2.find(matcher.start())) {
                         String notParsedToDate = s.substring(matcher2.start() + 3, matcher2.end()).trim();
-                        Date parsedToDate = stringToDate(notParsedToDate);
+                        Date parsedToDate = stringToDate(notParsedToDate,null);
                         roomTimePeriod.addLessonDate(new LessonDate(parsedFromDate,parsedToDate));
                         toDates.add(notParsedToDate);
                         fromDates.add(notParsedFromDate);
@@ -366,8 +390,8 @@ public class ParserPDF {
                 String toDateStr = s.substring(matcher.start() + 3,matcher.end());
                 if (!toDates.contains(toDateStr)) {
                     String notParsedDate = s.substring(matcher.start() + 3, matcher.end()).trim();
-                    Date parsedDate = stringToDate(s.substring(matcher.start() + 3, matcher.end()));
-                    roomTimePeriod.addLessonDate(new LessonDate(true,parsedDate));
+                    Date parsedDate = stringToDate(s.substring(matcher.start() + 3, matcher.end()),null);
+                    roomTimePeriod.addLessonDate(new LessonDate(false ,parsedDate));
 //                    System.out.println("only to date: " + notParsedDate);
                 }
             }
@@ -375,8 +399,8 @@ public class ParserPDF {
             if (matcher.find()){
                 String notParsedFromDate = s.substring(matcher.start() + 2,matcher.end()).trim();
                 if (!fromDates.contains(notParsedFromDate)){
-                    Date parsedDate = stringToDate(notParsedFromDate);
-                    roomTimePeriod.addLessonDate(new LessonDate(parsedDate,true));
+                    Date parsedDate = stringToDate(notParsedFromDate, null);
+                    roomTimePeriod.addLessonDate(new LessonDate(parsedDate,maxToDate));
                 }
             }
             if ((roomTimePeriod.getLessonDate().isEmpty() || roomTimePeriod.getLessonDate() == null) && (lessonDates != null)){
@@ -400,7 +424,7 @@ public class ParserPDF {
                     }
                 }
                 else {
-                    rtp.addLessonDate(new LessonDate(upDate, true));
+                    rtp.addLessonDate(new LessonDate(upDate, maxToDate));
                 }
             }
         }
@@ -445,9 +469,13 @@ public class ParserPDF {
      *             and
      * @return parsed Date
      */
-    private Date stringToDate(String date){
+    private Date stringToDate(String date, DayOfWeek dayOfWeek){
+
         String[] dateMonth = date.split("\\.");
         int day = Integer.parseInt(dateMonth[0]);
+        if (dayOfWeek != null){
+            day += dayOfWeek.ordinal();
+        }
         int month = Integer.parseInt(dateMonth[1]);
         int year = calendar.get(Calendar.YEAR);
         return new GregorianCalendar(year,month - 1,day).getTime();

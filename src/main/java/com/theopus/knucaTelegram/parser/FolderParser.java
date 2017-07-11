@@ -10,15 +10,12 @@ import javax.annotation.Resource;
 import java.io.File;
 import java.util.*;
 
-@Component
+
 public class FolderParser {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Resource
-    private LessonService lessonService;
-
-    public void parseFolder(String path){
+    public List<Lesson> parseFolder(String path){
         File folder = new File(path);
         Set<ParserPDF> parserPDFSet = new HashSet<>();
         int i = 0;
@@ -34,12 +31,7 @@ public class FolderParser {
         }
 
         long before = new Date().getTime();
-        ParserPDF.print(lessonService.saveAll(lessonList));
-        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
-        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
-        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
-        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
-        System.out.println("DDDDDDDDDDDDDDDDDDDDDD");
-        ParserPDF.print(lessonService.getAll());
+        ParserPDF.print(lessonList);
+        return lessonList;
     }
 }
