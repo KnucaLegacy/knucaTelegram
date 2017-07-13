@@ -141,13 +141,13 @@ public class LessonDate {
         if (fromDate != null && toDate != null){
             System.out.println("testing - " + date) ;
             System.out.println("from " + fromDate + " - to " + toDate);
-            if ((date.getTime() >= fromDate.getTime() && (date.getTime() < toDate.getTime())))
+            if ((date.getTime() >= fromDate.getTime() && (date.getTime() <= toDate.getTime())))
                 return true;
         }
         if (fromDate == null && toDate != null){
             System.out.println(date);
             System.out.println(toDate);
-            if (date.getTime() < toDate.getTime())
+            if (date.getTime() <= toDate.getTime())
                 return true;
         }
         if (fromDate != null && toDate == null){

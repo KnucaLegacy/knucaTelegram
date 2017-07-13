@@ -18,6 +18,9 @@ public class GroupServiceImpl implements GroupService {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+
+
+
     @Resource
     private GroupRepository groupRepository;
 

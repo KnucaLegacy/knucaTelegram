@@ -3,10 +3,12 @@ package com.theopus.knucaTelegram.data.service;
 import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Lesson;
 import com.theopus.knucaTelegram.data.entity.Teacher;
+import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 
 public interface LessonService extends CustomService<Lesson> {
@@ -15,24 +17,40 @@ public interface LessonService extends CustomService<Lesson> {
 
     List<Lesson> getAll();
 
-    List<Lesson> getTodayByGroupName(String name);
-    List<Lesson> getExactDayByGroup(Date date, String groupName);
-    List<Lesson> getExactDayByGroup(Date date, long groupId);
-    List<Lesson> getExactDayByGroup(Date date, Group group);
+    List<Lesson> getExactDayByGroup(Date date, String groupName, int offset);
+    /**
+     *
+     * @param date
+     * @param groupId
+     * @param offset :
+     *               0 today
+     *               <0 n days ago
+     *               >0 n days forwadr
+     * @return list of lessons at the exact day
+     */
+    List<Lesson> getExactDayByGroup(Date date, long groupId, int offset);
+    List<Lesson> getExactDayByGroup(Date date, Group group, int offset);
 
-    List<Lesson> getExactDayByTeacher(Date date, String teacherName);
-    List<Lesson> getExactDayByTeacher(Date date, long teacherId);
-    List<Lesson> getExactDayByTeacher(Date date, Teacher teacher);
+    List<Lesson> getExactDayByTeacher(Date date, String teacherName, int offset);
+    /**
+     *
+     * @param date
+     * @param teacherIdId
+     * @param offset :
+     *               0 today
+     *               <0 n days ago
+     *               >0 n days forwadr
+     * @return list of lessons at the exact day
+     */
+    List<Lesson> getExactDayByTeacher(Date date, long teacherId, int offset);
+    List<Lesson> getExactDayByTeacher(Date date, Teacher teacher, int offset);
 
+    Map<DayOfWeek,List<Lesson>> getWeekByGroup(Date date, Group group, int week);
+    Map<DayOfWeek,List<Lesson>> getWeekByGroup(Date date, long groupId, int week);
+    Map<DayOfWeek,List<Lesson>> getWeekByGroup(Date date, String groupName, int week);
 
-    List<Lesson> getWeekByGroup(Group group);
-    List<Lesson> getWeekByGroup(Group group, int week);
-    List<Lesson> getWeekByGroup(long groupId, int week);
-    List<Lesson> getWeekByGroup(String groupName, int week);
-
-    List<Lesson> getWeekByTeacher(Teacher teacher);
-    List<Lesson> getWeekByTeacher(Teacher teacher, int week);
-    List<Lesson> getWeekByTeacher(long teacherId, int week);
-    List<Lesson> getWeekByTeacher(String teacherName, int week);
+    Map<DayOfWeek,List<Lesson>> getWeekByTeacher(Date date, Teacher teacher, int week);
+    Map<DayOfWeek,List<Lesson>> getWeekByTeacher(Date date, long teacherId, int week);
+    Map<DayOfWeek,List<Lesson>> getWeekByTeacher(Date date, String teacherName, int week);
 
 }

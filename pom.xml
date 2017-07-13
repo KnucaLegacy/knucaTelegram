@@ -87,11 +87,11 @@
 			<version>3.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.xabgesagtx</groupId>
-			<artifactId>telegram-spring-boot-starter</artifactId>
-			<version>0.8</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.github.xabgesagtx</groupId>-->
+			<!--<artifactId>telegram-spring-boot-starter</artifactId>-->
+			<!--<version>0.8</version>-->
+		<!--</dependency>-->
 	</dependencies>
 
 	<repositories>

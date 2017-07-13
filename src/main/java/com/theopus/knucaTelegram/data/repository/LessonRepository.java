@@ -41,5 +41,37 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
     List<Lesson> findDayTeacherID(int day, long id);
 
 
+    @Query(value = "select les.* " +
+            "FROM lesson les " +
+            "INNER JOIN lesson_teacher lt " +
+            "ON les.id = lt.lessons_id " +
+            "INNER JOIN teacher t ON lt.teachers_id = t.id " +
+            "WHERE (t.name=?1)", nativeQuery = true)
+    List<Lesson> getAllByTeacherName(String teacherName);
+
+    @Query(value = "select les.* " +
+            "FROM lesson les " +
+            "INNER JOIN lesson_teacher lt " +
+            "ON les.id = lt.lessons_id " +
+            "INNER JOIN teacher t ON lt.teachers_id = t.id " +
+            "WHERE (t.id=?1)", nativeQuery = true)
+    List<Lesson> getAllByTeacherId(long id);
+
+    @Query(value = "select les.* " +
+            "FROM lesson les " +
+            "INNER JOIN lesson_group_p lg " +
+            "ON les.id = lg.lessons_id " +
+            "INNER JOIN group_p gro ON lg.groups_id = gro.id " +
+            "WHERE (gro.name=?1)", nativeQuery = true)
+    List<Lesson> getAllByGroupName(String groupName);
+
+    @Query(value = "select les.* " +
+            "FROM lesson les " +
+            "INNER JOIN lesson_group_p lg " +
+            "ON les.id = lg.lessons_id " +
+            "INNER JOIN group_p gro ON lg.groups_id = gro.id " +
+            "WHERE (gro.id=?1)", nativeQuery = true)
+    List<Lesson> getAllByGroupId(long groupId);
+
 
 }
