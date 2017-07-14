@@ -3,6 +3,7 @@ package com.theopus.knucaTelegram.bot;
 import com.theopus.knucaTelegram.bot.command.HelloCommand;
 import com.theopus.knucaTelegram.bot.command.HelpCommand;
 import com.theopus.knucaTelegram.bot.command.StartCommand;
+import com.theopus.knucaTelegram.bot.action.Action;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,6 +23,8 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
 
     @Resource
     MessageHandleService messageHandleService;
+    @Resource
+    MessageActionDispatcher dispatcher;
 
     @Value("${botName}")
     private String botName;
@@ -56,6 +59,11 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
     public void processNonCommandUpdate(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             messageHandleService.handle(update.getMessage(), null, this);
+
+            Action action = dispatcher.handleMessage(update.getMessage(), update.getMessage().getChat());
+            action.execute(this);
+
+
         } else if (update.hasCallbackQuery()){
             messageHandleService.handle(update.getCallbackQuery().getMessage(), update.getCallbackQuery().getData(), this);
         }

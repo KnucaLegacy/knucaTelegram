@@ -27,7 +27,7 @@ public enum DayOfWeek {
     public static String toReadable(DayOfWeek dayOfWeek) {
         switch (dayOfWeek) {
             case MONDAY: return "Понедельник";
-            case TUESDAY: return "Вторние";
+            case TUESDAY: return "Вторник";
             case WEDNESDAY: return "Среда";
             case THURSDAY: return "Четверг";
             case FRIDAY: return "Пятница";

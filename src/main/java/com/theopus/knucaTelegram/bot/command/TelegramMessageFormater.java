@@ -2,6 +2,7 @@ package com.theopus.knucaTelegram.bot.command;
 
 import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Lesson;
+import com.theopus.knucaTelegram.data.entity.Teacher;
 import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.entity.enums.LessonOrder;
 import org.apache.commons.lang3.StringUtils;
@@ -45,15 +46,23 @@ public class TelegramMessageFormater {
         return  StringUtils.replaceChars(string, "<>", "[]");
     }
 
-    public String dateHeader(DayOfWeek dayOfWeek, Date date){
+    public String dateHeader(Date date){
         StringBuilder headerBuilder = new StringBuilder();
         DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        headerBuilder.append(DayOfWeek.toReadable(dayOfWeek)).append(" - ").append(format.format(date)).append("\n\n");
+        headerBuilder
+                .append(DayOfWeek.toReadable(DayOfWeek.dateToDayOfWeek(date)))
+                .append(" - ")
+                .append(format.format(date))
+                .append("\n\n");
         return headerBuilder.toString();
     }
 
     public String groupHeader(Group group){
         return new StringBuilder().append("<b>").append(group.getName()).append("</b>").append("\n").toString();
+    }
+
+    public String teacherHeader(Teacher teacher){
+        return new StringBuilder().append("<b>").append(teacher.getName()).append("</b>").append("\n").toString();
     }
 
     private String noLessonsMessage(){

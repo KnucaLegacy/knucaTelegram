@@ -33,6 +33,9 @@ public class MessageHandleService {
     @Resource
     private TelegramMessageFormater formater;
 
+    @Resource
+    private GroupLessonMessageFactory groupLessonMessageFactory;
+
     private GregorianCalendar mockToday = new GregorianCalendar(2017, 4, 15);
 
     public MessageHandleService() {
@@ -51,47 +54,55 @@ public class MessageHandleService {
             message = data;
         System.out.println(message);
         Group exactGroup = groupService.getByExactName(message);
+        List<SendMessage> list = groupLessonMessageFactory.oneWeekDataMessage(msg.getChatId(),mockToday.getTime(),exactGroup,0);
 
-        if (exactGroup != null){
-            handleGroupSingleDate(msg, data,  bot);
-            return;
-        }
-        Set<Group> groupsAllies = groupService.getByAlliesName(message);
-        if (groupsAllies != null && !groupsAllies.isEmpty()){
-            SendMessage sendMessage = new SendMessage()
-                    .setChatId(msg.getChatId())
-                    .setText("Похожие на " + message + " ");
-            InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
-
-            List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
-            List<InlineKeyboardButton> rowInline = new ArrayList<>();
-
-            int i = 0;
-            for (Group g: groupsAllies) {
-                if (i%3 == 0){
-                    rowsInline.add(rowInline);
-                    rowInline = new ArrayList<>();
-                }
-                rowInline.add(new InlineKeyboardButton().setText(g.getName()).setCallbackData(g.getName()));
-                i++;
-            }
-            rowsInline.add(rowInline);
-            // Add it to the message
-            markupInline.setKeyboard(rowsInline);
-            sendMessage.setReplyMarkup(markupInline);
+        list.forEach(sendMessage -> {
             try {
                 bot.sendMessage(sendMessage);
             } catch (TelegramApiException e) {
-                log.error("inline allies", e);
+                e.printStackTrace();
             }
-            return;
-        }
-
-        try {
-            bot.sendMessage(new SendMessage().setChatId(msg.getChatId()).setText("Мая не панимать"));
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
+        });
+//        if (exactGroup != null){
+//            handleGroupSingleDate(msg, data,  bot);
+//            return;
+//        }
+//        Set<Group> groupsAllies = groupService.getByAlliesName(message);
+//        if (groupsAllies != null && !groupsAllies.isEmpty()){
+//            SendMessage sendMessage = new SendMessage()
+//                    .setChatId(msg.getChatId())
+//                    .setText("Похожие на " + message + " ");
+//            InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
+//
+//            List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
+//            List<InlineKeyboardButton> rowInline = new ArrayList<>();
+//
+//            int i = 0;
+//            for (Group g: groupsAllies) {
+//                if (i%3 == 0){
+//                    rowsInline.add(rowInline);
+//                    rowInline = new ArrayList<>();
+//                }
+//                rowInline.add(new InlineKeyboardButton().setText(g.getName()).setCallbackData(g.getName()));
+//                i++;
+//            }
+//            rowsInline.add(rowInline);
+//            // Add it to the message
+//            markupInline.setKeyboard(rowsInline);
+//            sendMessage.setReplyMarkup(markupInline);
+//            try {
+//                bot.sendMessage(sendMessage);
+//            } catch (TelegramApiException e) {
+//                log.error("inline allies", e);
+//            }
+//            return;
+//        }
+//
+//        try {
+//            bot.sendMessage(new SendMessage().setChatId(msg.getChatId()).setText("Мая не панимать"));
+//        } catch (TelegramApiException e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void handleGroupSingleDate(Message message, String data, TelegramLongPollingBot bot){
@@ -111,7 +122,7 @@ public class MessageHandleService {
             StringBuilder textMessage = new StringBuilder();
 
             textMessage.append(formater.groupHeader(exactGroup));
-            textMessage.append(formater.dateHeader(DayOfWeek.calendarDOWtoDayOfWeek(today.get(Calendar.DAY_OF_WEEK)),today.getTime()));
+            textMessage.append(formater.dateHeader(today.getTime()));
             textMessage.append(formater.lessonsToString(lessons,today.getTime()));
             sendMessage.setChatId(message.getChatId()).setText(textMessage.toString());
             sendMessage.enableHtml(true);

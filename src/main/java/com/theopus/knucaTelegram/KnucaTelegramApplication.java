@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @SpringBootApplication
-@ComponentScan(value = "com.theopus.knucaTelegram")
+//@ComponentScan(value = "com.theopus.knucaTelegram")
 public class KnucaTelegramApplication {
 
 
