@@ -16,8 +16,10 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-
-import java.util.*;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = PersistenceConfig.class)
@@ -33,6 +35,9 @@ public class LessonServiceImplTest {
 
     @Resource
     private TeacherService teacherService;
+
+    @Resource
+    private GroupServiceImpl groupService;
 
     private Date dateMock = new GregorianCalendar(2017, 4 - 1, 17).getTime();
 

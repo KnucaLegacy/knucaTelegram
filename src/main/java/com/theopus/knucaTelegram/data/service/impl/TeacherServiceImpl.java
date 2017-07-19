@@ -1,6 +1,7 @@
 package com.theopus.knucaTelegram.data.service.impl;
 
 import com.theopus.knucaTelegram.data.entity.Teacher;
+import com.theopus.knucaTelegram.data.repository.LessonRepository;
 import com.theopus.knucaTelegram.data.repository.TeacherRepository;
 import com.theopus.knucaTelegram.data.service.TeacherService;
 import org.slf4j.Logger;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityManager;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,6 +21,10 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Resource
     private TeacherRepository teacherRepository;
+    @Resource
+    private LessonRepository lessonRepository;
+    @Resource
+    private EntityManager as;
 
     private Set<Teacher> teachersCache = new HashSet<>();
 
@@ -63,6 +69,15 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public Teacher findByName(String name) {
         return teacherRepository.findByExactName(name);
+    }
+
+    @Override
+    public void deleteById(long id) {
+        teacherRepository.delete(id);
+    }
+
+    @Override
+    public void deleteTeacher(Teacher t) {
     }
 
     @Override

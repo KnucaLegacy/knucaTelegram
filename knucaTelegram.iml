@@ -2,12 +2,25 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration />
-    </facet>
-    <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map />
-        <naming-strategy-map />
+        <fileset id="spring_boot_com.theopus.knucaTelegram.KnucaTelegramApplication" name="KnucaTelegramApplication" removed="true">
+          <file>file://$MODULE_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java</file>
+        </fileset>
+        <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/application.properties</file>
+        </fileset>
+        <fileset id="fileset" name="knucaTelegram" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java</file>
+        </fileset>
+      </configuration>
+    </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="entityManagerFactory" value="69bbced2-75be-4ad2-8aef-9b4e6c7b2ea8" />
+        </datasource-mapping>
       </configuration>
     </facet>
   </component>

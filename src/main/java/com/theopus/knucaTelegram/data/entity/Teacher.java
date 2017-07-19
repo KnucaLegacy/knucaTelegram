@@ -19,7 +19,7 @@ public class Teacher {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "teachers", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "teachers", fetch = FetchType.EAGER)
     private Set<Lesson> lessons = new HashSet<>();
 
     public Teacher() {
@@ -35,6 +35,10 @@ public class Teacher {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Lesson> getLessons() {
+        return lessons;
     }
 
     @Override

@@ -1,10 +1,8 @@
 package com.theopus.knucaTelegram.bot;
 
 
-import com.theopus.knucaTelegram.bot.command.TelegramMessageFormater;
 import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Lesson;
-import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.service.GroupService;
 import com.theopus.knucaTelegram.data.service.LessonService;
 import org.slf4j.Logger;
@@ -12,13 +10,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
-import org.telegram.telegrambots.api.objects.replykeyboard.InlineKeyboardMarkup;
-import org.telegram.telegrambots.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import javax.annotation.Resource;
-import java.util.*;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 
 @Service
@@ -30,11 +27,8 @@ public class MessageHandleService {
     private GroupService groupService;
     @Resource
     private LessonService lessonService;
-    @Resource
-    private TelegramMessageFormater formater;
 
-    @Resource
-    private GroupLessonMessageFactory groupLessonMessageFactory;
+
 
     private GregorianCalendar mockToday = new GregorianCalendar(2017, 4, 15);
 
@@ -54,15 +48,8 @@ public class MessageHandleService {
             message = data;
         System.out.println(message);
         Group exactGroup = groupService.getByExactName(message);
-        List<SendMessage> list = groupLessonMessageFactory.oneWeekDataMessage(msg.getChatId(),mockToday.getTime(),exactGroup,0);
 
-        list.forEach(sendMessage -> {
-            try {
-                bot.sendMessage(sendMessage);
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-            }
-        });
+
 //        if (exactGroup != null){
 //            handleGroupSingleDate(msg, data,  bot);
 //            return;
@@ -121,9 +108,6 @@ public class MessageHandleService {
             SendMessage sendMessage = new SendMessage();
             StringBuilder textMessage = new StringBuilder();
 
-            textMessage.append(formater.groupHeader(exactGroup));
-            textMessage.append(formater.dateHeader(today.getTime()));
-            textMessage.append(formater.lessonsToString(lessons,today.getTime()));
             sendMessage.setChatId(message.getChatId()).setText(textMessage.toString());
             sendMessage.enableHtml(true);
             try {

@@ -27,6 +27,7 @@ import static org.junit.Assert.*;
 @WebAppConfiguration
 public class GroupServiceImplTest {
 
+
     @Resource
     private GroupRepository groupRepository;
 

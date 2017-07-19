@@ -1,9 +1,9 @@
 package com.theopus.knucaTelegram.bot;
 
+import com.theopus.knucaTelegram.bot.action.Action;
 import com.theopus.knucaTelegram.bot.command.HelloCommand;
 import com.theopus.knucaTelegram.bot.command.HelpCommand;
 import com.theopus.knucaTelegram.bot.command.StartCommand;
-import com.theopus.knucaTelegram.bot.action.Action;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

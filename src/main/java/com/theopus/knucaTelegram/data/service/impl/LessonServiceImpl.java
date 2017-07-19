@@ -41,6 +41,7 @@ public class LessonServiceImpl implements LessonService {
             l.setTeachers(teacherService.saveAll(l.getTeachers()));
             l.setSubject(subjectService.saveOne(l.getSubject()));
             l.setRoomTimePeriod(roomService.saveRooms(l.getRoomTimePeriod()));
+            l.getRoomTimePeriod().forEach(roomTimePeriod -> roomTimePeriod.setLesson(l));
             lessonRepository.save(l);
             count++;
         }

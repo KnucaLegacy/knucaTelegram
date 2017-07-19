@@ -1,12 +1,9 @@
 package com.theopus.knucaTelegram.parser;
 
 import com.theopus.knucaTelegram.data.entity.Lesson;
-import com.theopus.knucaTelegram.data.service.LessonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.io.File;
 import java.util.*;
 

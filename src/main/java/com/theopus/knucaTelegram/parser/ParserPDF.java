@@ -424,7 +424,7 @@ public class ParserPDF {
                     }
                 }
                 else {
-                    rtp.addLessonDate(new LessonDate(upDate, maxToDate));
+                    rtp.addLessonDate(new LessonDate(true, maxToDate));
                 }
             }
         }

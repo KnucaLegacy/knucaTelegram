@@ -22,9 +22,10 @@ public class RoomTimePeriod {
     private Room room;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "lesson_id")
     private Lesson lesson;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "roomTimePeriod", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<LessonDate> lessonDate = new HashSet<>();
 
     public RoomTimePeriod() {

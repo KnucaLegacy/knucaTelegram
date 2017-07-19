@@ -6,15 +6,44 @@ import com.theopus.knucaTelegram.data.entity.Teacher;
 import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.entity.enums.LessonOrder;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Component;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 
-@Component
+
 public class TelegramMessageFormater {
+
+    public Collection<String> weekLessonsToString(Map<DayOfWeek, List<Lesson>> lessonMap, Date weekDate, Object o){
+        Map<DayOfWeek, Date> dateMap = DayOfWeek.dateToDateMap(weekDate);
+
+        List<String> messages = new ArrayList<>();
+
+        for (Map.Entry<DayOfWeek, Date> dateMapPair: dateMap.entrySet()){
+            if (!lessonMap.get(dateMapPair.getKey()).isEmpty()) {
+                Date pairDate = dateMapPair.getValue();
+                dayLessonsToString(lessonMap.get(dateMapPair.getKey()),o,pairDate);
+                messages.add(dayLessonsToString(lessonMap.get(dateMapPair.getKey()),o,pairDate));
+            }
+        }
+        return messages;
+    }
+
+    public String dayLessonsToString(Collection<Lesson> lessons, Object o, Date date){
+
+        StringBuilder message = new StringBuilder();
+        if (o instanceof Group)
+            message.append(groupHeader((Group) o));
+        if (o instanceof Teacher)
+            message.append(teacherHeader((Teacher) o));
+        message.append(dateHeader(date));
+        if (lessons.isEmpty()){
+            message.append(noLessonsMessage());
+            return message.toString();
+        }
+        message.append(lessonsToString(lessons,date));
+        return message.toString();
+    }
 
     public String lessonsToString(Collection<Lesson> lessons, Date date){
         StringBuilder lessonListBuilder = new StringBuilder();

@@ -13,4 +13,8 @@ public class KnucaTelegramApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+	public void loadTOBd() throws Exception {
+
+	}
 }

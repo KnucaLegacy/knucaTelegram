@@ -1,12 +1,13 @@
 package com.theopus.knucaTelegram.bot;
 
-import com.theopus.knucaTelegram.bot.action.*;
-import com.theopus.knucaTelegram.bot.action.impl.BadRequest;
+import com.theopus.knucaTelegram.bot.action.Action;
+import com.theopus.knucaTelegram.bot.action.facrory.SendDataActionFactory;
 import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.service.GroupService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.api.objects.Chat;
@@ -21,13 +22,17 @@ import java.util.regex.Pattern;
 public class MessageActionDispatcher {
 
     private Logger log = LoggerFactory.getLogger(MessageActionDispatcher.class);
-
     private Pattern pattern = Pattern.compile("\\b[А-яІіЇїЄє]{1,6}-(\\S){1,6}\\b");
-    @Qualifier("groupServiceImpl")
+
     @Resource
     private GroupService groupService;
 
     public String groupsList;
+
+    @Qualifier("baseDataActionFactory")
+    @Autowired
+    private SendDataActionFactory factory;
+
 
     @PostConstruct
     private void loadStringQuery(){
@@ -49,7 +54,7 @@ public class MessageActionDispatcher {
         if (message.contains("-"))
             return exactGroupMathcing(message);
         notExactGroupMatching(message);
-        return new BadRequest(chatId);
+        return factory.sendBadRequest(message,chatId);
     }
 
     public Action notExactGroupMatching(String group){
@@ -63,7 +68,7 @@ public class MessageActionDispatcher {
             else
                 return exactGroupMathcing(tmp);
         }
-        return new BadRequest(chatId);
+        return factory.sendBadRequest(group, chatId);
     }
 
     public Action exactGroupMathcing(String exactName){
@@ -71,10 +76,7 @@ public class MessageActionDispatcher {
         System.out.println(groupName);
         Group group = groupService.getByExactName(groupName);
         if (group != null){
-            ResponseAction sendDataByGroup = appContext.getBean("responseAction", ResponseAction.class);
-            sendDataByGroup.setChatId(this.chatId);
-            sendDataByGroup.setGroup(group);
-            return sendDataByGroup;
+            return factory.sendBadRequest(exactName, chatId);
         }
         else
             return alliesGroupMathcing(groupName);
@@ -85,11 +87,12 @@ public class MessageActionDispatcher {
         String alliesGroup = normalize(groupName);
         Set<Group> groupSet = groupService.getByAlliesName(alliesGroup);
         if (groupSet.isEmpty() || groupSet == null)
-            return new BadRequest(chatId);
+            factory.sendBadRequest(groupName, chatId);
         else{
             log.info("event complition at chatId" + chatId);
-            return new RequestAdditionalGroupData(chatId,groupSet);
+            return factory.sendBadRequest(groupName,chatId);
         }
+        return factory.sendBadRequest(groupName,chatId);
     }
 
     public String normalize(String initial){

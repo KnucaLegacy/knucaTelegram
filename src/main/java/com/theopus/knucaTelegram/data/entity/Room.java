@@ -18,7 +18,7 @@ public class Room {
     @Column
     private String name;
 
-    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "room")
     private Set<RoomTimePeriod> roomTimePeriodSet;
 
     public Room() {

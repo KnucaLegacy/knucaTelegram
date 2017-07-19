@@ -1,6 +1,5 @@
 package com.theopus.knucaTelegram.data.repository;
 
-import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

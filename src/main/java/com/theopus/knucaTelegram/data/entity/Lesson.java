@@ -34,13 +34,19 @@ public class Lesson {
     @Column
     private DayOfWeek dayofWeek;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<RoomTimePeriod> roomTimePeriod = new HashSet<>();
 
-    @ManyToMany(cascade = CascadeType.REMOVE ,fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "lesson_teacher",
+            joinColumns =@JoinColumn(name = "lesson_id"),
+            inverseJoinColumns =@JoinColumn(name = "teacher_id") )
     private Set<Teacher> teachers = new HashSet<>();
 
-    @ManyToMany(cascade = CascadeType.REMOVE ,fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "lesson_group",
+            joinColumns =@JoinColumn(name = "lesson_id"),
+            inverseJoinColumns =@JoinColumn(name = "group_id") )
     private Set<Group> groups = new HashSet<>();
 
     public Lesson() {
@@ -95,12 +101,13 @@ public class Lesson {
 
     @Override
     public int hashCode() {
-        int result = order.hashCode();
-        result = 31 * result + subject.hashCode();
-        result = 31 * result + lessonType.hashCode();
-        result = 31 * result + roomTimePeriod.hashCode();
-        result = 31 * result + (teachers != null ? teachers.hashCode() : 0);
-        result = 31 * result + (groups != null ? groups.hashCode() : 0);
+        int result = (int) id;
+        result = order == null ? result : order.hashCode();
+        result = subject == null ? result : 31 * result + subject.hashCode();
+        result = lessonType == null ? result : 31 * result + lessonType.hashCode();
+        result = roomTimePeriod == null ? result : 31 * result + roomTimePeriod.hashCode();
+        result = teachers == null ? result : 31 * result + (teachers != null ? teachers.hashCode() : 0);
+        result = groups == null ? result : 31 * result + (groups != null ? groups.hashCode() : 0);
         return result;
     }
 
@@ -180,6 +187,19 @@ public class Lesson {
     public void setGroups(Set<Group> groups) {
         this.groups = groups;
     }
+
+    public boolean removeTeacher(Teacher teacher){
+        return teachers.remove(teacher);
+    }
+
+    public DayOfWeek getDayofWeek() {
+        return dayofWeek;
+    }
+
+    public void setDayofWeek(DayOfWeek dayofWeek) {
+        this.dayofWeek = dayofWeek;
+    }
+
     @Override
     public String toString() {
         return "Lesson{" +
