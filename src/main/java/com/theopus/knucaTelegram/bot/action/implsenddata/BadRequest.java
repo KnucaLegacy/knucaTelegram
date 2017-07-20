@@ -1,4 +1,4 @@
-package com.theopus.knucaTelegram.bot.action.impl;
+package com.theopus.knucaTelegram.bot.action.implsenddata;
 
 import com.theopus.knucaTelegram.bot.action.CallBackable;
 import com.theopus.knucaTelegram.bot.action.SingleDirSendMessageAction;

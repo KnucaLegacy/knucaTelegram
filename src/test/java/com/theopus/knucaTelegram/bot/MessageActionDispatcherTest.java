@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram.bot;
 
+import com.theopus.knucaTelegram.bot.action.facrory.BaseDataActionFactory;
 import com.theopus.knucaTelegram.bot.util.TelegramMessageFormater;
 import com.theopus.knucaTelegram.config.TestPersistenceConfig;
 import com.theopus.knucaTelegram.data.service.GroupService;
@@ -21,23 +22,18 @@ import java.util.*;
 @ContextConfiguration(classes = {
         TestPersistenceConfig.class,
         MessageActionDispatcher.class,
-        TelegramMessageFormater.class})
+        TelegramMessageFormater.class,
+        BaseDataActionFactory.class})
 //@SpringBootTest
 public class MessageActionDispatcherTest {
-
 
     @Resource
     private EntityManagerFactory emf;
     protected EntityManager em;
 
-
     @Qualifier("messageActionDispatcher")
     @Autowired
     private MessageActionDispatcher messageActionDispatcher;
-
-
-
-
 
     private Date dateMock = new GregorianCalendar(2017, 4 - 1, 17).getTime();
     @Autowired
@@ -46,12 +42,6 @@ public class MessageActionDispatcherTest {
     @Before
     public void setUp() throws Exception {
         em = emf.createEntityManager();
-    }
-
-
-    @Test
-    public void test() throws Exception {
-        System.out.println(messageActionDispatcher.groupsList.contains("ІУС"));
     }
 
     @Test

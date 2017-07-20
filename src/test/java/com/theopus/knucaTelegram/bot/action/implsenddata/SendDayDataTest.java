@@ -1,8 +1,6 @@
-package com.theopus.knucaTelegram.bot.action.impl;
+package com.theopus.knucaTelegram.bot.action.implsenddata;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class SendDayDataTest {
     @Test

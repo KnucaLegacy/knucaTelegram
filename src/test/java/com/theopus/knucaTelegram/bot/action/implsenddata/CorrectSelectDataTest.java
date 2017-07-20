@@ -1,22 +1,14 @@
-package com.theopus.knucaTelegram.bot.action.impl;
+package com.theopus.knucaTelegram.bot.action.implsenddata;
 
 import com.theopus.knucaTelegram.config.PersistenceConfig;
-import com.theopus.knucaTelegram.config.TestPersistenceConfig;
 import com.theopus.knucaTelegram.data.entity.Group;
-import com.theopus.knucaTelegram.data.service.GroupService;
 import com.theopus.knucaTelegram.generictestclasses.GenericDBWithDBCheck;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.annotation.PropertySources;
 import org.springframework.test.context.ContextConfiguration;
 
-import javax.annotation.Resource;
-
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-
-import static org.junit.Assert.*;
 
 
 @ContextConfiguration(classes = PersistenceConfig.class)

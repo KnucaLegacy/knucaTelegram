@@ -1,4 +1,4 @@
-package com.theopus.knucaTelegram.bot.action.impl;
+package com.theopus.knucaTelegram.bot.action.implsenddata;
 
 import com.theopus.knucaTelegram.bot.action.SingleDirSendMessageAction;
 import com.theopus.knucaTelegram.bot.util.KeyboardBuilder;

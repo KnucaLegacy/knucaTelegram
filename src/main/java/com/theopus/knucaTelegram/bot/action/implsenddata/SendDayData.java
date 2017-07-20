@@ -1,4 +1,4 @@
-package com.theopus.knucaTelegram.bot.action.impl;
+package com.theopus.knucaTelegram.bot.action.implsenddata;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.theopus.knucaTelegram.bot.action.CallBackable;

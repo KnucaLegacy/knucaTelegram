@@ -1,7 +1,5 @@
 package com.theopus.knucaTelegram.bot.util;
 
-import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
-
 import java.util.*;
 
 public class DayOffsetValues {

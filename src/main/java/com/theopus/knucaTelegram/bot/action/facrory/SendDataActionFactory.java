@@ -1,6 +1,5 @@
 package com.theopus.knucaTelegram.bot.action.facrory;
 
-import com.theopus.knucaTelegram.bot.action.Action;
 import com.theopus.knucaTelegram.bot.action.SendDataAction;
 
 import java.util.Collection;

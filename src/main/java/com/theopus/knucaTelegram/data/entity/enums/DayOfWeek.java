@@ -89,4 +89,8 @@ public enum DayOfWeek {
         long oneDay = 1 * 1000 * 3600 * 24;
         return new Date(dateToRawDate(date).getTime() + oneDay * offset);
     }
+
+    public static Date dayOfweekToDate(DayOfWeek dayOfWeek, Date date){
+        return dateToDateMap(date).get(dayOfWeek);
+    }
 }

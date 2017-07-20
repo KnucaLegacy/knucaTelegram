@@ -1,6 +1,5 @@
 package com.theopus.knucaTelegram.data.service.impl;
 
-import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Teacher;
 import com.theopus.knucaTelegram.data.repository.LessonRepository;
 import com.theopus.knucaTelegram.data.repository.TeacherRepository;

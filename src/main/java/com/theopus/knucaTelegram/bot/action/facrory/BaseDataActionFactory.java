@@ -1,10 +1,10 @@
 package com.theopus.knucaTelegram.bot.action.facrory;
 
 import com.theopus.knucaTelegram.bot.action.SendDataAction;
-import com.theopus.knucaTelegram.bot.action.impl.BadRequest;
-import com.theopus.knucaTelegram.bot.action.impl.CorrectSelectData;
-import com.theopus.knucaTelegram.bot.action.impl.SendDayData;
-import com.theopus.knucaTelegram.bot.action.impl.SendWeekData;
+import com.theopus.knucaTelegram.bot.action.implsenddata.BadRequest;
+import com.theopus.knucaTelegram.bot.action.implsenddata.CorrectSelectData;
+import com.theopus.knucaTelegram.bot.action.implsenddata.SendDayData;
+import com.theopus.knucaTelegram.bot.action.implsenddata.SendWeekData;
 import com.theopus.knucaTelegram.data.service.LessonService;
 import org.springframework.stereotype.Service;
 

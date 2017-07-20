@@ -1,7 +1,5 @@
-package com.theopus.knucaTelegram.bot.action.impl;
+package com.theopus.knucaTelegram.bot.action.implsenddata;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Lesson;
 import com.theopus.knucaTelegram.data.entity.Teacher;
