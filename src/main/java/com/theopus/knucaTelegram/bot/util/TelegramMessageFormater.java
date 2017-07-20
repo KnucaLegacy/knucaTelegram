@@ -1,4 +1,4 @@
-package com.theopus.knucaTelegram.bot.command;
+package com.theopus.knucaTelegram.bot.util;
 
 import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Lesson;

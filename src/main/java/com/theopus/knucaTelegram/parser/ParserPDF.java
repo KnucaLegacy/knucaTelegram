@@ -22,6 +22,8 @@ import java.util.regex.Pattern;
 /**
  PDF Schedule Parser for KNUCA University Ukraine
  */
+
+//TODO: REFACTOR IT
 public class ParserPDF {
 
     private static final Logger log = LoggerFactory.getLogger(ParserPDF.class);

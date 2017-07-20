@@ -1,5 +1,7 @@
 package com.theopus.knucaTelegram.bot.action.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Lesson;
 import com.theopus.knucaTelegram.data.entity.Teacher;
@@ -7,21 +9,40 @@ import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.service.LessonService;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class SendWeekData extends SendDayData {
 
-    public SendWeekData(long chatId, LessonService service, Object targetEnt, Date date) {
-        super(chatId, service, targetEnt, date);
+    public SendWeekData(long chatId, LessonService service, Object targetEnt, Date date, int offset) {
+        super(chatId, service, targetEnt, date, offset);
+    }
+
+    @Override
+    public String toString() {
+        String date = null;
+        if (this.date != null) {
+            date = new SimpleDateFormat("dd-MM-yyyy").format(this.date);
+        }
+        return "SendDayData{" +
+                "targetEnt=" + targetEnt +
+                (this.date != null ? (", date=" + date) : "") +
+                ", offset=" + offset +
+                '}';
+    }
+
+    @Override
+    public String getCallBackQuery() {
+        return toString();
     }
 
     @Override
     public Collection<SendMessage> buildMessage() {
         Map<DayOfWeek, List<Lesson>> lessonMap = null;
         if (targetEnt instanceof Group)
-            lessonMap = service.getWeekByGroup(date, (Group) targetEnt,0);
+            lessonMap = service.getWeekByGroup(date, (Group) targetEnt,offset);
         if (targetEnt instanceof Teacher)
-            lessonMap = service.getWeekByTeacher(date, (Teacher) targetEnt, 0);
+            lessonMap = service.getWeekByTeacher(date, (Teacher) targetEnt, offset);
         Map<DayOfWeek, Date> dateMap = DayOfWeek.dateToDateMap(date);
 
         Set<SendMessage> result = new HashSet<>();

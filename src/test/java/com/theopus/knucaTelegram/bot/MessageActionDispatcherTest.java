@@ -1,6 +1,6 @@
 package com.theopus.knucaTelegram.bot;
 
-import com.theopus.knucaTelegram.bot.command.TelegramMessageFormater;
+import com.theopus.knucaTelegram.bot.util.TelegramMessageFormater;
 import com.theopus.knucaTelegram.config.TestPersistenceConfig;
 import com.theopus.knucaTelegram.data.service.GroupService;
 import org.junit.Before;

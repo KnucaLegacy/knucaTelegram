@@ -11,6 +11,8 @@
         </fileset>
         <fileset id="fileset" name="knucaTelegram" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/com/theopus/knucaTelegram/KnucaTelegramApplication.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/theopus/knucaTelegram/config/PersistenceConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/theopus/knucaTelegram/config/TelegramBotAutoConfiguration.java</file>
         </fileset>
       </configuration>
     </facet>
@@ -31,7 +33,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -126,6 +128,8 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.6" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-actuator:1.5.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-actuator:1.5.4.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:5.1.32" level="project" />
     <orderEntry type="library" name="Maven: org.apache.pdfbox:pdfbox:1.8.13" level="project" />
     <orderEntry type="library" name="Maven: org.apache.pdfbox:fontbox:1.8.13" level="project" />

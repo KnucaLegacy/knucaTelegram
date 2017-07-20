@@ -25,7 +25,7 @@ import java.util.HashSet;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = PersistenceConfig.class)
-@PropertySource(value = "../../../../resources/presistence-mysql.properties")
+@PropertySource(value = "../../../../resources/presistence-mysql-test.properties")
 public class dbLoadTest {
 
     @Resource

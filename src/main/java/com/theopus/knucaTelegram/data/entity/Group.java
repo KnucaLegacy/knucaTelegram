@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class Group {
 
     @Column(name = "name")
     private String name;
+
 
     @ManyToMany(mappedBy = "groups", fetch = FetchType.LAZY)
     private Set<Lesson> lessons = new HashSet<>();

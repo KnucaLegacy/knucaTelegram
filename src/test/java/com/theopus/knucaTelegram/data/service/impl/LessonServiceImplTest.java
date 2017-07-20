@@ -1,6 +1,7 @@
 package com.theopus.knucaTelegram.data.service.impl;
 
 import com.theopus.knucaTelegram.config.PersistenceConfig;
+import com.theopus.knucaTelegram.config.TestPersistenceConfig;
 import com.theopus.knucaTelegram.data.entity.Lesson;
 import com.theopus.knucaTelegram.data.entity.Teacher;
 import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
@@ -22,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = PersistenceConfig.class)
+@ContextConfiguration(classes = TestPersistenceConfig.class)
 @WebAppConfiguration
 public class LessonServiceImplTest {
 

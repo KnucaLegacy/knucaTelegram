@@ -5,7 +5,6 @@ import com.theopus.knucaTelegram.bot.action.impl.BadRequest;
 import com.theopus.knucaTelegram.bot.action.impl.CorrectSelectData;
 import com.theopus.knucaTelegram.bot.action.impl.SendDayData;
 import com.theopus.knucaTelegram.bot.action.impl.SendWeekData;
-import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.service.LessonService;
 import org.springframework.stereotype.Service;
 
@@ -21,17 +20,24 @@ public class BaseDataActionFactory extends SendDataActionFactory {
 
     @Override
     SendDataAction sendExactDayDataAction(Object o, long chatId, Date date, int offset) {
-        return new SendDayData(chatId, lessonService, o, DayOfWeek.dayDateOffset(date,offset));
+        return new SendDayData(chatId, lessonService, o, date,offset);
+    }
+
+    @Override
+    SendDataAction sendExactDayDataAction(Collection<Object> objects, long chatId, int offset) {
+        Object o = objects.stream().findFirst().orElse(null);
+        return new CorrectSelectData(objects, new SendDayData(chatId, null, o, null, offset));
     }
 
     @Override
     SendDataAction sendWeekDataAction(Object o, long chatId, Date date, int offset) {
-        return new SendWeekData(chatId, lessonService, o, DayOfWeek.weekDateOffset(date,offset));
+        return new SendWeekData(chatId, lessonService, o, date, offset);
     }
 
     @Override
-    SendDataAction sendCorrectSelectionAction(Collection<Object> objects, long chatId) {
-        return new CorrectSelectData(chatId, objects);
+    SendDataAction sendWeekDataAction(Collection<Object> objects, long chatId, int offset) {
+        Object o = objects.stream().findFirst().orElse(null);
+        return new CorrectSelectData(objects, new SendWeekData(chatId, null, o, null, offset));
     }
 
     @Override
