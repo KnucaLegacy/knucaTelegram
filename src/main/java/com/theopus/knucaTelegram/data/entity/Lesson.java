@@ -62,8 +62,9 @@ public class Lesson {
     }
 
     public boolean isAtDate(Date date){
+        DayOfWeek thisdow = DayOfWeek.dateToDayOfWeek(date);
         for (RoomTimePeriod rtp : roomTimePeriod) {
-            if (rtp.isAtDate(date))
+            if (rtp.isAtDate(date) && thisdow.equals(this.dayofWeek))
                 return true;
         }
         return false;

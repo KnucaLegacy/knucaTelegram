@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.HashSet;
@@ -18,7 +19,7 @@ public class GroupServiceImpl implements GroupService {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-
+    private String searchLine;
 
 
     @Resource
@@ -28,12 +29,33 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public Group saveOne(Group group) {
-        return groupRepository.save(group);
+        Group save = groupRepository.save(group);
+        loadSearchLine();
+        return save;
+
     }
 
     @Override
     public Group getById(long id) {
         return groupRepository.getOne(id);
+    }
+
+    @PostConstruct
+    @Override
+    public void loadSearchLine() {
+        StringBuilder line = new StringBuilder();
+        Set<Group> groups = this.getAll();
+        line.append(";");
+        groups.forEach(group -> {
+            line
+                    .append(group.getName())
+                    .append(";");
+        });
+    }
+
+    @Override
+    public String getSearchLine() {
+        return searchLine;
     }
 
     @Override
@@ -83,6 +105,7 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public void flush() {
+        loadSearchLine();
         groupsCache = null;
     }
 

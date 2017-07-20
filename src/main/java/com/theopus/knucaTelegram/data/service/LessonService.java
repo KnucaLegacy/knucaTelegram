@@ -35,7 +35,7 @@ public interface LessonService extends CustomService<Lesson> {
     /**
      *
      * @param date
-     * @param teacherIdId
+     * @param teacherId
      * @param offset :
      *               0 today
      *               <0 n days ago
@@ -52,5 +52,13 @@ public interface LessonService extends CustomService<Lesson> {
     Map<DayOfWeek,List<Lesson>> getWeekByTeacher(Date date, Teacher teacher, int week);
     Map<DayOfWeek,List<Lesson>> getWeekByTeacher(Date date, long teacherId, int week);
     Map<DayOfWeek,List<Lesson>> getWeekByTeacher(Date date, String teacherName, int week);
+
+    Map<Date, List<Lesson>> getByTeacher(Date from, Date to, Teacher teacher);
+    Map<Date, List<Lesson>> getByTeacher(Date from, Date to, long teacherId);
+    Map<Date, List<Lesson>> getByTeacher(Date from, Date to, String teacherName);
+
+    Map<Date, List<Lesson>> getByGroup(Date from, Date to, Group group);
+    Map<Date, List<Lesson>> getByGroup(Date from, Date to, long groupId);
+    Map<Date, List<Lesson>> getByGroup(Date from, Date to, String groupName);
 
 }

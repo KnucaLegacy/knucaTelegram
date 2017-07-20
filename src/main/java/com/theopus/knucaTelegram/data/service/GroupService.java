@@ -5,7 +5,7 @@ import com.theopus.knucaTelegram.data.entity.Group;
 import java.util.Collection;
 import java.util.Set;
 
-public interface GroupService extends CustomService<Group> {
+public interface GroupService extends CustomService<Group>, SearchableService {
 
     Set<Group> saveAll(Collection<Group> group);
 

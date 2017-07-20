@@ -96,6 +96,30 @@ public class LessonServiceImpl implements LessonService {
         return result;
     }
 
+    private Map<Date, List<Lesson>> sortByFromToDate(Date from, Date to, List<Lesson> lessonList){
+        long oneDay = 1 * 1000 * 3600 * 24;
+        List<Date> dates = new ArrayList<>();
+        System.out.println(from);
+        System.out.println(to);
+        long diff = DayOfWeek.dateToRawDate(to).getTime() - DayOfWeek.dateToRawDate(from).getTime();
+        if (diff <= 0)
+            return null;
+
+        System.out.println(diff);
+        int days = (int) (diff / 1000 / 3600 / 24);
+        System.out.println(days);
+        for (int i = 0; i < days; i++) {
+            dates.add(new Date(from.getTime() + (i * oneDay)));
+        }
+
+        Map<Date, List<Lesson>> result = new LinkedHashMap<>();
+
+        dates.forEach(date -> {
+            result.put(date, new ArrayList<>(Lesson.atDate(lessonList,date)));
+        });
+        return result;
+    }
+
     @Override
     public List<Lesson> getExactDayByGroup(Date date, String groupName, int offset) {
         date = offset == 0 ? date : DayOfWeek.dayDateOffset(date, offset);
@@ -166,6 +190,38 @@ public class LessonServiceImpl implements LessonService {
     @Override
     public Map<DayOfWeek, List<Lesson>> getWeekByTeacher(Date date, String teacherName, int week) {
         return null;
+    }
+
+    @Override
+    public Map<Date, List<Lesson>> getByTeacher(Date from, Date to, Teacher teacher) {
+        return sortByFromToDate(from, to, lessonRepository.getAllByTeacherId(teacher.getId()));
+    }
+
+    @Override
+    public Map<Date, List<Lesson>> getByTeacher(Date from, Date to, long teacherId) {
+        return sortByFromToDate(from, to, lessonRepository.getAllByTeacherId(teacherId));
+    }
+
+    @Override
+    public Map<Date, List<Lesson>> getByTeacher(Date from, Date to, String teacherName) {
+        Teacher teacher = teacherService.findByName(teacherName);
+        return sortByFromToDate(from, to, lessonRepository.getAllByTeacherId(teacher.getId()));
+    }
+
+    @Override
+    public Map<Date, List<Lesson>> getByGroup(Date from, Date to, Group group) {
+        return sortByFromToDate(from, to, lessonRepository.getAllByGroupId(group.getId()));
+    }
+
+    @Override
+    public Map<Date, List<Lesson>> getByGroup(Date from, Date to, long groupId) {
+        return sortByFromToDate(from, to, lessonRepository.getAllByGroupId(groupId));
+    }
+
+    @Override
+    public Map<Date, List<Lesson>> getByGroup(Date from, Date to, String groupName) {
+        Group group = groupService.getByExactName(groupName);
+        return sortByFromToDate(from, to, lessonRepository.getAllByGroupId(group.getId()));
     }
 
     //TODO: tmp delete

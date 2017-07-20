@@ -435,7 +435,7 @@ public class ParserPDF {
         Collections.reverse(result);
 //        System.out.println(result);
 //        System.out.println("----initial-----");
-//        KNUCAUtil.print(a);
+//        KNUCAUtil.print(a);]
         return new HashSet<>(result);
 
     }

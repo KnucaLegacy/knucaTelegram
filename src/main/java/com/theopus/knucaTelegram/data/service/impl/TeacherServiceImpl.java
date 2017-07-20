@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram.data.service.impl;
 
+import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Teacher;
 import com.theopus.knucaTelegram.data.repository.LessonRepository;
 import com.theopus.knucaTelegram.data.repository.TeacherRepository;
@@ -8,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import java.util.Collection;
@@ -19,6 +21,8 @@ public class TeacherServiceImpl implements TeacherService {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
+    private String searchLine;
+
     @Resource
     private TeacherRepository teacherRepository;
     @Resource
@@ -28,9 +32,28 @@ public class TeacherServiceImpl implements TeacherService {
 
     private Set<Teacher> teachersCache = new HashSet<>();
 
+    @PostConstruct
+    @Override
+    public void loadSearchLine() {
+        StringBuilder line = new StringBuilder();
+        Set<Teacher> teachers = new HashSet<>(this.getAll());
+        line.append(";");
+        teachers.forEach(teacher -> {
+            line
+                    .append(teacher.getName())
+                    .append(";");
+        });
+    }
+
+    @Override
+    public String getSearchLine() {
+        return searchLine;
+    }
     @Override
     public Teacher saveOne(Teacher teacher) {
-        return teacherRepository.save(teacher);
+        Teacher save = teacherRepository.save(teacher);
+        loadSearchLine();
+        return save;
     }
 
     @Override
@@ -92,6 +115,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public void flush() {
+        loadSearchLine();
         teachersCache = null;
     }
 

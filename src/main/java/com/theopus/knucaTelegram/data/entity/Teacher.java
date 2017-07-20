@@ -20,7 +20,7 @@ public class Teacher {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(mappedBy = "teachers", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "teachers", fetch = FetchType.LAZY)
     private Set<Lesson> lessons = new HashSet<>();
 
     public Teacher() {

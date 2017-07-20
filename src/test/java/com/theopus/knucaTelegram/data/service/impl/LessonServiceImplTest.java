@@ -2,6 +2,7 @@ package com.theopus.knucaTelegram.data.service.impl;
 
 import com.theopus.knucaTelegram.config.PersistenceConfig;
 import com.theopus.knucaTelegram.config.TestPersistenceConfig;
+import com.theopus.knucaTelegram.data.entity.Group;
 import com.theopus.knucaTelegram.data.entity.Lesson;
 import com.theopus.knucaTelegram.data.entity.Teacher;
 import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
@@ -23,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = TestPersistenceConfig.class)
+@ContextConfiguration(classes = PersistenceConfig.class)
 @WebAppConfiguration
 public class LessonServiceImplTest {
 
@@ -40,7 +41,7 @@ public class LessonServiceImplTest {
     @Resource
     private GroupServiceImpl groupService;
 
-    private Date dateMock = new GregorianCalendar(2017, 4 - 1, 17).getTime();
+    private Date dateMock = new GregorianCalendar(2017, 5 - 1, 5).getTime();
 
     @Before
     public void setUp() throws Exception {
@@ -88,7 +89,7 @@ public class LessonServiceImplTest {
 
     @Test
     public void getWeekByTeacher() throws Exception {
-        Teacher teacher = teacherService.getById(555);
+        Teacher teacher = teacherService.getById(1);
         Map<DayOfWeek, List<Lesson>> weekByTeacher = lessonServiceService.getWeekByTeacher(
                 dateMock,
                 teacher.getId(),
@@ -100,5 +101,17 @@ public class LessonServiceImplTest {
             System.out.println(dayOfWeek);
             lessons.forEach(System.out::println);
         });
+    }
+
+    @Test
+    public void tofromtest() throws Exception {
+        long oneDay = 1 * 1000 * 3600 * 24;
+        Group group = groupService.getByExactName("ІУСТ-31");
+        lessonServiceService.getByGroup(dateMock, new Date(dateMock.getTime() + 5 * oneDay), group)
+                .forEach((date, lessonList) -> {
+                    System.out.println("-------");
+                    System.out.println(date);
+                    lessonList.forEach(System.out::println);
+                });
     }
 }
