@@ -103,12 +103,11 @@ public class LessonServiceImpl implements LessonService {
         System.out.println(to);
         long diff = DayOfWeek.dateToRawDate(to).getTime() - DayOfWeek.dateToRawDate(from).getTime();
         if (diff <= 0)
-            return null;
-
+            diff = DayOfWeek.dateToRawDate(from).getTime() - DayOfWeek.dateToRawDate(to).getTime();
         System.out.println(diff);
         int days = (int) (diff / 1000 / 3600 / 24);
         System.out.println(days);
-        for (int i = 0; i < days; i++) {
+        for (int i = 0; i <= days; i++) {
             dates.add(new Date(from.getTime() + (i * oneDay)));
         }
 

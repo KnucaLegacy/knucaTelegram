@@ -13,11 +13,13 @@ public class CorrectSelectData extends SingleDirSendMessageAction {
 
     private Collection<Object> objects;
     private SendDayData template;
+    private String initialString;
 
-    public CorrectSelectData(Collection<Object> objects, SendDayData sendDayData) {
+    public CorrectSelectData(Collection<Object> objects, SendDayData sendDayData, String initialString) {
         super(sendDayData.getChatId());
         this.objects = objects;
         this.template = sendDayData;
+        this.initialString = initialString;
     }
 
     @Override
@@ -40,8 +42,8 @@ public class CorrectSelectData extends SingleDirSendMessageAction {
         }
         map.forEach((s, s2) -> System.out.println(s + "-" + s2));
         InlineKeyboardMarkup keyBoard = KeyboardBuilder.gridInlineKeyBoard(map, 3);
-        Set<SendMessage> result = new HashSet<>();
-        result.add(new SendMessage().enableHtml(true).setReplyMarkup(keyBoard));
+        Set<SendMessage> result = new LinkedHashSet<>();
+        result.add(new SendMessage().enableHtml(true).setReplyMarkup(keyBoard).setText(initialString));
         return result;
     }
 }

@@ -6,6 +6,7 @@ import com.theopus.knucaTelegram.bot.action.implsenddata.BadRequest;
 import com.theopus.knucaTelegram.bot.util.DayOfWeekAllias;
 import com.theopus.knucaTelegram.bot.util.DayOffsetValues;
 import com.theopus.knucaTelegram.data.entity.Group;
+import com.theopus.knucaTelegram.data.entity.Teacher;
 import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.service.GroupService;
 import com.theopus.knucaTelegram.data.service.TeacherService;
@@ -39,55 +40,137 @@ public class MessageActionDispatcher {
     private Action action;
     private String messageText;
     private Date currdate = new Date();
+    private boolean reqiereWeek;
 
     private Pattern exactGroupPattern = Pattern.compile("\\b[А-яІіЇїЄє]{1,6}-(\\S){1,6}\\b");
     private Pattern teacherPattern = Pattern.compile("\\b[^.,\\s\\d]+(\\s[^.,\\d\\s]\\.?)?([^.,\\d\\s]\\.?)?");
 
 
 
-    public synchronized Action handleMessage(Message messageObj, Chat chat){
-        this.messageText = messageObj.getText();
+    public synchronized Action handleMessage(String messageText, long chatId){
+
+        String extratedData = extractData(messageText);
+        System.out.println("--------------"+extratedData);
+        this.chatId = chatId;
+        this.messageText = messageText;
         this.currdate = new Date();
+        this.reqiereWeek = parseWeek(messageText);
+        parseDate(extratedData);
 
-        parseDate(messageText);
+        Action tmpaction;
+
         Matcher matcher = exactGroupPattern.matcher(messageText);
-        if (matcher.find()) {
-            Action action = exactGroupCase(messageText);
-            if (action != null && !(action instanceof BadRequest))
-                return action;
+        if (matcher.find()){
+            tmpaction = exactGroupCase(messageText.substring(matcher.start(),matcher.end()));
+            if (tmpaction != null && !(tmpaction instanceof BadRequest))
+                return tmpaction;
         }
-        return bot -> {  };
+
+        matcher = teacherPattern.matcher(messageText);
+        if (matcher.find()) {
+            tmpaction = exactTeacherCase(messageText.substring(matcher.start(), matcher.end()));
+            if (tmpaction != null && !(tmpaction instanceof BadRequest))
+                return tmpaction;
+        }
+
+        String[] messagewords = messageText.split("\\s");
+        for (String word : messagewords) {
+            tmpaction = notExactGroupCase(word);
+            if (tmpaction != null && !(tmpaction instanceof BadRequest))
+                return tmpaction;
+            tmpaction = notExactTeacherCase(word);
+            if (tmpaction != null && !(tmpaction instanceof BadRequest))
+                return tmpaction;
+        }
+
+        return new BadRequest(chatId, messageText);
     }
 
-    public Action notExactGroupCase(String text){
-        return null;
+    private String extractData(String messageText) {
+        String[] words = messageText.split("\\s");
+        StringBuilder result = new StringBuilder();
+        if (words.length == 1)
+            return messageText;
+        else{
+            for (int i = 1; i <= words.length - 1; i++) {
+                result.append(words[i]);
+            }
+            return result.toString();
+        }
+
     }
 
-    public Action exactGroupCase(String text){
+    private Action exactTeacherCase(String text) {
+        String exactTeacherName = text.toUpperCase();
+        Teacher teacher = teacherService.findByName(exactTeacherName);
+        if (teacher != null){
+            return makeAction(teacher);
+        }
+        else
+            return notExactTeacherCase(exactTeacherName);
+    }
+
+    private Action notExactTeacherCase(String text) {
+        String notExactGroupName = text.toUpperCase();
+        String searchTeacherLine = teacherService.getSearchLine().toUpperCase();
+
+        String searchString = notExactGroupName;
+
+        for (int i = 0 ;
+             searchString.length() > 4;
+             searchString = notExactGroupName.substring(0,notExactGroupName.length()-i-1), i ++) {
+            if (searchTeacherLine.contains(searchString)){
+                Set<Object> teacherSet = new HashSet<>(teacherService.getByAlliesName(searchString));
+                if (teacherSet.size() == 1) {
+                    return makeAction(teacherSet.stream().findFirst().orElse(false));
+                }
+                return makeCollectAction(teacherSet);
+            }
+        }
+        return new BadRequest(chatId, this.messageText);
+    }
+
+    private Action exactGroupCase(String text){
         String exactGroupName = normalize(text);
         Group group = groupService.getByExactName(exactGroupName);
         if (group != null){
-
-//            factory
+            return makeAction(group);
         }
-        return null;
+        else
+            return notExactGroupCase(exactGroupName);
     }
 
+    private Action notExactGroupCase(String text){
+        String notExactGroupName = normalize(text);
+        String searchGroupLine = groupService.getSearchLine();
 
-    public Action alliesGroupMathcing(String groupName){
-        return null;
+        String searchString = notExactGroupName;
+
+        for (int i = 0 ;
+             searchString.length() >= 3;
+             searchString = notExactGroupName.substring(0,notExactGroupName.length()-i-1), i ++) {
+
+            if (searchGroupLine.contains(searchString)){
+                Set<Object> groupSet = new HashSet<>(groupService.getByAlliesName(searchString));
+                if (groupSet.size() == 1)
+                    return makeAction(groupSet.stream().findFirst().orElse(false));
+                return makeCollectAction(groupSet);
+            }
+        }
+        return new BadRequest(chatId, this.messageText);
+
     }
-
 
     private Set<Date> dates;
     private Pattern numbericDayPattern = Pattern.compile("\\d\\d?(\\p{Punct}|\\s)\\d\\d?");
-
     private void parseDate(String messageText) {
         dates = new LinkedHashSet<>();
         parseNumericDate(messageText);
         parseDOWDate(messageText);
         parseOffsetDate(messageText);
         dates.forEach(System.out::println);
+        if (dates.isEmpty())
+            dates.add(currdate);
     }
 
     private void parseNumericDate(String messageText){
@@ -119,6 +202,29 @@ public class MessageActionDispatcher {
             if (dayOfWeek != null)
                 dates.add(DayOfWeek.dayOfweekToDate(dayOfWeek, currdate));
         }
+    }
+
+    private boolean parseWeek(String messageText) {
+        String weekLine = messageText.toLowerCase();
+        for (String s : new HashSet<>(Arrays.asList("тиждень", "неделя", "week"))) {
+            if (weekLine.contains(s))
+                return true;
+        }
+        return false;
+    }
+
+    private Action makeAction(Object o){
+        if (reqiereWeek)
+            return factory.sendWeekDataAction(o, chatId, currdate, 0);
+        else
+            return factory.sendDayDataAction(o, chatId, dates, 0);
+    }
+
+    private Action makeCollectAction(Collection<Object> collection){
+        if (reqiereWeek)
+            return factory.sendWeekDataAction(collection,chatId,0, messageText);
+        else
+            return factory.sendDayDataAction(collection,chatId,0, messageText);
     }
 
     private String normalize(String initial){

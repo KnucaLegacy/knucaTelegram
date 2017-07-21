@@ -1,13 +1,9 @@
 package com.theopus.knucaTelegram.parser;
 
-import com.theopus.knucaTelegram.bot.MessageHandleService;
 import com.theopus.knucaTelegram.data.entity.Lesson;
 import org.junit.Test;
 
-import java.util.Date;
 import java.util.GregorianCalendar;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by irina on 04.07.17.

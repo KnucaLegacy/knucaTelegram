@@ -22,8 +22,6 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Resource
-    MessageHandleService messageHandleService;
-    @Resource
     MessageActionDispatcher dispatcher;
 
     @Value("${botName}")
@@ -58,14 +56,12 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
     @Override
     public void processNonCommandUpdate(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
-            messageHandleService.handle(update.getMessage(), null, this);
 
-            Action action = dispatcher.handleMessage(update.getMessage(), update.getMessage().getChat());
+            Action action = dispatcher.handleMessage(update.getMessage().getText(), update.getMessage().getChat().getId());
             action.execute(this);
 
 
         } else if (update.hasCallbackQuery()){
-            messageHandleService.handle(update.getCallbackQuery().getMessage(), update.getCallbackQuery().getData(), this);
         }
     }
 

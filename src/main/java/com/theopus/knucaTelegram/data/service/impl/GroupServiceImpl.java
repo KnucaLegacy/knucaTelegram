@@ -51,10 +51,13 @@ public class GroupServiceImpl implements GroupService {
                     .append(group.getName())
                     .append(";");
         });
+        searchLine = line.toString();
     }
 
     @Override
     public String getSearchLine() {
+        if (searchLine == null)
+            loadSearchLine();
         return searchLine;
     }
 

@@ -42,10 +42,13 @@ public class TeacherServiceImpl implements TeacherService {
                     .append(teacher.getName())
                     .append(";");
         });
+        searchLine = line.toString();
     }
 
     @Override
     public String getSearchLine() {
+        if (searchLine == null)
+            loadSearchLine();
         return searchLine;
     }
     @Override
@@ -85,7 +88,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public Set<Teacher> getByAlliesName(String name) {
-        return null;
+        return teacherRepository.findNameAlies(name);
     }
 
     @Override
@@ -103,8 +106,8 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public Collection<Teacher> getAll() {
-        return teacherRepository.findAll();
+    public Set<Teacher> getAll() {
+        return new HashSet<>(teacherRepository.findAll());
     }
 
     @Override

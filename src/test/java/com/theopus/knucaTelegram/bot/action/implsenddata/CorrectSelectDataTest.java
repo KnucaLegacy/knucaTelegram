@@ -25,7 +25,7 @@ public class CorrectSelectDataTest extends GenericDBWithDBCheck{
     public void buildMessage() throws Exception {
         Set<Group> set = groupService.getByAlliesName("іуст");
         Object o = set.stream().findFirst().orElse(null);
-        CorrectSelectData correctSelectData = new CorrectSelectData(new HashSet<>(set), new SendDayData(0, null, o, null, 0));
+        CorrectSelectData correctSelectData = new CorrectSelectData(new HashSet<>(set), new SendDayData(0, null, o, null, 0), "хуй");
         correctSelectData.buildMessage();
     }
 

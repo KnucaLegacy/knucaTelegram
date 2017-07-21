@@ -17,4 +17,7 @@ public interface TeacherService extends CustomService<Teacher>, SearchableServic
     void deleteById(long Id);
 
     void deleteTeacher(Teacher t);
+
+    @Override
+    Set<Teacher> getAll();
 }

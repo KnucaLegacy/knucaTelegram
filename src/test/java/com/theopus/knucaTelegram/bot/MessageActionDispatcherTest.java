@@ -1,7 +1,9 @@
 package com.theopus.knucaTelegram.bot;
 
+import com.theopus.knucaTelegram.bot.action.SingleDirSendMessageAction;
 import com.theopus.knucaTelegram.bot.action.facrory.BaseDataActionFactory;
 import com.theopus.knucaTelegram.bot.util.TelegramMessageFormater;
+import com.theopus.knucaTelegram.config.PersistenceConfig;
 import com.theopus.knucaTelegram.config.TestPersistenceConfig;
 import com.theopus.knucaTelegram.data.service.GroupService;
 import org.junit.Before;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.telegram.telegrambots.api.objects.Message;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
@@ -20,11 +23,10 @@ import java.util.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {
-        TestPersistenceConfig.class,
+        PersistenceConfig.class,
         MessageActionDispatcher.class,
         TelegramMessageFormater.class,
         BaseDataActionFactory.class})
-//@SpringBootTest
 public class MessageActionDispatcherTest {
 
     @Resource
@@ -47,5 +49,17 @@ public class MessageActionDispatcherTest {
     @Test
     public void testfactory() throws Exception {
 
+    }
+
+
+
+    @Test
+    public void firstCase() throws Exception {
+        long chatIdmock = 0;
+        String text = "иуст32";
+        SingleDirSendMessageAction act = (SingleDirSendMessageAction) messageActionDispatcher.handleMessage(text, chatIdmock);
+        act.buildMessage().forEach(sendMessage -> {
+            System.out.println(sendMessage.getText());
+        });
     }
 }

@@ -28,7 +28,7 @@ public class BaseDataActionFactoryTest extends GenericDBWithDBCheck{
     @Test
     public void testGetGroupDayInfo() throws Exception {
         Group group = groupService.getById(1);
-        baseDataActionFactory.sendExactDayDataAction(group,1, GlobalMocks.DATE_MOCK, 0)
+        baseDataActionFactory.sendDayDataAction(group,1, GlobalMocks.DATE_MOCK, 0)
                 .buildMessage().forEach(message -> {
             System.out.println(message.getText());
         });
