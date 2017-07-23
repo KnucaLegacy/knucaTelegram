@@ -22,8 +22,7 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Resource
-    MessageActionDispatcher dispatcher;
-
+    private MessageActionDispatcher messageDispatcher;
     @Value("${botName}")
     private String botName;
 
@@ -48,21 +47,25 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
         });
     }
 
-    @Override
-    public String getBotUsername() {
-        return botName;
-    }
 
     @Override
     public void processNonCommandUpdate(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
 
-            Action action = dispatcher.handleMessage(update.getMessage().getText(), update.getMessage().getChat().getId());
+            Action action = messageDispatcher.handleMessage(update.getMessage().getText(), update.getMessage().getChat().getId());
             action.execute(this);
 
 
         } else if (update.hasCallbackQuery()){
+            System.out.println(update.getCallbackQuery().getData());
+            Action action = messageDispatcher.handleMessage(update.getCallbackQuery().getData(),  update.getCallbackQuery().getMessage().getChatId());
+            action.execute(this);
         }
+    }
+
+    @Override
+    public String getBotUsername() {
+        return botName;
     }
 
     @Override

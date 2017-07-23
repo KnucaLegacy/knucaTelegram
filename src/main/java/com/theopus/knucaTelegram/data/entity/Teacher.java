@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class Teacher {
     @Column(name = "name")
     private String name;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "teachers", fetch = FetchType.LAZY)
     private Set<Lesson> lessons = new HashSet<>();
 

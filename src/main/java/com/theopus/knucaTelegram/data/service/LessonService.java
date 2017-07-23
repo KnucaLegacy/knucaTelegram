@@ -17,41 +17,20 @@ public interface LessonService extends CustomService<Lesson> {
 
     List<Lesson> getAll();
 
-    List<Lesson> getExactDayByGroup(Date date, String groupName, int offset);
-    /**
-     *
-     * @param date
-     * @param groupId
-     * @param offset :
-     *               0 today
-     *               <0 n days ago
-     *               >0 n days forwadr
-     * @return list of lessons at the exact day
-     */
-    List<Lesson> getExactDayByGroup(Date date, long groupId, int offset);
-    List<Lesson> getExactDayByGroup(Date date, Group group, int offset);
+    List<Lesson> getExactDayByGroup(Date date, String groupName);
+    List<Lesson> getExactDayByGroup(Date date, long groupId);
+    List<Lesson> getExactDayByGroup(Date date, Group group);
+    List<Lesson> getExactDayByTeacher(Date date, String teacherName);
+    List<Lesson> getExactDayByTeacher(Date date, long teacherId);
+    List<Lesson> getExactDayByTeacher(Date date, Teacher teacher);
 
-    List<Lesson> getExactDayByTeacher(Date date, String teacherName, int offset);
-    /**
-     *
-     * @param date
-     * @param teacherId
-     * @param offset :
-     *               0 today
-     *               <0 n days ago
-     *               >0 n days forwadr
-     * @return list of lessons at the exact day
-     */
-    List<Lesson> getExactDayByTeacher(Date date, long teacherId, int offset);
-    List<Lesson> getExactDayByTeacher(Date date, Teacher teacher, int offset);
+    Map<Date,List<Lesson>> getWeekByGroup(Date date, Group group);
+    Map<Date,List<Lesson>> getWeekByGroup(Date date, long groupId);
+    Map<Date,List<Lesson>> getWeekByGroup(Date date, String groupName);
 
-    Map<DayOfWeek,List<Lesson>> getWeekByGroup(Date date, Group group, int week);
-    Map<DayOfWeek,List<Lesson>> getWeekByGroup(Date date, long groupId, int week);
-    Map<DayOfWeek,List<Lesson>> getWeekByGroup(Date date, String groupName, int week);
-
-    Map<DayOfWeek,List<Lesson>> getWeekByTeacher(Date date, Teacher teacher, int week);
-    Map<DayOfWeek,List<Lesson>> getWeekByTeacher(Date date, long teacherId, int week);
-    Map<DayOfWeek,List<Lesson>> getWeekByTeacher(Date date, String teacherName, int week);
+    Map<Date,List<Lesson>> getWeekByTeacher(Date date, Teacher teacher);
+    Map<Date,List<Lesson>> getWeekByTeacher(Date date, long teacherId);
+    Map<Date,List<Lesson>> getWeekByTeacher(Date date, String teacherName);
 
     Map<Date, List<Lesson>> getByTeacher(Date from, Date to, Teacher teacher);
     Map<Date, List<Lesson>> getByTeacher(Date from, Date to, long teacherId);

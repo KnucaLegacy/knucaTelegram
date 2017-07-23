@@ -44,6 +44,7 @@ public class MessageActionDispatcher {
 
     private Pattern exactGroupPattern = Pattern.compile("\\b[А-яІіЇїЄє]{1,6}-(\\S){1,6}\\b");
     private Pattern teacherPattern = Pattern.compile("\\b[^.,\\s\\d]+(\\s[^.,\\d\\s]\\.?)?([^.,\\d\\s]\\.?)?");
+    private Pattern exactTeacherPattern = Pattern.compile("\\b((([^.,\\s\\d\\p{Punct}]{2,5}.)?[^.,\\s\\d\\p{Punct}]{2,4}\\.)|[^.,\\d\\s]{3,}\\.)\\s[^.,\\s\\d]+(\\s[^.,\\d\\s]\\.)?([^.,\\d\\s]\\.?)?");
 
 
 
@@ -66,7 +67,7 @@ public class MessageActionDispatcher {
                 return tmpaction;
         }
 
-        matcher = teacherPattern.matcher(messageText);
+        matcher = exactTeacherPattern.matcher(messageText);
         if (matcher.find()) {
             tmpaction = exactTeacherCase(messageText.substring(matcher.start(), matcher.end()));
             if (tmpaction != null && !(tmpaction instanceof BadRequest))
@@ -206,6 +207,10 @@ public class MessageActionDispatcher {
 
     private boolean parseWeek(String messageText) {
         String weekLine = messageText.toLowerCase();
+        if (weekLine.contains("nextweek")){
+            currdate = DayOfWeek.weekDateOffset(currdate, 1);
+            return true;
+        }
         for (String s : new HashSet<>(Arrays.asList("тиждень", "неделя", "week"))) {
             if (weekLine.contains(s))
                 return true;
@@ -224,7 +229,7 @@ public class MessageActionDispatcher {
         if (reqiereWeek)
             return factory.sendWeekDataAction(collection,chatId,0, messageText);
         else
-            return factory.sendDayDataAction(collection,chatId,0, messageText);
+            return factory.sendDayDataAction(collection,chatId, dates,0, messageText);
     }
 
     private String normalize(String initial){

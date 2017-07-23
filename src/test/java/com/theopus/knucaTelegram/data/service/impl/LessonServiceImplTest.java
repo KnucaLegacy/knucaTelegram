@@ -48,60 +48,6 @@ public class LessonServiceImplTest {
         em = emf.createEntityManager();
     }
 
-    @Test
-    public void testTest() throws Exception {
-        Map<DayOfWeek, List<Lesson>> weekByGroup = lessonServiceService.getWeekByGroup(dateMock ,
-                187, 0);
-
-        for (Map.Entry pair : weekByGroup.entrySet()) {
-            System.out.println(pair.getKey());
-            System.out.println(pair.getValue());
-        }
-    }
-
-    @Test
-    public void exactDayGroupSelect() throws Exception {
-        List<Lesson> lessons = lessonServiceService.getExactDayByGroup(
-                dateMock,
-                187,
-                1);
-
-        for (Lesson l : lessons) {
-            System.out.println(l);
-        }
-    }
-
-    @Test
-    public void getExactByTeacher() throws Exception {
-
-        Teacher teacher = teacherService.getById(555);
-        List<Lesson> byTeacher = lessonServiceService.getExactDayByTeacher(
-                dateMock,
-                teacher.getId(),
-                0
-        );
-
-        System.out.println(teacher);
-        for (Lesson lesson : byTeacher) {
-            System.out.println(lesson);
-        }
-    }
-
-    @Test
-    public void getWeekByTeacher() throws Exception {
-        Teacher teacher = teacherService.getById(1);
-        Map<DayOfWeek, List<Lesson>> weekByTeacher = lessonServiceService.getWeekByTeacher(
-                dateMock,
-                teacher.getId(),
-                0
-        );
-
-        System.out.println(teacher);
-        weekByTeacher.forEach((dayOfWeek, lessons) -> {
-            System.out.println(dayOfWeek);
-            lessons.forEach(System.out::println);
-        });
-    }
 
     @Test
     public void tofromtest() throws Exception {

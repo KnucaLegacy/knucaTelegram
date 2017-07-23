@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram.bot.action.implsenddata;
 
+import com.theopus.knucaTelegram.bot.util.KeyboardBuilder;
 import com.theopus.knucaTelegram.data.service.LessonService;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 
@@ -17,12 +18,20 @@ public class SendFewDaysData extends SendDayData {
         return "SendFewDaysData{" +
                 "dates=" + dates +
                 ", targetEnt=" + targetEnt +
-                ", offset=" + offset +
                 '}';
     }
 
-    public SendFewDaysData(long chatId, LessonService service, Object targetEnt, Date date, int offset, Set<Date> dates) {
-        super(chatId, service, targetEnt, date, offset);
+    @Override
+    public String getCallBackQuery() {
+        StringBuilder builder = new StringBuilder(super.getCallBackQuery());
+        dates.forEach(date1 -> {
+            builder.append(simpleDateFormat.format(date1)).append(" ");
+        });
+        return builder.toString();
+    }
+
+    public SendFewDaysData(long chatId, LessonService service, Object targetEnt, Date date, Set<Date> dates) {
+        super(chatId, service, targetEnt, date);
         this.dates = dates;
     }
 
@@ -32,8 +41,9 @@ public class SendFewDaysData extends SendDayData {
 
         dates.forEach(date1 -> {
             this.date = date1;
-            sendMessages.addAll(super.buildMessage());
+            sendMessages.add(super.buildMessage().stream().findFirst().orElse(null));
         });
+        sendMessages.add(getKeyBoard());
         return sendMessages;
     }
 }

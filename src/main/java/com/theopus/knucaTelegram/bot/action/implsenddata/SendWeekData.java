@@ -12,8 +12,8 @@ import java.util.*;
 
 public class SendWeekData extends SendDayData {
 
-    public SendWeekData(long chatId, LessonService service, Object targetEnt, Date date, int offset) {
-        super(chatId, service, targetEnt, date, offset);
+    public SendWeekData(long chatId, LessonService service, Object targetEnt, Date date) {
+        super(chatId, service, targetEnt, date);
     }
 
     @Override
@@ -25,30 +25,33 @@ public class SendWeekData extends SendDayData {
         return "SendDayData{" +
                 "targetEnt=" + targetEnt +
                 (this.date != null ? (", date=" + date) : "") +
-                ", offset=" + offset +
                 '}';
     }
 
     @Override
     public String getCallBackQuery() {
-        return toString();
+        StringBuilder builder = new StringBuilder(super.getCallBackQuery());
+        builder.append("week").append(" ");
+        return builder.toString();
     }
 
     @Override
     public Collection<SendMessage> buildMessage() {
-        Map<DayOfWeek, List<Lesson>> lessonMap = null;
+        Map<Date, List<Lesson>> lessonMap = null;
         if (targetEnt instanceof Group)
-            lessonMap = service.getWeekByGroup(date, (Group) targetEnt,offset);
+            lessonMap = service.getWeekByGroup(date, (Group) targetEnt);
         if (targetEnt instanceof Teacher)
-            lessonMap = service.getWeekByTeacher(date, (Teacher) targetEnt, offset);
+            lessonMap = service.getWeekByTeacher(date, (Teacher) targetEnt);
         Map<DayOfWeek, Date> dateMap = DayOfWeek.dateToDateMap(date);
 
-        Set<SendMessage> result = new HashSet<>();
-        Collection<String> strings = formater.weekLessonsToString(lessonMap, date, targetEnt);
+        Set<SendMessage> result = new LinkedHashSet<>();
 
-        strings.forEach(s -> result.add(new SendMessage()
+        lessonMap.forEach((date1, lessonList) -> {
+            result.add(new SendMessage()
                 .enableHtml(true)
-                .setText(s)));
+                .setText(formater.dayLessonsToString(lessonList,targetEnt,date1)));
+        });
+        result.add(getKeyBoard());
         return result;
     }
 }

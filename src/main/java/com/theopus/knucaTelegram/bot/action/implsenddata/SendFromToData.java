@@ -12,8 +12,15 @@ public class SendFromToData extends SendDayData {
 
     private Date to;
 
-    public SendFromToData(long chatId, LessonService service, Object targetEnt, Date date, Date to, int offset) {
-        super(chatId, service, targetEnt, date, offset);
+    @Override
+    public String getCallBackQuery() {
+        StringBuilder builder = new StringBuilder(super.getCallBackQuery());
+        builder.append(simpleDateFormat.format(to)).append(" ");
+        return builder.toString();
+    }
+
+    public SendFromToData(long chatId, LessonService service, Object targetEnt, Date date, Date to) {
+        super(chatId, service, targetEnt, date);
         this.to = to;
     }
 
@@ -37,6 +44,7 @@ public class SendFromToData extends SendDayData {
                                 .setText(formater.dayLessonsToString(lessonList1, targetEnt, dat)));
             });
         }
+        sendMessages.add(getKeyBoard());
         return sendMessages;
     }
 }

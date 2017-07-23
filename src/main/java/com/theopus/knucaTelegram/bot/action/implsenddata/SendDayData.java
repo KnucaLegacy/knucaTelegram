@@ -19,7 +19,6 @@ public class SendDayData extends SingleDirSendMessageAction implements CallBacka
 
     protected Object targetEnt;
     protected Date date;
-    protected int offset;
 
 
     @Override
@@ -31,21 +30,31 @@ public class SendDayData extends SingleDirSendMessageAction implements CallBacka
         return "SendDayData{" +
                 "targetEnt=" + targetEnt +
                 (this.date != null ? (", date=" + date) : "") +
-                ", offset=" + offset +
                 '}';
     }
 
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM");
     @Override
     public String getCallBackQuery() {
-        return toString();
+        StringBuilder builder = new StringBuilder();
+        if (targetEnt instanceof Group) {
+            Group group = (Group) targetEnt;
+            builder.append(group.getName()).append(" ");
+        }
+        if (targetEnt instanceof Teacher) {
+            Teacher teacher = (Teacher) targetEnt;
+            builder.append(teacher.getName()).append(" ");
+        }
+        if (date!=null)
+        builder.append(simpleDateFormat.format(date)).append(" ");
+        return builder.toString();
     }
 
-    public SendDayData(long chatId, LessonService service, Object targetEnt, Date date, int offset) {
+    public SendDayData(long chatId, LessonService service, Object targetEnt, Date date) {
         super(chatId);
         this.service = service;
         this.targetEnt = targetEnt;
         this.date = date;
-        this.offset = offset;
     }
 
     @Override
@@ -53,22 +62,27 @@ public class SendDayData extends SingleDirSendMessageAction implements CallBacka
         Set<SendMessage> resultSet = new LinkedHashSet<>();
         List<Lesson> lessonList = null;
         if (targetEnt instanceof Group)
-            lessonList = service.getExactDayByGroup(date, (Group) targetEnt, offset);
+            lessonList = service.getExactDayByGroup(date, (Group) targetEnt);
         if (targetEnt instanceof Teacher)
-            lessonList = service.getExactDayByTeacher(date, (Teacher) targetEnt, offset);
+            lessonList = service.getExactDayByTeacher(date, (Teacher) targetEnt);
         SendMessage sendMessage = new SendMessage();
         sendMessage
                 .setText(formater.dayLessonsToString(lessonList,targetEnt,date))
                 .enableHtml(true);
         resultSet.add(sendMessage);
+        resultSet.add(getKeyBoard());
         return resultSet;
+    }
+
+    protected SendMessage getKeyBoard(){
+       return new SendInlineKeyboard(chatId, targetEnt).buildMessage().stream().findFirst().orElse(null);
     }
 
     public Object getTargetEnt() {
         return targetEnt;
     }
 
-    public void setTargetEnt(Object targetEnt) {
+    void setTargetEnt(Object targetEnt) {
         this.targetEnt = targetEnt;
     }
 }

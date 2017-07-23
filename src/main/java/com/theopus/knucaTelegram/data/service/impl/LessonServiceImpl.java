@@ -70,21 +70,18 @@ public class LessonServiceImpl implements LessonService {
         return lessonRepository.count();
     }
 
-    private Map<DayOfWeek, List<Lesson>> sortByDayGroupWeekList(Date date, List<Lesson> lessons, int week){
+    private Map<Date, List<Lesson>> sortByDayGroupWeekList(Date date, List<Lesson> lessons){
         Set<Lesson> lessonList = new HashSet<>(lessons);
-        Map<DayOfWeek,List<Lesson>> resultMap = new TreeMap<>();
-        Map<DayOfWeek, Date> dateMap = DayOfWeek.dateToDateMap(
-                week == 0 ?
-                        date :
-                        DayOfWeek.weekDateOffset(date, week));
+        Map<Date,List<Lesson>> resultMap = new LinkedHashMap<>();
+        Map<DayOfWeek, Date> dateMap = DayOfWeek.dateToDateMap(date);
 
         for (Map.Entry<DayOfWeek, Date> dayDate : dateMap.entrySet()) {
-            resultMap.put(dayDate.getKey(), new ArrayList<>());
+            resultMap.put(dayDate.getValue(), new ArrayList<>());
             for (Lesson lesson : lessonList) {
                 if (lesson.getDayOfWeek().equals(dayDate.getKey()) && lesson.isAtDate(dayDate.getValue()))
                     resultMap.get(dayDate.getKey()).add(lesson);
             }
-            resultMap.get(dayDate.getKey()).sort((o1, o2) -> o1.getOrder().ordinal() - o2.getOrder().ordinal());
+            resultMap.get(dayDate.getValue()).sort((o1, o2) -> o1.getOrder().ordinal() - o2.getOrder().ordinal());
         }
         return resultMap;
     }
@@ -120,8 +117,7 @@ public class LessonServiceImpl implements LessonService {
     }
 
     @Override
-    public List<Lesson> getExactDayByGroup(Date date, String groupName, int offset) {
-        date = offset == 0 ? date : DayOfWeek.dayDateOffset(date, offset);
+    public List<Lesson> getExactDayByGroup(Date date, String groupName) {
         int dayOfWeek = DayOfWeek.dateToDayOfWeek(date).ordinal();
         List<Lesson> result = lessonRepository.findDayGroupName(dayOfWeek, groupName);
 
@@ -129,8 +125,7 @@ public class LessonServiceImpl implements LessonService {
     }
 
     @Override
-    public List<Lesson> getExactDayByGroup(Date date, long groupId, int offset) {
-        date = offset == 0 ? date : DayOfWeek.dayDateOffset(date, offset);
+    public List<Lesson> getExactDayByGroup(Date date, long groupId) {
         int dayOfWeek = DayOfWeek.dateToDayOfWeek(date).ordinal();
         List<Lesson> result = lessonRepository.findDayGroupID(dayOfWeek, groupId);
 
@@ -138,56 +133,55 @@ public class LessonServiceImpl implements LessonService {
     }
 
     @Override
-    public List<Lesson> getExactDayByGroup(Date date, Group group, int offset) {
-        return getExactDayByGroup(date, group.getId(), offset);
+    public List<Lesson> getExactDayByGroup(Date date, Group group) {
+        return getExactDayByGroup(date, group.getId());
     }
 
     @Override
-    public List<Lesson> getExactDayByTeacher(Date date, String teacherName, int offset) {
+    public List<Lesson> getExactDayByTeacher(Date date, String teacherName) {
         long teacherID = teacherService.findByName(teacherName).getId();
-        return getExactDayByTeacher(date, teacherID, offset);
+        return getExactDayByTeacher(date, teacherID);
     }
 
     @Override
-    public List<Lesson> getExactDayByTeacher(Date date, long teacherId, int offset) {
-        date = offset == 0 ? date : DayOfWeek.dayDateOffset(date, offset);
+    public List<Lesson> getExactDayByTeacher(Date date, long teacherId) {
         int dayOfWeek = DayOfWeek.dateToDayOfWeek(date).ordinal();
         List<Lesson> result = lessonRepository.findDayTeacherID(dayOfWeek, teacherId);
         return sortByDateList(date, result);
     }
 
     @Override
-    public List<Lesson> getExactDayByTeacher(Date date, Teacher teacher, int offset) {
-        return getExactDayByTeacher(date, teacher.getId(), offset);
+    public List<Lesson> getExactDayByTeacher(Date date, Teacher teacher) {
+        return getExactDayByTeacher(date, teacher.getId());
     }
 
     @Override
-    public Map<DayOfWeek, List<Lesson>> getWeekByGroup(Date date, Group group, int week) {
-        return getWeekByGroup(date, group.getId(), week);
+    public Map<Date, List<Lesson>> getWeekByGroup(Date date, Group group) {
+        return getWeekByGroup(date, group.getId());
     }
 
     @Override
-    public Map<DayOfWeek, List<Lesson>> getWeekByGroup(Date date, long groupId, int week) {
-        return sortByDayGroupWeekList(date, lessonRepository.getAllByGroupId(groupId), week);
+    public Map<Date, List<Lesson>> getWeekByGroup(Date date, long groupId) {
+        return sortByDayGroupWeekList(date, lessonRepository.getAllByGroupId(groupId));
     }
 
     @Override
-    public Map<DayOfWeek, List<Lesson>> getWeekByGroup(Date date, String groupName, int week) {
-        return sortByDayGroupWeekList(date, lessonRepository.getAllByGroupName(groupName), week);
+    public Map<Date, List<Lesson>> getWeekByGroup(Date date, String groupName) {
+        return sortByDayGroupWeekList(date, lessonRepository.getAllByGroupName(groupName));
     }
 
     @Override
-    public Map<DayOfWeek, List<Lesson>> getWeekByTeacher(Date date, Teacher teacher, int week) {
-        return getWeekByTeacher(date, teacher.getId(), week);
+    public Map<Date, List<Lesson>> getWeekByTeacher(Date date, Teacher teacher) {
+        return getWeekByTeacher(date, teacher.getId());
     }
 
     @Override
-    public Map<DayOfWeek, List<Lesson>> getWeekByTeacher(Date date, long teacherId, int week) {
-        return sortByDayGroupWeekList(date, lessonRepository.getAllByTeacherId(teacherId), week);
+    public Map<Date, List<Lesson>> getWeekByTeacher(Date date, long teacherId) {
+        return sortByDayGroupWeekList(date, lessonRepository.getAllByTeacherId(teacherId));
     }
 
     @Override
-    public Map<DayOfWeek, List<Lesson>> getWeekByTeacher(Date date, String teacherName, int week) {
+    public Map<Date, List<Lesson>> getWeekByTeacher(Date date, String teacherName) {
         return null;
     }
 

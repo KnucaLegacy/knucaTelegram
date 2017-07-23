@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class KeyboardBuilder {
 
-    public static InlineKeyboardMarkup gridInlineKeyBoard(Map<String, String> strings, int columns){
+    public static InlineKeyboardMarkup gridInlineKeyBoard(Map<String, String> titleQueryMap, int columns){
             InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
 
             List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
@@ -17,7 +17,7 @@ public class KeyboardBuilder {
 
 
             int i = 0;
-            for (Map.Entry<String, String> pair: strings.entrySet()) {
+            for (Map.Entry<String, String> pair: titleQueryMap.entrySet()) {
                 if (i % columns == 0){
                     rowsInline.add(rowInline);
                     rowInline = new ArrayList<>();
