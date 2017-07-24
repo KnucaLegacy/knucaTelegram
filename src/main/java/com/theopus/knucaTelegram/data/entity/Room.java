@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class Room {
     private String name;
 
     @OneToMany(mappedBy = "room")
+    @JsonIgnore
     private Set<RoomTimePeriod> roomTimePeriodSet;
 
     public Room() {

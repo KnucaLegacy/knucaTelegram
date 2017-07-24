@@ -10,7 +10,7 @@ public class FolderParserTest {
 
     @Test
     public void parseFolder() throws Exception {
-        new FolderParser().parseFolder("pdfs");
+        System.out.println(new FolderParser().parseFolder("pdfstest").size());
     }
 
 }

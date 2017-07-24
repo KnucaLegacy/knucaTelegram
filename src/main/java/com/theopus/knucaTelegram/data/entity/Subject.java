@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -18,6 +19,8 @@ public class Subject {
     @Column(name = "name")
     private String name;
 
+
+    @JsonIgnore
     @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
     private Set<Lesson> lessons;
 

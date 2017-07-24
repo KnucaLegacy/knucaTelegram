@@ -7,10 +7,7 @@ import com.theopus.knucaTelegram.data.entity.enums.LessonType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "lesson")
@@ -48,6 +45,9 @@ public class Lesson {
             joinColumns =@JoinColumn(name = "lesson_id"),
             inverseJoinColumns =@JoinColumn(name = "group_id") )
     private Set<Group> groups = new HashSet<>();
+
+    @Transient
+    private Group ownerGroup;
 
     public Lesson() {
     }
@@ -91,12 +91,16 @@ public class Lesson {
         Lesson lesson = (Lesson) o;
 
         if (order != lesson.order) return false;
+        if (dayofWeek != lesson.dayofWeek) return false;
         if (!subject.equals(lesson.subject)) return false;
         if (lessonType != lesson.lessonType) return false;
         //TODO: FIGUREOUT
-        if (!roomTimePeriod.equals(lesson.roomTimePeriod)) return false;
-        if (teachers != null ? !teachers.equals(lesson.teachers) : lesson.teachers != null) return false;
-        if (groups.containsAll(lesson.getGroups())) return true;
+//        if (!roomTimePeriod.equals(lesson.roomTimePeriod)) return false;
+        if (teachers != null ? !teachers.equals(lesson.teachers) : lesson. teachers != null) return false;
+        if (teachers.size() != lesson.getTeachers().size()) return false;
+        if (!teachers.containsAll(lesson.getTeachers())) return false;
+        if (groups.size() != lesson.groups.size()) return false;
+        if (!groups.containsAll(lesson.getGroups())) return false;
         return groups != null ? groups.equals(lesson.groups) : lesson.groups == null;
     }
 
@@ -104,11 +108,12 @@ public class Lesson {
     public int hashCode() {
         int result = (int) id;
         result = order == null ? result : order.hashCode();
+        result = dayofWeek == null ? result : dayofWeek.hashCode();
         result = subject == null ? result : 31 * result + subject.hashCode();
         result = lessonType == null ? result : 31 * result + lessonType.hashCode();
-        result = roomTimePeriod == null ? result : 31 * result + roomTimePeriod.hashCode();
-        result = teachers == null ? result : 31 * result + (teachers != null ? teachers.hashCode() : 0);
         result = groups == null ? result : 31 * result + (groups != null ? groups.hashCode() : 0);
+        result = teachers == null ? result : 31 * result + (teachers != null ? teachers.hashCode() : 0);
+        result = roomTimePeriod == null ? result : 31 * result + roomTimePeriod.hashCode();
         return result;
     }
 
@@ -212,5 +217,21 @@ public class Lesson {
                 ", teachers=" + teachers +
                 ", groups=" + groups +
                 '}';
+    }
+
+    public Group getOwnerGroup() {
+        return ownerGroup;
+    }
+
+    public void setOwnerGroup(Group ownerGroup) {
+        this.ownerGroup = ownerGroup;
+    }
+
+    public void extractNotOwnerGroups(){
+        groups.removeIf(group -> !group.equals(ownerGroup));
+    }
+
+    public void addAllRoomTimePeriod(Set<RoomTimePeriod> roomTimePeriod) {
+        this.roomTimePeriod.addAll(roomTimePeriod);
     }
 }

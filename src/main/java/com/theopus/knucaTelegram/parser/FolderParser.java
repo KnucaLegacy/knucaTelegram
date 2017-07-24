@@ -28,7 +28,7 @@ public class FolderParser {
         }
 
         long before = new Date().getTime();
-        ParserPDF.print(lessonList);
+        ParserUtils.print(lessonList);
         return lessonList;
     }
 }

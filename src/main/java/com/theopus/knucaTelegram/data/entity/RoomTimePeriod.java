@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -23,6 +24,7 @@ public class RoomTimePeriod {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "lesson_id")
+    @JsonIgnore
     private Lesson lesson;
 
     @OneToMany(mappedBy = "roomTimePeriod", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -55,6 +57,12 @@ public class RoomTimePeriod {
         if (this.lessonDate == null)
             this.lessonDate = new HashSet<>();
         return this.lessonDate.add(lessonDate);
+    }
+
+    public boolean addAllLessonDate(Set<LessonDate> lessonDates){
+        if (this.lessonDate == null)
+            this.lessonDate = new HashSet<>();
+        return this.lessonDate.addAll(lessonDates);
     }
 
     public Set<LessonDate> getLessonDate() {

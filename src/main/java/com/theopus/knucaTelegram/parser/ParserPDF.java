@@ -2,7 +2,6 @@ package com.theopus.knucaTelegram.parser;
 
 import com.theopus.knucaTelegram.data.entity.*;
 import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
-import com.theopus.knucaTelegram.data.entity.enums.LessonOrder;
 import com.theopus.knucaTelegram.data.entity.enums.LessonType;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSDocument;
@@ -91,7 +90,7 @@ public class ParserPDF {
         if (matcher.find())
             dateString = text.substring(matcher.start(),matcher.end());
         int day = Integer.parseInt(dateString.split(" ")[0]);
-        int month = ukrMothToNumber(dateString.split(" ")[1]);
+        int month = ParserUtils.ukrMothToNumber(dateString.split(" ")[1]);
         int year = Integer.parseInt(dateString.split(" ")[2]);
 
         GregorianCalendar gregorianCalendar = new GregorianCalendar(year,month,day);
@@ -195,7 +194,7 @@ public class ParserPDF {
             }
         }
 //        print(strings);
-        printMap(lessonGroup);
+        ParserUtils.printMap(lessonGroup);
         System.out.println(groupMap);
         System.out.println(groupsIndexes);
         return lessonGroup;
@@ -264,8 +263,8 @@ public class ParserPDF {
         String labeledMaxToDay = labeledGroupPlusDayPlusMaxToDay.split(" ")[2].trim();
 
         Lesson lesson = new Lesson();
-        lesson.setDayOfWeek(stringToDayOfWeek(labeledDayOfWeek));
-        lesson.setOrder(timeToOrder(lessonTime));
+        lesson.setDayOfWeek(ParserUtils.stringToDayOfWeek(labeledDayOfWeek));
+        lesson.setOrder(ParserUtils.timeToOrder(lessonTime));
         lesson.setSubject(new Subject(parseSubjName(lessonLine)));
         lesson.setLessonType(parseLessonType(lessonLine));
         lesson.setRoomTimePeriod(parseRoomTimePeriod(lessonLine, labeledMaxToDay, lesson.getDayOfWeek()));
@@ -481,77 +480,6 @@ public class ParserPDF {
         int month = Integer.parseInt(dateMonth[1]);
         int year = calendar.get(Calendar.YEAR);
         return new GregorianCalendar(year,month - 1,day).getTime();
-    }
-
-    private DayOfWeek stringToDayOfWeek(String s){
-        Pattern dayOfAWeek = Pattern.compile("" +
-                "([^|]Понеділок)|" +
-                "([^|]Вівторок)|" +
-                "([^|]Середа)|" +
-                "([^|]Четвер)|" +
-                "([^|]П'ятниця)" +
-                "|([^|]Субота)");
-        switch (s){
-            case "Понеділок":
-                return DayOfWeek.MONDAY;
-            case "Вівторок":
-                return DayOfWeek.TUESDAY;
-            case "Середа":
-                return DayOfWeek.WEDNESDAY;
-            case "Четвер":
-                return DayOfWeek.THURSDAY;
-            case "П'ятниця":
-                return DayOfWeek.FRIDAY;
-            case "Субота":
-                return DayOfWeek.SATURDAY;
-            default:
-                return DayOfWeek.SUNDAY;
-        }
-    }
-
-    public static LessonOrder timeToOrder(String string){
-        switch (string){
-            case "9:00": return LessonOrder.FIRST;
-            case "10:30": return LessonOrder.SECOND;
-            case "12:20": return LessonOrder.THIRD;
-            case "13:50": return LessonOrder.FOURTH;
-            case "15:20": return LessonOrder.FIFTH;
-            case "16:50": return LessonOrder.SIXTH;
-            case "18:20": return LessonOrder.SEVENTH;
-            default: return LessonOrder.OUT_OF_SCHEDULE;
-        }
-    }
-
-    public static void printMap(Map<String,String> map){
-        for (Map.Entry<String, String> pair: map.entrySet()) {
-            System.out.println(pair.getKey() + " " + pair.getValue());
-        }
-    }
-
-    public static void print(Collection strings){
-        for (Object o :
-                strings) {
-            System.out.println(o);
-        }
-    }
-
-    public static int ukrMothToNumber(String month){
-        month = month.toLowerCase();
-        switch (month){
-            case "січня": return 0;
-            case "лютого": return 1;
-            case "березня": return 2;
-            case "квітня": return 3;
-            case "травня": return 4;
-            case "червня": return 5;
-            case "липня": return 6;
-            case "серпня": return 7;
-            case "вересня": return 8;
-            case "жовтня": return 9;
-            case "листопада": return 10;
-            case "грудня": return 11;
-            default:return 0;
-        }
     }
 
 }
