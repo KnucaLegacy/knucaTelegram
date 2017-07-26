@@ -87,11 +87,11 @@ public class TelegramMessageFormater {
     }
 
     public String groupHeader(Group group){
-        return new StringBuilder().append("<b>").append(group.getName()).append("</b>").append("\n").toString();
+        return "<b>" + group.getName() + "</b>" + "\n";
     }
 
     public String teacherHeader(Teacher teacher){
-        return new StringBuilder().append("<b>").append(teacher.getName()).append("</b>").append("\n").toString();
+        return "<b>" + teacher.getName() + "</b>" + "\n";
     }
 
     private String noLessonsMessage(){

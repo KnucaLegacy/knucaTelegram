@@ -1,6 +1,7 @@
 package com.theopus.knucaTelegram.parser;
 
 import com.theopus.knucaTelegram.data.entity.Lesson;
+import com.theopus.knucaTelegram.parser.ver20.ParserUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -3,6 +3,7 @@ package com.theopus.knucaTelegram.parser;
 import com.theopus.knucaTelegram.data.entity.*;
 import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
 import com.theopus.knucaTelegram.data.entity.enums.LessonType;
+import com.theopus.knucaTelegram.parser.ver20.ParserUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.pdfparser.PDFParser;

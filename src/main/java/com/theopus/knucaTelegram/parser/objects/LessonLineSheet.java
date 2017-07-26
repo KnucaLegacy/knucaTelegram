@@ -3,7 +3,9 @@ package com.theopus.knucaTelegram.parser.objects;
 import com.theopus.knucaTelegram.data.entity.*;
 import com.theopus.knucaTelegram.data.entity.enums.LessonOrder;
 import com.theopus.knucaTelegram.data.entity.enums.LessonType;
-import com.theopus.knucaTelegram.parser.ParserUtils;
+import com.theopus.knucaTelegram.data.entity.proxy.LessonProxy;
+import com.theopus.knucaTelegram.data.entity.proxy.RoomDateProxy;
+import com.theopus.knucaTelegram.parser.ver20.ParserUtils;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -15,22 +17,21 @@ public class LessonLineSheet {
     private String line;
     private DayLessonListSheet parent;
     private LessonOrder lessonOrder;
-    private Lesson lesson;
+    private LessonProxy lesson;
 
 
     public LessonLineSheet(String line, DayLessonListSheet parent, LessonOrder lessonOrder) {
         this.line = line;
         this.parent = parent;
         this.lessonOrder = lessonOrder;
-        this.lesson = new Lesson();
+        this.lesson = new LessonProxy();
         this.lesson.setOwnerGroup(parent.getParent().getGroup());
         this.lesson.addGroup(parent.getParent().getGroup());
         this.lesson.setOrder(lessonOrder);
-        this.lesson.setDayOfWeek(parent.getDayOfWeek());
 
     }
 
-    public Lesson parse(){
+    public LessonProxy parse(){
         String[] lessonLine = line.split(";");
         StringBuilder rightSB = new StringBuilder();
         for (int i = 1; i < lessonLine.length; i++) {
@@ -43,8 +44,9 @@ public class LessonLineSheet {
         this.lesson.setSubject(parseSubject(leftSide));
         this.lesson.setLessonType(parseLessonType(leftSide));
         this.lesson.getTeachers().addAll(parseTeachers(rightSide));
-        this.lesson.getGroups().addAll(parseGroups(rightSide));
-        this.lesson.setRoomTimePeriod(parserRTP(rightSide));
+//        this.lesson.getGroups().addAll(parseGroups(rightSide));
+        Set<RoomTimePeriod> rtp = parserRTP(rightSide);
+        this.lesson.addAllRoomDateProxy(parseDates(rtp));
         return this.lesson;
     }
 
@@ -52,6 +54,31 @@ public class LessonLineSheet {
     private final static Pattern EXACT_DAY_PATTERN = Pattern.compile("(^|([^доз]\\s))(\\d?\\d\\.\\d\\d)");
     private final static Pattern FROM_DAY_PATTERN = Pattern.compile("з\\s(\\d?\\d\\.\\d\\d)");
     private final static Pattern TO_DAY_PATTERN = Pattern.compile("до\\s(\\d?\\d\\.\\d\\d)");
+
+
+    private Set<RoomDateProxy> parseDates(Set<RoomTimePeriod> rtp){
+        Set<RoomDateProxy> roomDate = new HashSet<>();
+
+        rtp.forEach(roomTimePeriod -> {
+            roomDate.add(new RoomDateProxy(roomTimePeriod.getRoom(),parseLessonDates(roomTimePeriod.getLessonDate())));
+        });
+        return roomDate;
+    }
+
+    private Set<Date> parseLessonDates(Set<LessonDate> lessonDates){
+        Set<Date> result = new HashSet<>();
+        lessonDates.forEach(lessonDate -> {
+            if (lessonDate.getSingleDate() != null){
+                result.add(lessonDate.getSingleDate());
+            }
+            if (lessonDate.getFromDate() != null && lessonDate.getToDate() != null){
+                result.addAll(ParserUtils.fromToToDatesSet(lessonDate.getFromDate(),lessonDate.getToDate(), parent.getDayOfWeek()));
+            }
+
+        });
+        return result;
+    }
+
 
     private Set<RoomTimePeriod> parserRTP(String rightSide){
         Pattern p = Pattern.compile("\\[(.*?)\\]");

@@ -48,14 +48,7 @@ public class FilePDFTest {
         System.out.println(lessonLineSheets.size() + " lessonlines to process.");
         Map<String,Lesson> lessons = new LinkedHashMap<>();
 
-        i = 0;
-        for (LessonLineSheet lessonLineSheet : lessonLineSheets) {
-            if (delta != 0)
-                if (i % delta == 0)
-                    System.out.print("..");
-            lessons.put(lessonLineSheet.getLine(), lessonLineSheet.parse());
-            i++;
-        }
+
     }
 
     @Test
