@@ -1,14 +1,8 @@
 package com.theopus.knucaTelegram.bot;
 
-import com.theopus.knucaTelegram.data.entity.Group;
-import com.theopus.knucaTelegram.data.entity.Lesson;
-import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
+import com.theopus.knucaTelegram.entity.Lesson;
 import com.theopus.knucaTelegram.parser.ParserPDF;
 import org.junit.Test;
-
-import java.util.Date;
-
-import static org.junit.Assert.*;
 
 public class MessageHandleServiceTest {
     @Test
@@ -20,6 +14,6 @@ public class MessageHandleServiceTest {
 
     @Test
     public void dateFormatTest() throws Exception {
-//        System.out.println(new MessageHandleService().(DayOfWeek.MONDAY,new Date(), new Group("Test-28")));
+//        System.out.println(new MessageHandleService().(DayOfWeek.MONDAY,new Date(), new GroupProxy("Test-28")));
     }
 }

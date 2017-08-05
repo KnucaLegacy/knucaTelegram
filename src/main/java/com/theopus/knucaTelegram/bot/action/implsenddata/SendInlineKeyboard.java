@@ -2,8 +2,8 @@ package com.theopus.knucaTelegram.bot.action.implsenddata;
 
 import com.theopus.knucaTelegram.bot.action.SingleDirSendMessageAction;
 import com.theopus.knucaTelegram.bot.util.KeyboardBuilder;
-import com.theopus.knucaTelegram.data.entity.Group;
-import com.theopus.knucaTelegram.data.entity.Teacher;
+import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.Teacher;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 
 import java.util.*;

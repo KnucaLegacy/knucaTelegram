@@ -1,10 +1,11 @@
 package com.theopus.knucaTelegram.bot.util;
 
-import com.theopus.knucaTelegram.data.entity.Group;
-import com.theopus.knucaTelegram.data.entity.Lesson;
-import com.theopus.knucaTelegram.data.entity.Teacher;
-import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
-import com.theopus.knucaTelegram.data.entity.enums.LessonOrder;
+import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.Lesson;
+import com.theopus.knucaTelegram.entity.SimpleLesson;
+import com.theopus.knucaTelegram.entity.Teacher;
+import com.theopus.knucaTelegram.entity.enums.DayOfWeek;
+import com.theopus.knucaTelegram.entity.enums.LessonOrder;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.DateFormat;
@@ -13,6 +14,47 @@ import java.util.*;
 
 
 public class TelegramMessageFormater {
+
+    public String toDayMessage(Collection<SimpleLesson> lessons, Object o, Date defaultDate){
+        StringBuilder message = new StringBuilder();
+        if (o instanceof Group)
+            message.append(groupHeader((Group) o));
+        if (o instanceof Teacher)
+            message.append(teacherHeader((Teacher) o));
+        if (lessons.isEmpty()){
+            message.append(dateHeader(defaultDate));
+            message.append(noLessonsMessage());
+            return message.toString();
+        }
+        Date date = lessons.stream().findFirst().orElse(null).getDate();
+        message.append(dateHeader(date));
+        lessons.forEach(simpleLesson -> message.append(simpleLessonToString(simpleLesson)).append("\n"));
+        return message.toString();
+    }
+
+    public String simpleLessonToString(SimpleLesson l){
+        StringBuilder lessonBuilder = new StringBuilder();
+        lessonBuilder.append("<b>").append("| ").append(LessonOrder.toTimeString(l.getOrder())).append(" | ").append("</b>");
+        lessonBuilder.append(l.getSubject().getName()).append(" | ").append("\n");
+        lessonBuilder.append(" |");
+        l.getRooms().forEach(room -> lessonBuilder.append(replaceDiamonds(room.getName())).append(" | "));
+        lessonBuilder.append(l.getLessonType().toString()).append(" |");
+        lessonBuilder.append("\n |");
+        l.getTeachers().forEach(t -> lessonBuilder.append(t.getName()).append(" | "));
+        lessonBuilder.append("\n |");
+        l.getGroups().forEach(group -> lessonBuilder.append(group.getName()).append(" | "));
+        lessonBuilder.append("\n ");
+        return lessonBuilder.toString();
+    }
+
+    public Collection<String> toDaysMessage(Map<Date,List<SimpleLesson>> dateLessonMap, Object o){
+        List<String> messages = new ArrayList<>();
+        dateLessonMap.forEach((date, simpleLessons) -> {
+            messages.add(toDayMessage(simpleLessons,o,date));
+        });
+        return messages;
+    }
+
 
     public Collection<String> weekLessonsToString(Map<DayOfWeek, List<Lesson>> lessonMap, Date weekDate, Object o){
         Map<DayOfWeek, Date> dateMap = DayOfWeek.dateToDateMap(weekDate);
@@ -58,10 +100,12 @@ public class TelegramMessageFormater {
 
     private String lessonToString(Lesson l, Date date){
         StringBuilder lessonBuilder = new StringBuilder();
-        lessonBuilder.append("<b>").append("| ").append(LessonOrder.toTimeString(l.getOrder())).append(" | ").append("</b>");
+        //TODO: lessonchange
+//        lessonBuilder.append("<b>").append("| ").append(LessonOrder.toTimeString(l.getOrder())).append(" | ").append("</b>");
         lessonBuilder.append(l.getSubject().getName()).append(" | ").append("\n");
         lessonBuilder.append(" |");
-        l.getRoomByDate(date).forEach(r -> lessonBuilder.append(replaceDiamonds(r.getName())).append(" | "));
+        //TODO: lessonchange
+//        l.getRoomByDate(date).forEach(r -> lessonBuilder.append(replaceDiamonds(r.getName())).append(" | "));
         lessonBuilder.append(l.getLessonType().toString()).append(" |");
         lessonBuilder.append("\n |");
         l.getTeachers().forEach(t -> lessonBuilder.append(t.getName()).append(" | "));

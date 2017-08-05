@@ -1,7 +1,7 @@
 package com.theopus.knucaTelegram.parser;
 
-import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
-import com.theopus.knucaTelegram.parser.ver20.ParserUtils;
+import com.theopus.knucaTelegram.entity.enums.DayOfWeek;
+import com.theopus.knucaTelegram.parser.core.ParserUtils;
 import org.junit.Test;
 
 import java.util.Date;

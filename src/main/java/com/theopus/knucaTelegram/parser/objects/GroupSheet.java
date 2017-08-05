@@ -1,8 +1,8 @@
 package com.theopus.knucaTelegram.parser.objects;
 
-import com.theopus.knucaTelegram.data.entity.Group;
-import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
-import com.theopus.knucaTelegram.parser.ver20.ParserUtils;
+import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.enums.DayOfWeek;
+import com.theopus.knucaTelegram.parser.core.ParserUtils;
 
 import java.util.*;
 import java.util.regex.Matcher;

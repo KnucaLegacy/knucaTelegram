@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="knuca@localhost" uuid="69bbced2-75be-4ad2-8aef-9b4e6c7b2ea8">
+    <data-source source="LOCAL" name="knuca20@localhost" uuid="5843079b-a94b-4824-94ce-ac321ab88b56">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/knuca</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/knuca20</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

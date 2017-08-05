@@ -1,9 +1,14 @@
 package com.theopus.knucaTelegram.parser;
 
-import com.theopus.knucaTelegram.data.entity.*;
-import com.theopus.knucaTelegram.data.entity.enums.DayOfWeek;
-import com.theopus.knucaTelegram.data.entity.enums.LessonType;
-import com.theopus.knucaTelegram.parser.ver20.ParserUtils;
+import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.Lesson;
+import com.theopus.knucaTelegram.entity.Room;
+import com.theopus.knucaTelegram.entity.Teacher;
+import com.theopus.knucaTelegram.entity.enums.DayOfWeek;
+import com.theopus.knucaTelegram.entity.enums.LessonType;
+import com.theopus.knucaTelegram.parser.core.ParserUtils;
+import com.theopus.knucaTelegram.parser.objects.entity.LessonDate;
+import com.theopus.knucaTelegram.parser.objects.entity.RoomTimePeriod;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.pdfbox.cos.COSDocument;
 import org.apache.pdfbox.pdfparser.PDFParser;
@@ -264,11 +269,11 @@ public class ParserPDF {
         String labeledMaxToDay = labeledGroupPlusDayPlusMaxToDay.split(" ")[2].trim();
 
         Lesson lesson = new Lesson();
-        lesson.setDayOfWeek(ParserUtils.stringToDayOfWeek(labeledDayOfWeek));
-        lesson.setOrder(ParserUtils.timeToOrder(lessonTime));
-        lesson.setSubject(new Subject(parseSubjName(lessonLine)));
-        lesson.setLessonType(parseLessonType(lessonLine));
-        lesson.setRoomTimePeriod(parseRoomTimePeriod(lessonLine, labeledMaxToDay, lesson.getDayOfWeek()));
+//        lesson.setDayOfWeek(ParserUtils.stringToDayOfWeek(labeledDayOfWeek));
+//        lesson.setOrder(ParserUtils.timeToOrder(lessonTime));
+//        lesson.setSubject(new Subject(parseSubjName(lessonLine)));
+//        lesson.setLessonType(parseLessonType(lessonLine));
+//        lesson.setRoomTimePeriod(parseRoomTimePeriod(lessonLine, labeledMaxToDay, lesson.getDayOfWeek()));
         lesson.setGroups(parseGroups(lessonLine,labeledGroup));
         lesson.setTeachers(parseTeachers(lessonLine));
         System.out.println(lesson);

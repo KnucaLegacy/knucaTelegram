@@ -18,9 +18,9 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.theopus.knucaTelegram.data")
+@ComponentScan("com.theopus.knucaTelegram")
 @PropertySource(value = {"classpath:presistence-mysql-test.properties", "classpath:application.properties"})
-@EnableJpaRepositories("com.theopus.knucaTelegram.data.repository")
+@EnableJpaRepositories("com.theopus.knucaTelegram.service.data.repository")
 public class TestPersistenceConfig {
 
     @Autowired
@@ -53,7 +53,7 @@ public class TestPersistenceConfig {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource());
         entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        entityManagerFactoryBean.setPackagesToScan("com.theopus.knucaTelegram.data.entity");
+        entityManagerFactoryBean.setPackagesToScan("com.theopus.knucaTelegram.entity");
 
         entityManagerFactoryBean.setJpaProperties(getHibernateProperties());
 

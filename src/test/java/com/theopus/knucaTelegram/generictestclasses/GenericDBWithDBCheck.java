@@ -2,12 +2,13 @@ package com.theopus.knucaTelegram.generictestclasses;
 
 import com.theopus.knucaTelegram.config.PersistenceConfig;
 import com.theopus.knucaTelegram.config.TestPersistenceConfig;
-import com.theopus.knucaTelegram.data.entity.Group;
-import com.theopus.knucaTelegram.data.entity.Teacher;
-import com.theopus.knucaTelegram.data.service.GroupService;
-import com.theopus.knucaTelegram.data.service.LessonService;
-import com.theopus.knucaTelegram.data.service.TeacherService;
+import com.theopus.knucaTelegram.entity.Lesson;
+import com.theopus.knucaTelegram.service.data.GroupService;
+import com.theopus.knucaTelegram.service.data.LessonService;
+import com.theopus.knucaTelegram.service.data.TeacherService;
+import com.theopus.knucaTelegram.parser.core.MainParser;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -15,10 +16,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import java.util.Set;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = TestPersistenceConfig.class)
 public class GenericDBWithDBCheck {
+
+
     @Resource
     protected LessonService lessonService;
     @Resource
@@ -33,5 +37,11 @@ public class GenericDBWithDBCheck {
     @Before
     public void setUp() throws Exception {
         em = emf.createEntityManager();
+    }
+
+    @Test
+    public void name() throws Exception {
+        Set<Lesson> pdfs20 = MainParser.parseFolder("pdfs20");
+        lessonService.saveAll(pdfs20);
     }
 }

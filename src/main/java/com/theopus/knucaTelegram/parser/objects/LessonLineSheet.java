@@ -1,11 +1,16 @@
 package com.theopus.knucaTelegram.parser.objects;
 
-import com.theopus.knucaTelegram.data.entity.*;
-import com.theopus.knucaTelegram.data.entity.enums.LessonOrder;
-import com.theopus.knucaTelegram.data.entity.enums.LessonType;
-import com.theopus.knucaTelegram.data.entity.proxy.LessonProxy;
-import com.theopus.knucaTelegram.data.entity.proxy.RoomDateProxy;
-import com.theopus.knucaTelegram.parser.ver20.ParserUtils;
+import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.Room;
+import com.theopus.knucaTelegram.entity.Subject;
+import com.theopus.knucaTelegram.entity.Teacher;
+import com.theopus.knucaTelegram.entity.enums.LessonOrder;
+import com.theopus.knucaTelegram.entity.enums.LessonType;
+import com.theopus.knucaTelegram.parser.core.ParserUtils;
+import com.theopus.knucaTelegram.parser.objects.entity.LessonDate;
+import com.theopus.knucaTelegram.parser.objects.entity.LessonProxy;
+import com.theopus.knucaTelegram.parser.objects.entity.RoomDateProxy;
+import com.theopus.knucaTelegram.parser.objects.entity.RoomTimePeriod;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -27,8 +32,6 @@ public class LessonLineSheet {
         this.lesson = new LessonProxy();
         this.lesson.setOwnerGroup(parent.getParent().getGroup());
         this.lesson.addGroup(parent.getParent().getGroup());
-        this.lesson.setOrder(lessonOrder);
-
     }
 
     public LessonProxy parse(){
@@ -59,9 +62,7 @@ public class LessonLineSheet {
     private Set<RoomDateProxy> parseDates(Set<RoomTimePeriod> rtp){
         Set<RoomDateProxy> roomDate = new HashSet<>();
 
-        rtp.forEach(roomTimePeriod -> {
-            roomDate.add(new RoomDateProxy(roomTimePeriod.getRoom(),parseLessonDates(roomTimePeriod.getLessonDate())));
-        });
+        rtp.forEach(roomTimePeriod -> roomDate.add(new RoomDateProxy(lessonOrder, roomTimePeriod.getRoom(),parseLessonDates(roomTimePeriod.getLessonDate()))));
         return roomDate;
     }
 

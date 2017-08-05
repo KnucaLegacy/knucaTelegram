@@ -4,8 +4,7 @@ import com.theopus.knucaTelegram.bot.action.SingleDirSendMessageAction;
 import com.theopus.knucaTelegram.bot.action.facrory.BaseDataActionFactory;
 import com.theopus.knucaTelegram.bot.util.TelegramMessageFormater;
 import com.theopus.knucaTelegram.config.PersistenceConfig;
-import com.theopus.knucaTelegram.config.TestPersistenceConfig;
-import com.theopus.knucaTelegram.data.service.GroupService;
+import com.theopus.knucaTelegram.service.data.GroupService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.telegram.telegrambots.api.objects.Message;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;

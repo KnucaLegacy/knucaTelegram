@@ -1,13 +1,11 @@
 package com.theopus.knucaTelegram.parser.objects;
 
-import com.theopus.knucaTelegram.data.entity.Lesson;
+import com.theopus.knucaTelegram.entity.Lesson;
 import org.junit.Test;
 
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static org.junit.Assert.*;
 
 public class FilePDFTest {
     @Test

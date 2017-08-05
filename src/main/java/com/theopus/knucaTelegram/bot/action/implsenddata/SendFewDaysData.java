@@ -1,7 +1,7 @@
 package com.theopus.knucaTelegram.bot.action.implsenddata;
 
-import com.theopus.knucaTelegram.bot.util.KeyboardBuilder;
-import com.theopus.knucaTelegram.data.service.LessonService;
+import com.theopus.knucaTelegram.service.data.LessonService;
+import com.theopus.knucaTelegram.service.data.SimpleLessonService;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 
 import java.util.Collection;
@@ -30,7 +30,7 @@ public class SendFewDaysData extends SendDayData {
         return builder.toString();
     }
 
-    public SendFewDaysData(long chatId, LessonService service, Object targetEnt, Date date, Set<Date> dates) {
+    public SendFewDaysData(long chatId, SimpleLessonService service, Object targetEnt, Date date, Set<Date> dates) {
         super(chatId, service, targetEnt, date);
         this.dates = dates;
     }

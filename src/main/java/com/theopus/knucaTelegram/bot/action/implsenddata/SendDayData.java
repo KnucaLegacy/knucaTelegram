@@ -3,10 +3,12 @@ package com.theopus.knucaTelegram.bot.action.implsenddata;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.theopus.knucaTelegram.bot.action.CallBackable;
 import com.theopus.knucaTelegram.bot.action.SingleDirSendMessageAction;
-import com.theopus.knucaTelegram.data.entity.Group;
-import com.theopus.knucaTelegram.data.entity.Lesson;
-import com.theopus.knucaTelegram.data.entity.Teacher;
-import com.theopus.knucaTelegram.data.service.LessonService;
+import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.Lesson;
+import com.theopus.knucaTelegram.entity.SimpleLesson;
+import com.theopus.knucaTelegram.entity.Teacher;
+import com.theopus.knucaTelegram.service.data.LessonService;
+import com.theopus.knucaTelegram.service.data.SimpleLessonService;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 
 import java.text.SimpleDateFormat;
@@ -15,7 +17,7 @@ import java.util.*;
 public class SendDayData extends SingleDirSendMessageAction implements CallBackable{
 
     @JsonIgnore
-    protected LessonService service;
+    protected SimpleLessonService service;
 
     protected Object targetEnt;
     protected Date date;
@@ -50,7 +52,7 @@ public class SendDayData extends SingleDirSendMessageAction implements CallBacka
         return builder.toString();
     }
 
-    public SendDayData(long chatId, LessonService service, Object targetEnt, Date date) {
+    public SendDayData(long chatId, SimpleLessonService service, Object targetEnt, Date date) {
         super(chatId);
         this.service = service;
         this.targetEnt = targetEnt;
@@ -60,14 +62,14 @@ public class SendDayData extends SingleDirSendMessageAction implements CallBacka
     @Override
     public Collection<SendMessage> buildMessage() {
         Set<SendMessage> resultSet = new LinkedHashSet<>();
-        List<Lesson> lessonList = null;
+        List<SimpleLesson> lessonList = null;
         if (targetEnt instanceof Group)
-            lessonList = service.getExactDayByGroup(date, (Group) targetEnt);
+            lessonList = service.getByGroup(date, (Group) targetEnt);
         if (targetEnt instanceof Teacher)
-            lessonList = service.getExactDayByTeacher(date, (Teacher) targetEnt);
+            lessonList = service.getByTeacher(date, (Teacher) targetEnt);
         SendMessage sendMessage = new SendMessage();
         sendMessage
-                .setText(formater.dayLessonsToString(lessonList,targetEnt,date))
+                .setText(formater.toDayMessage(lessonList,targetEnt,date))
                 .enableHtml(true);
         resultSet.add(sendMessage);
         resultSet.add(getKeyBoard());
