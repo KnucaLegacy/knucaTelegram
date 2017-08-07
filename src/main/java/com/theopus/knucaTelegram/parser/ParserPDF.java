@@ -322,7 +322,7 @@ public class ParserPDF {
 
         List<String> a = new ArrayList<>();
         Pattern leftBrace = Pattern.compile("\\[");
-        Pattern rightBrace = Pattern.compile("\\]");
+        Pattern rightBrace = Pattern.compile("1\\]");
         Matcher ml = leftBrace.matcher(lessonLine);
         Matcher mr = rightBrace.matcher(lessonLine);
         while (ml.find()){
