@@ -1,7 +1,7 @@
 package com.theopus.knucaTelegram.data.service.impl;
 
-import com.theopus.knucaTelegram.entity.Group;
-import com.theopus.knucaTelegram.entity.Lesson;
+import com.theopus.knucaTelegram.entity.schedule.Group;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import com.theopus.knucaTelegram.generictestclasses.GenericDBWithDBCheck;
 import com.theopus.knucaTelegram.service.LessonSimplifier;
 import org.junit.Test;

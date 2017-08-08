@@ -1,24 +1,38 @@
-package com.theopus.knucaTelegram.entity;
+package com.theopus.knucaTelegram.entity.schedule;
 
-import com.theopus.knucaTelegram.entity.enums.DayOfWeek;
-import com.theopus.knucaTelegram.entity.enums.LessonOrder;
-import com.theopus.knucaTelegram.entity.enums.LessonType;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.theopus.knucaTelegram.controller.ajax.View;
+import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
+import com.theopus.knucaTelegram.entity.schedule.enums.LessonOrder;
+import com.theopus.knucaTelegram.entity.schedule.enums.LessonType;
 
 import java.util.Date;
 import java.util.Set;
 
+
 public class SimpleLesson {
 
-
+    @JsonView(View.Summary.class)
     private long fullid;
+    @JsonView(View.Summary.class)
     private DayOfWeek dayOfWeek;
+    @JsonView(View.Summary.class)
     private LessonOrder order;
+    @JsonView(View.Summary.class)
     private LessonType lessonType;
+    @JsonView(View.Summary.class)
     private Subject subject;
+    @JsonView(View.Summary.class)
     private Set<Group> groups;
+    @JsonView(View.Summary.class)
     private Set<Teacher> teachers;
+    @JsonView(View.Summary.class)
     private Set<Room> rooms;
+    @JsonView(View.Summary.class)
     private Date date;
+
+    public SimpleLesson() {
+    }
 
     public SimpleLesson(long fullid, DayOfWeek dayOfWeek, LessonOrder order, LessonType lessonType, Subject subject, Set<Group> groups, Set<Teacher> teachers, Set<Room> rooms, Date date) {
         this.fullid = fullid;
@@ -85,5 +99,37 @@ public class SimpleLesson {
 
     public void setLessonType(LessonType lessonType) {
         this.lessonType = lessonType;
+    }
+
+    public void setFullid(long fullid) {
+        this.fullid = fullid;
+    }
+
+    public void setDayOfWeek(DayOfWeek dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
+    }
+
+    public void setOrder(LessonOrder order) {
+        this.order = order;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
+
+    public void setGroups(Set<Group> groups) {
+        this.groups = groups;
+    }
+
+    public void setTeachers(Set<Teacher> teachers) {
+        this.teachers = teachers;
+    }
+
+    public void setRooms(Set<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

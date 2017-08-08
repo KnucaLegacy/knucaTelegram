@@ -1,7 +1,7 @@
 package com.theopus.knucaTelegram.parser.core;
 
-import com.theopus.knucaTelegram.entity.Circumstance;
-import com.theopus.knucaTelegram.entity.Lesson;
+import com.theopus.knucaTelegram.entity.schedule.Circumstance;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import com.theopus.knucaTelegram.parser.objects.entity.LessonProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

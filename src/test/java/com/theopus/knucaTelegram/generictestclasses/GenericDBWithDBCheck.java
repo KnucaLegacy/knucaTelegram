@@ -1,8 +1,7 @@
 package com.theopus.knucaTelegram.generictestclasses;
 
-import com.theopus.knucaTelegram.config.PersistenceConfig;
 import com.theopus.knucaTelegram.config.TestPersistenceConfig;
-import com.theopus.knucaTelegram.entity.Lesson;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import com.theopus.knucaTelegram.service.data.GroupService;
 import com.theopus.knucaTelegram.service.data.LessonService;
 import com.theopus.knucaTelegram.service.data.TeacherService;

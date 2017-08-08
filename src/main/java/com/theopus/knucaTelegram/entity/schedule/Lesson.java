@@ -1,6 +1,6 @@
-package com.theopus.knucaTelegram.entity;
+package com.theopus.knucaTelegram.entity.schedule;
 
-import com.theopus.knucaTelegram.entity.enums.LessonType;
+import com.theopus.knucaTelegram.entity.schedule.enums.LessonType;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-
 public class Lesson {
 
     @Id

@@ -4,7 +4,6 @@ import com.theopus.knucaTelegram.config.PersistenceConfig;
 import com.theopus.knucaTelegram.service.data.repository.LessonRepository;
 import com.theopus.knucaTelegram.service.data.LessonService;
 import com.theopus.knucaTelegram.service.data.TeacherService;
-import com.theopus.knucaTelegram.parser.FolderParser;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,12 +35,6 @@ public class dbLoadTest {
     @Before
     public void setUp() throws Exception {
         em = emf.createEntityManager();
-    }
-
-    @Test
-    public void load() throws Exception {
-        lessonService.saveAll(new FolderParser().parseFolder("pdfstest"));
-//        teacherServicel.deleteById(1);
     }
 
 

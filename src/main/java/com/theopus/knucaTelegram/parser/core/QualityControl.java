@@ -1,7 +1,7 @@
 package com.theopus.knucaTelegram.parser.core;
 
 import com.google.common.collect.Sets;
-import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.schedule.Group;
 import com.theopus.knucaTelegram.parser.objects.entity.LessonProxy;
 import com.theopus.knucaTelegram.parser.objects.entity.RoomDateProxy;
 import org.slf4j.Logger;

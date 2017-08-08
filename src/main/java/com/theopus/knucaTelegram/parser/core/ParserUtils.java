@@ -1,7 +1,7 @@
 package com.theopus.knucaTelegram.parser.core;
 
-import com.theopus.knucaTelegram.entity.enums.DayOfWeek;
-import com.theopus.knucaTelegram.entity.enums.LessonOrder;
+import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
+import com.theopus.knucaTelegram.entity.schedule.enums.LessonOrder;
 
 import java.util.*;
 import java.util.regex.Pattern;

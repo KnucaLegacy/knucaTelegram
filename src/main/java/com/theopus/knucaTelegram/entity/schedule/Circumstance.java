@@ -1,6 +1,6 @@
-package com.theopus.knucaTelegram.entity;
+package com.theopus.knucaTelegram.entity.schedule;
 
-import com.theopus.knucaTelegram.entity.enums.LessonOrder;
+import com.theopus.knucaTelegram.entity.schedule.enums.LessonOrder;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;

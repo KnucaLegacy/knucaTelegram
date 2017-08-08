@@ -1,29 +1,34 @@
-package com.theopus.knucaTelegram.entity;
+package com.theopus.knucaTelegram.entity.schedule;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.theopus.knucaTelegram.controller.ajax.View;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
-public class Room {
+public class Subject {
 
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
     @Column(name = "id", length = 6, nullable = false)
+    @JsonView(View.Summary.class)
     private long id;
 
-    @Column
+    @Column(name = "name")
+    @JsonView(View.Summary.class)
     private String name;
-//
-//    @OneToMany(mappedBy = "room")
-//    @JsonIgnore
-//    private Set<RoomTimePeriod> roomTimePeriodSet;
 
-    public Room() {
+
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Set<Lesson> lessons;
+
+    public Subject() {
     }
 
-    public Room(String name) {
+    public Subject(String name) {
         this.name = name;
     }
 
@@ -35,6 +40,16 @@ public class Room {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Subject subject = (Subject) o;
+
+        return name != null ? name.equals(subject.name) : subject.name == null;
+    }
+
     public long getId() {
         return id;
     }
@@ -44,23 +59,13 @@ public class Room {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Room room = (Room) o;
-
-        return name != null ? name.equals(room.name) : room.name == null;
-    }
-
-    @Override
     public int hashCode() {
         return name != null ? name.hashCode() : 0;
     }
 
     @Override
     public String toString() {
-        return "Room{" +
+        return "Subject{" +
                 "name='" + name + '\'' +
                 '}';
     }

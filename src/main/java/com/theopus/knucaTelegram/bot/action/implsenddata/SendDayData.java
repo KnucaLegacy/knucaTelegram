@@ -3,11 +3,9 @@ package com.theopus.knucaTelegram.bot.action.implsenddata;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.theopus.knucaTelegram.bot.action.CallBackable;
 import com.theopus.knucaTelegram.bot.action.SingleDirSendMessageAction;
-import com.theopus.knucaTelegram.entity.Group;
-import com.theopus.knucaTelegram.entity.Lesson;
-import com.theopus.knucaTelegram.entity.SimpleLesson;
-import com.theopus.knucaTelegram.entity.Teacher;
-import com.theopus.knucaTelegram.service.data.LessonService;
+import com.theopus.knucaTelegram.entity.schedule.Group;
+import com.theopus.knucaTelegram.entity.schedule.SimpleLesson;
+import com.theopus.knucaTelegram.entity.schedule.Teacher;
 import com.theopus.knucaTelegram.service.data.SimpleLessonService;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 

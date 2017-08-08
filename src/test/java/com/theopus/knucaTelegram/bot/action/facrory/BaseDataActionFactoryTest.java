@@ -2,7 +2,7 @@ package com.theopus.knucaTelegram.bot.action.facrory;
 
 import com.theopus.knucaTelegram.GlobalMocks;
 import com.theopus.knucaTelegram.bot.action.SendDataAction;
-import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.schedule.Group;
 import com.theopus.knucaTelegram.service.data.GroupService;
 import com.theopus.knucaTelegram.generictestclasses.GenericDBWithDBCheck;
 import org.junit.Before;

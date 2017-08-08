@@ -18,7 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.theopus.knucaTelegram")
+@ComponentScan("com.theopus.knucaTelegram.service.data")
 @PropertySource("classpath:presistence-mysql.properties")
 @EnableJpaRepositories("com.theopus.knucaTelegram.service.data.repository")
 public class PersistenceConfig {

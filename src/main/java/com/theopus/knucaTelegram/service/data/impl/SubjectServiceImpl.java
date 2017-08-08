@@ -1,6 +1,6 @@
 package com.theopus.knucaTelegram.service.data.impl;
 
-import com.theopus.knucaTelegram.entity.Subject;
+import com.theopus.knucaTelegram.entity.schedule.Subject;
 import com.theopus.knucaTelegram.service.data.repository.SubjectRepository;
 import com.theopus.knucaTelegram.service.data.SubjectService;
 import org.slf4j.Logger;

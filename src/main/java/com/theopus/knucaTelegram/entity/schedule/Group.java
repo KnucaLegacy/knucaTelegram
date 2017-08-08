@@ -1,6 +1,8 @@
-package com.theopus.knucaTelegram.entity;
+package com.theopus.knucaTelegram.entity.schedule;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.theopus.knucaTelegram.controller.ajax.View;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -8,26 +10,49 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Teacher {
+@Table(name = "Group_p")
+public class Group {
 
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
     @Column(name = "id", length = 6, nullable = false)
+    @JsonView(View.Summary.class)
     private long id;
 
     @Column(name = "name")
+    @JsonView(View.Summary.class)
     private String name;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "teachers", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "groups", fetch = FetchType.LAZY)
     private Set<Lesson> lessons = new HashSet<>();
 
-    public Teacher() {
+    public Group() {
     }
 
-    public Teacher(String name) {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(Set<Lesson> lessons) {
+        this.lessons = lessons;
+    }
+
+    public Group(String name) {
         this.name = name;
+    }
+
+    public boolean addLesson(Lesson lesson){
+        return lessons.add(lesson);
     }
 
     public String getName() {
@@ -38,30 +63,14 @@ public class Teacher {
         this.name = name;
     }
 
-    public Set<Lesson> getLessons() {
-        return lessons;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Teacher teacher = (Teacher) o;
+        Group group = (Group) o;
 
-        return name != null ? name.equals(teacher.name) : teacher.name == null;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public boolean addLesson(Lesson lesson){
-        return lessons.add(lesson);
-    }
-
-    public void setId(long id) {
-        this.id = id;
+        return name != null ? name.equals(group.name) : group.name == null;
     }
 
     @Override
@@ -71,7 +80,7 @@ public class Teacher {
 
     @Override
     public String toString() {
-        return "Teacher{" +
+        return "Group{" +
                 "name='" + name + '\'' +
                 '}';
     }

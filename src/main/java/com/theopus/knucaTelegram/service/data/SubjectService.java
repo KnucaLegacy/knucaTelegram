@@ -1,6 +1,6 @@
 package com.theopus.knucaTelegram.service.data;
 
-import com.theopus.knucaTelegram.entity.Subject;
+import com.theopus.knucaTelegram.entity.schedule.Subject;
 
 import java.util.Collection;
 import java.util.Set;

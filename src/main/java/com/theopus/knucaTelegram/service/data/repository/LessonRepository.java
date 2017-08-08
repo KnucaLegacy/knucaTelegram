@@ -1,17 +1,15 @@
 package com.theopus.knucaTelegram.service.data.repository;
 
-import com.theopus.knucaTelegram.entity.Group;
-import com.theopus.knucaTelegram.entity.Lesson;
-import com.theopus.knucaTelegram.entity.Subject;
-import com.theopus.knucaTelegram.entity.Teacher;
+import com.theopus.knucaTelegram.entity.schedule.Group;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
+import com.theopus.knucaTelegram.entity.schedule.Subject;
+import com.theopus.knucaTelegram.entity.schedule.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 public interface LessonRepository extends JpaRepository<Lesson, Long> {
 

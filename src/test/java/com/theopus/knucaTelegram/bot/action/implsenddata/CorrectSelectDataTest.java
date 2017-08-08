@@ -3,7 +3,7 @@ package com.theopus.knucaTelegram.bot.action.implsenddata;
 import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 import com.theopus.knucaTelegram.config.PersistenceConfig;
-import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.schedule.Group;
 import com.theopus.knucaTelegram.generictestclasses.GenericDBWithDBCheck;
 import org.junit.Before;
 import org.junit.Test;

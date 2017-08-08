@@ -1,32 +1,36 @@
-package com.theopus.knucaTelegram.entity;
+package com.theopus.knucaTelegram.entity.schedule;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.theopus.knucaTelegram.controller.ajax.View;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Subject {
+public class Teacher {
 
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
     @Column(name = "id", length = 6, nullable = false)
+    @JsonView(View.Summary.class)
     private long id;
 
     @Column(name = "name")
+    @JsonView(View.Summary.class)
     private String name;
 
-
     @JsonIgnore
-    @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
-    private Set<Lesson> lessons;
+    @ManyToMany(mappedBy = "teachers", fetch = FetchType.LAZY)
+    private Set<Lesson> lessons = new HashSet<>();
 
-    public Subject() {
+    public Teacher() {
     }
 
-    public Subject(String name) {
+    public Teacher(String name) {
         this.name = name;
     }
 
@@ -38,18 +42,26 @@ public class Subject {
         this.name = name;
     }
 
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Subject subject = (Subject) o;
+        Teacher teacher = (Teacher) o;
 
-        return name != null ? name.equals(subject.name) : subject.name == null;
+        return name != null ? name.equals(teacher.name) : teacher.name == null;
     }
 
     public long getId() {
         return id;
+    }
+
+    public boolean addLesson(Lesson lesson){
+        return lessons.add(lesson);
     }
 
     public void setId(long id) {
@@ -63,7 +75,7 @@ public class Subject {
 
     @Override
     public String toString() {
-        return "Subject{" +
+        return "Teacher{" +
                 "name='" + name + '\'' +
                 '}';
     }

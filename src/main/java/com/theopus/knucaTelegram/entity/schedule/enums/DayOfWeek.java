@@ -1,4 +1,4 @@
-package com.theopus.knucaTelegram.entity.enums;
+package com.theopus.knucaTelegram.entity.schedule.enums;
 
 import java.util.*;
 

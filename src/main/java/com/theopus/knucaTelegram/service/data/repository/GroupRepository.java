@@ -1,6 +1,6 @@
 package com.theopus.knucaTelegram.service.data.repository;
 
-import com.theopus.knucaTelegram.entity.Group;
+import com.theopus.knucaTelegram.entity.schedule.Group;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

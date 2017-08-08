@@ -1,8 +1,8 @@
 package com.theopus.knucaTelegram.parser.objects.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.theopus.knucaTelegram.entity.Lesson;
-import com.theopus.knucaTelegram.entity.Room;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
+import com.theopus.knucaTelegram.entity.schedule.Room;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,23 +10,16 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-@Table(name = "roomTimePeriod")
+
 public class RoomTimePeriod {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id", length = 6, nullable = false)
+
     private long id;
 
-    @ManyToOne
-    @JoinColumn(name = "room_id")
+
     private Room room;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "lesson_id")
-    @JsonIgnore
+
     private Lesson lesson;
 
     @OneToMany(mappedBy = "roomTimePeriod", cascade = CascadeType.ALL, fetch = FetchType.EAGER)

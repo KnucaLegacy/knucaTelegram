@@ -1,7 +1,7 @@
 package com.theopus.knucaTelegram.parser.objects.entity;
 
-import com.theopus.knucaTelegram.entity.Room;
-import com.theopus.knucaTelegram.entity.enums.LessonOrder;
+import com.theopus.knucaTelegram.entity.schedule.Room;
+import com.theopus.knucaTelegram.entity.schedule.enums.LessonOrder;
 
 import java.util.Date;
 import java.util.HashSet;

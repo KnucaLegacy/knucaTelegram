@@ -1,18 +1,15 @@
 package com.theopus.knucaTelegram.service;
 
-import com.theopus.knucaTelegram.entity.Circumstance;
-import com.theopus.knucaTelegram.entity.Lesson;
-import com.theopus.knucaTelegram.entity.Room;
-import com.theopus.knucaTelegram.entity.SimpleLesson;
-import com.theopus.knucaTelegram.entity.enums.DayOfWeek;
-import com.theopus.knucaTelegram.entity.enums.LessonOrder;
+import com.theopus.knucaTelegram.entity.schedule.Circumstance;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
+import com.theopus.knucaTelegram.entity.schedule.Room;
+import com.theopus.knucaTelegram.entity.schedule.SimpleLesson;
+import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
+import com.theopus.knucaTelegram.entity.schedule.enums.LessonOrder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-/**
- * Created by irina on 02.08.17.
- */
 @Service
 public class LessonSimplifier {
 

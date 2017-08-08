@@ -1,6 +1,6 @@
 package com.theopus.knucaTelegram.parser.objects;
 
-import com.theopus.knucaTelegram.entity.Lesson;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import org.junit.Test;
 
 import java.util.*;

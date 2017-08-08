@@ -1,6 +1,6 @@
 package com.theopus.knucaTelegram.bot.util;
 
-import com.theopus.knucaTelegram.entity.enums.DayOfWeek;
+import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
 package com.theopus.knucaTelegram.service.data.repository;
 
-import com.theopus.knucaTelegram.entity.Subject;
+import com.theopus.knucaTelegram.entity.schedule.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

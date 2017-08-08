@@ -8,9 +8,4 @@ import static org.junit.Assert.*;
 
 public class FolderParserTest {
 
-    @Test
-    public void parseFolder() throws Exception {
-        System.out.println(new FolderParser().parseFolder("pdfstest").size());
-    }
-
 }

@@ -5,9 +5,9 @@ import com.theopus.knucaTelegram.bot.action.facrory.SendDataActionFactory;
 import com.theopus.knucaTelegram.bot.action.implsenddata.BadRequest;
 import com.theopus.knucaTelegram.bot.util.DayOfWeekAllias;
 import com.theopus.knucaTelegram.bot.util.DayOffsetValues;
-import com.theopus.knucaTelegram.entity.Group;
-import com.theopus.knucaTelegram.entity.Teacher;
-import com.theopus.knucaTelegram.entity.enums.DayOfWeek;
+import com.theopus.knucaTelegram.entity.schedule.Group;
+import com.theopus.knucaTelegram.entity.schedule.Teacher;
+import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
 import com.theopus.knucaTelegram.service.data.GroupService;
 import com.theopus.knucaTelegram.service.data.TeacherService;
 import org.apache.commons.lang3.StringUtils;
@@ -110,14 +110,15 @@ public class MessageActionDispatcher {
     }
 
     private Action notExactTeacherCase(String text) {
-        String notExactGroupName = text.toUpperCase();
+        String notExactTeacherName = text.toUpperCase();
         String searchTeacherLine = teacherService.getSearchLine().toUpperCase();
+        notExactTeacherName = notExactTeacherName.replace("Ы", "И");
 
-        String searchString = notExactGroupName;
+        String searchString = notExactTeacherName;
 
         for (int i = 0 ;
              searchString.length() > 4;
-             searchString = notExactGroupName.substring(0,notExactGroupName.length()-i-1), i ++) {
+             searchString = notExactTeacherName.substring(0,notExactTeacherName.length()-i-1), i ++) {
             if (searchTeacherLine.contains(searchString)){
                 Set<Object> teacherSet = new HashSet<>(teacherService.getByAlliesName(searchString));
                 if (teacherSet.size() == 1) {

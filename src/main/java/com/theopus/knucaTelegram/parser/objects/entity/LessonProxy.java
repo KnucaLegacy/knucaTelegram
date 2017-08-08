@@ -1,10 +1,10 @@
 package com.theopus.knucaTelegram.parser.objects.entity;
 
-import com.theopus.knucaTelegram.entity.Group;
-import com.theopus.knucaTelegram.entity.Room;
-import com.theopus.knucaTelegram.entity.Subject;
-import com.theopus.knucaTelegram.entity.Teacher;
-import com.theopus.knucaTelegram.entity.enums.LessonType;
+import com.theopus.knucaTelegram.entity.schedule.Group;
+import com.theopus.knucaTelegram.entity.schedule.Room;
+import com.theopus.knucaTelegram.entity.schedule.Subject;
+import com.theopus.knucaTelegram.entity.schedule.Teacher;
+import com.theopus.knucaTelegram.entity.schedule.enums.LessonType;
 
 import java.util.HashSet;
 import java.util.Set;

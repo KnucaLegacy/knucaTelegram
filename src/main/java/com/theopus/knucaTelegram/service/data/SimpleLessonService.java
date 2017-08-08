@@ -1,8 +1,8 @@
 package com.theopus.knucaTelegram.service.data;
 
-import com.theopus.knucaTelegram.entity.Group;
-import com.theopus.knucaTelegram.entity.SimpleLesson;
-import com.theopus.knucaTelegram.entity.Teacher;
+import com.theopus.knucaTelegram.entity.schedule.Group;
+import com.theopus.knucaTelegram.entity.schedule.SimpleLesson;
+import com.theopus.knucaTelegram.entity.schedule.Teacher;
 
 import java.util.Date;
 import java.util.List;
