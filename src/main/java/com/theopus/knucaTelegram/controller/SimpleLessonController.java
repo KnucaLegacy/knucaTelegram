@@ -20,7 +20,7 @@ import java.util.*;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
 
-@Controller
+//@Controller
 @RequestMapping("/slesson")
 @EnableHypermediaSupport(type = { EnableHypermediaSupport.HypermediaType.HAL })
 public class SimpleLessonController {
@@ -31,7 +31,7 @@ public class SimpleLessonController {
     @Resource
     private GroupService groupService;
 
-    @Autowired
+    @Resource
     private RepositoryRestMvcConfiguration configuration;
 
     @RequestMapping(value = "/single/byGroup/{groupId}/{dateLong}/{lessonOrder}")

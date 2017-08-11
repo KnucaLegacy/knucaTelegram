@@ -8,29 +8,30 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-@Entity
-@Table(name = "lessonDate")
+
 public class LessonDate {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id", length = 6, nullable = false)
+
     private long id;
 
-    @Column
     private Date singleDate;
 
-    @Column
     private Date fromDate;
 
-    @Column
+
     private Date toDate;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "roomTimePeriod_id")
-    @JsonIgnore
     private RoomTimePeriod roomTimePeriod;
+
+    private boolean in_a_week = false;
+
+    public void setIn_a_week(boolean in_a_week) {
+        this.in_a_week = in_a_week;
+    }
+
+    public boolean isIn_a_week() {
+        return in_a_week;
+    }
 
     public LessonDate() {
     }

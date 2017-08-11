@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="42260b14-99a4-4b4f-9fb8-dc034260de89" name="remote" url="http://138.68.89.226">
+        <fileTransfer host="138.68.89.226" port="21" rootFolder="/home/theopus">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

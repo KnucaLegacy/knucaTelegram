@@ -32,4 +32,13 @@ public class ParserUtilsTest {
         System.out.println(ParserUtils.fromToToDatesSet(from,to,DayOfWeek.TUESDAY));
 
     }
+
+    @Test
+    public void afTest() throws Exception {
+        Date from = new GregorianCalendar(2017, 4 - 1, 12).getTime();
+        Date to = new GregorianCalendar(2017, 5 - 1, 10).getTime();
+        System.out.println(from);
+        System.out.println(to);
+        System.out.println(ParserUtils.fromToToDatesSetAF(from,to,DayOfWeek.WEDNESDAY));
+    }
 }

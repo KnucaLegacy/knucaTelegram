@@ -10,17 +10,6 @@ import static org.junit.Assert.*;
 
 public class DataHandlerTest {
 
-    @Test
-    public void name() throws Exception {
-        Set<Integer> it = new LinkedHashSet<>();
 
-        for (int i = 0; i < 500; i++) {
-            it.add(i);
-        }
 
-        Collection<Integer> integers = it;
-
-        integers.forEach(System.out::println);
-
-    }
 }

@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram.service.data.impl;
 
+import com.theopus.knucaTelegram.KnucaTelegramApplication;
 import com.theopus.knucaTelegram.bot.util.TelegramMessageFormater;
 import com.theopus.knucaTelegram.config.PersistenceConfig;
 import com.theopus.knucaTelegram.entity.schedule.Group;
@@ -19,7 +20,7 @@ import java.util.Set;
 /**
  * Created by irina on 04.08.17.
  */
-@ContextConfiguration(classes = PersistenceConfig.class)
+@ContextConfiguration(classes = {PersistenceConfig.class, KnucaTelegramApplication.class})
 public class SimpleLessonServiceImplTest extends GenericDBWithDBCheck {
     @Resource
     private SimpleLessonService simpleLessonService;
@@ -44,5 +45,13 @@ public class SimpleLessonServiceImplTest extends GenericDBWithDBCheck {
     public void loadAll() throws Exception {
         Set<Lesson> pdsf = MainParser.parseFolder("pdfs");
         lessonService.saveAll(pdsf);
+    }
+
+
+    @Test
+    public void get() throws Exception {
+        Date singleDate = new GregorianCalendar(2017, 4-1, 17).getTime();
+        Group group = groupService.getById(76);
+        simpleLessonService.getByGroup(singleDate,group).forEach(System.out::println);
     }
 }

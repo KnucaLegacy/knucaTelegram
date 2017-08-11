@@ -57,6 +57,7 @@ public class LessonLineSheet {
     private final static Pattern EXACT_DAY_PATTERN = Pattern.compile("(^|([^доз]\\s))(\\d?\\d\\.\\d\\d)");
     private final static Pattern FROM_DAY_PATTERN = Pattern.compile("з\\s(\\d?\\d\\.\\d\\d)");
     private final static Pattern TO_DAY_PATTERN = Pattern.compile("до\\s(\\d?\\d\\.\\d\\d)");
+    private final static Pattern АFTER_WEEK_PATTERN = Pattern.compile("([Чч]/[Тт])");
 
 
     private Set<RoomDateProxy> parseDates(Set<RoomTimePeriod> rtp){
@@ -73,7 +74,11 @@ public class LessonLineSheet {
                 result.add(lessonDate.getSingleDate());
             }
             if (lessonDate.getFromDate() != null && lessonDate.getToDate() != null){
-                result.addAll(ParserUtils.fromToToDatesSet(lessonDate.getFromDate(),lessonDate.getToDate(), parent.getDayOfWeek()));
+                if (lessonDate.isIn_a_week()){
+                    result.addAll(ParserUtils.fromToToDatesSetAF(lessonDate.getFromDate(),lessonDate.getToDate(), parent.getDayOfWeek()));
+                }
+                else
+                    result.addAll(ParserUtils.fromToToDatesSet(lessonDate.getFromDate(),lessonDate.getToDate(), parent.getDayOfWeek()));
             }
 
         });
@@ -160,6 +165,7 @@ public class LessonLineSheet {
         Set<String> toLessonDates = new HashSet<>();
         Matcher mOne = FROM_DAY_PATTERN.matcher(bracket);
         Matcher mTwo = TO_DAY_PATTERN.matcher(bracket);
+        Matcher mAW = АFTER_WEEK_PATTERN.matcher(bracket);
         while (mOne.find()){
             if (mTwo.find(mOne.end())){
                 String from =  mOne.group(1);
@@ -169,6 +175,10 @@ public class LessonLineSheet {
                 LessonDate lessonDate = new LessonDate(
                         ParserUtils.stringToDate(from, parent.getParent().getTitledDate()),
                         ParserUtils.stringToDate(to, parent.getParent().getTitledDate()));
+                if(mAW.find(mTwo.end())) {
+                    lessonDate.setIn_a_week(true);
+                    mAW.reset();
+                }
                 result.add(lessonDate);
             }
         }
@@ -179,6 +189,10 @@ public class LessonLineSheet {
                 LessonDate lessonDate = new LessonDate(
                         ParserUtils.stringToDate(from, parent.getParent().getTitledDate()),
                         ParserUtils.maxDateOffser(parent.getParent().getMaxDate(), parent.getDayOfWeek()));
+                if(mAW.find(mOne.end())) {
+                    lessonDate.setIn_a_week(true);
+                    mAW.reset();
+                }
                 result.add(lessonDate);
             }
         }
@@ -189,6 +203,10 @@ public class LessonLineSheet {
                 LessonDate lessonDate = new LessonDate(
                         ParserUtils.minDateOffser(parent.getParent().getMinDate(), parent.getDayOfWeek()),
                         ParserUtils.stringToDate(to, parent.getParent().getTitledDate()));
+                if(mAW.find(mTwo.end())) {
+                    lessonDate.setIn_a_week(true);
+                    mAW.reset();
+                }
                 result.add(lessonDate);
             }
         }

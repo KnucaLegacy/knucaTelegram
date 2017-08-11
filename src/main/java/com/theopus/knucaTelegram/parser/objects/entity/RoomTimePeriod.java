@@ -13,12 +13,9 @@ import java.util.Set;
 
 public class RoomTimePeriod {
 
-
     private long id;
 
-
     private Room room;
-
 
     private Lesson lesson;
 

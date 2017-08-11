@@ -1,5 +1,7 @@
 package com.theopus.knucaTelegram;
 
+import com.theopus.knucaTelegram.parser.core.MainParser;
+import com.theopus.knucaTelegram.service.data.LessonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;

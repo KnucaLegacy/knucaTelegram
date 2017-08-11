@@ -13,6 +13,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -23,8 +24,8 @@ import java.util.Properties;
 @EnableJpaRepositories("com.theopus.knucaTelegram.service.data.repository")
 public class PersistenceConfig {
 
-    @Autowired
-    Environment env;
+    @Resource
+    private Environment env;
 
     private String jdbc_driverClassName="com.mysql.jdbc.Driver";
     private String jdbc_url = "jdbc:mysql://localhost:3306/library";

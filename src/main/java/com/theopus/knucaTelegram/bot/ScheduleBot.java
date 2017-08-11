@@ -51,7 +51,7 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
     @Override
     public void processNonCommandUpdate(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
-
+            System.out.println(update.getMessage().getChat().getUserName());
             Action action = messageDispatcher.handleMessage(update.getMessage().getText(), update.getMessage().getChat().getId());
             action.execute(this);
 

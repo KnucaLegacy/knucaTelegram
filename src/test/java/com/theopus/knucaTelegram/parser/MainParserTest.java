@@ -11,7 +11,7 @@ public class MainParserTest {
 
     @Test
     public void parseNew() throws Exception {
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 2; i++) {
             MainParser.parseFolder("pdfs");
         }
     }

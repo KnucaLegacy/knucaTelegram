@@ -126,4 +126,18 @@ public class ParserUtils {
         return result;
 
     }
+
+    public static Set<Date> fromToToDatesSetAF(Date from, Date to, DayOfWeek dow){
+        Set<Date> result = new LinkedHashSet<>();
+        long diff = DayOfWeek.dateToRawDate(to).getTime() - DayOfWeek.dateToRawDate(from).getTime();
+        if (diff <= 0)
+            diff = DayOfWeek.dateToRawDate(from).getTime() - DayOfWeek.dateToRawDate(to).getTime();
+        int days = (int) (diff / 1000 / 3600 / 24);
+        for (int i = 0; i <= days + 1; i+=2) {
+            Date date = DayOfWeek.dayDateOffset(from, i);
+            if (DayOfWeek.dateToDayOfWeek(date).equals(dow))
+                result.add(date);
+        }
+        return result;
+    }
 }
