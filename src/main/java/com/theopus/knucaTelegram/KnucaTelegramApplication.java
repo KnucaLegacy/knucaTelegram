@@ -1,5 +1,6 @@
 package com.theopus.knucaTelegram;
 
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import com.theopus.knucaTelegram.parser.core.MainParser;
 import com.theopus.knucaTelegram.service.data.LessonService;
 import org.slf4j.Logger;
@@ -26,5 +27,6 @@ public class KnucaTelegramApplication {
     public static void main(String[] args) throws IOException {
         ConfigurableApplicationContext run = SpringApplication.run(KnucaTelegramApplication.class, args);
         log.info("in main starting");
+//        run.getBean(LessonService.class).saveAll(MainParser.parseFolder("pdfs"));
     }
 }

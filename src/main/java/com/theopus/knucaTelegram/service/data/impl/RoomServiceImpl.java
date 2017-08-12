@@ -58,12 +58,14 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public Room getById(long id) {
-        return roomRepository.getOne(id);
+        return roomRepository.findOne(id);
     }
 
     @Override
     public Collection<Room> getAll() {
-        return roomRepository.findAll();
+        Collection<Room> result = new HashSet<>();
+        roomRepository.findAll().forEach(result::add);
+        return result;
     }
 
     @Override
@@ -78,6 +80,8 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public Set<Room> saveAll(Collection<Room> rooms) {
-        return new HashSet<>(roomRepository.save(rooms));
+        Set<Room> result = new HashSet<>();
+        roomRepository.save(rooms).forEach(result::add);
+        return result;
     }
 }

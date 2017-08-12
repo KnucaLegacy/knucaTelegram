@@ -6,12 +6,14 @@ import com.theopus.knucaTelegram.entity.schedule.Subject;
 import com.theopus.knucaTelegram.entity.schedule.Teacher;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.Date;
 import java.util.List;
 
-public interface LessonRepository extends JpaRepository<Lesson, Long> {
+public interface LessonRepository extends PagingAndSortingRepository<Lesson, Long> {
+
 
     @Query( "select distinct l " +
             "from Lesson l " +

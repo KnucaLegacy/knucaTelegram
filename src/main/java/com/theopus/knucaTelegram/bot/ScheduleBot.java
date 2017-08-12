@@ -16,7 +16,7 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 import javax.annotation.Resource;
 
 
-@Component
+//@Component
 public class ScheduleBot extends TelegramLongPollingCommandBot {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());

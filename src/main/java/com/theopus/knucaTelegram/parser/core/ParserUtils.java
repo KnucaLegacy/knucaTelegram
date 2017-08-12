@@ -120,6 +120,7 @@ public class ParserUtils {
         int days = (int) (diff / 1000 / 3600 / 24);
         for (int i = 0; i <= days + 1; i++) {
             Date date = DayOfWeek.dayDateOffset(from, i);
+            date = DayOfWeek.dateToRawDate(date);
             if (DayOfWeek.dateToDayOfWeek(date).equals(dow))
                 result.add(date);
         }
@@ -135,6 +136,7 @@ public class ParserUtils {
         int days = (int) (diff / 1000 / 3600 / 24);
         for (int i = 0; i <= days + 1; i+=2) {
             Date date = DayOfWeek.dayDateOffset(from, i);
+            date = DayOfWeek.dateToRawDate(date);
             if (DayOfWeek.dateToDayOfWeek(date).equals(dow))
                 result.add(date);
         }

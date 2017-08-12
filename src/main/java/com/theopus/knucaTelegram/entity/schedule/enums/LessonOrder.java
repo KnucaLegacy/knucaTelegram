@@ -37,8 +37,18 @@ public enum LessonOrder {
             default: return null;
         }
     }
+
+    public static LessonOrder getById(int id){
+        switch (id){
+            case 0:return FIRST;
+            case 1:return SECOND;
+            case 2:return THIRD;
+            case 3:return FOURTH;
+            case 4:return FIFTH;
+            case 5:return SIXTH;
+            case 6:return SEVENTH;
+            default: return OUT_OF_SCHEDULE;
+        }
+    }
 }
 
-//15:20": return LessonOrder.FIFTH;
-//        case "16:50": return LessonOrder.SIXTH;
-//        case "18:20":

@@ -25,11 +25,11 @@ public class ParserUtilsTest {
 
     @Test
     public void fromToToDateSet() throws Exception {
-        Date from = new GregorianCalendar(2017, 3 - 1, 21).getTime();
-        Date to = new GregorianCalendar(2017, 4 - 1, 11).getTime();
+        Date from = new GregorianCalendar(2017, 3 - 1, 24).getTime();
+        Date to = new GregorianCalendar(2017, 4 - 1, 28).getTime();
         System.out.println(from);
         System.out.println(to);
-        System.out.println(ParserUtils.fromToToDatesSet(from,to,DayOfWeek.TUESDAY));
+        System.out.println(ParserUtils.fromToToDatesSet(from,to,DayOfWeek.FRIDAY));
 
     }
 
@@ -40,5 +40,12 @@ public class ParserUtilsTest {
         System.out.println(from);
         System.out.println(to);
         System.out.println(ParserUtils.fromToToDatesSetAF(from,to,DayOfWeek.WEDNESDAY));
+    }
+
+    @Test
+    public void minDateOffset() throws Exception {
+        Date from = new GregorianCalendar(2017, 4 - 1, 12).getTime();
+        Date to = new GregorianCalendar(2017, 5 - 1, 10).getTime();
+//        System.out.println(ParserUtils.minDateOffser());
     }
 }

@@ -63,12 +63,14 @@ public class LessonServiceImpl implements LessonService {
 
     @Override
     public Lesson getById(long id) {
-        return lessonRepository.getOne(id);
+        return lessonRepository.findOne(id);
     }
 
     @Override
     public Collection<Lesson> getAll() {
-        return lessonRepository.findAll();
+        List<Lesson> lessons = new ArrayList<>();
+        lessonRepository.findAll().forEach(lessons::add);
+        return lessons;
     }
 
     @Override

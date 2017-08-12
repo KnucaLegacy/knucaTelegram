@@ -30,7 +30,9 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Override
     public Collection<Subject> getAll() {
-        return subjectRepository.findAll();
+        Collection<Subject> result = new HashSet<>();
+        subjectRepository.findAll().forEach(result::add);
+        return result;
     }
 
     @Override
@@ -59,7 +61,7 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Override
     public Subject getById(long id) {
-        return subjectRepository.getOne(id);
+        return subjectRepository.findOne(id);
     }
 
     @Override

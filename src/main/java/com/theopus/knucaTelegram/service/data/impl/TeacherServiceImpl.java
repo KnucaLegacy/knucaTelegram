@@ -60,7 +60,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public Teacher getById(long id) {
-        return teacherRepository.getOne(id);
+        return teacherRepository.findOne(id);
     }
 
     @Override
@@ -107,7 +107,9 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public Set<Teacher> getAll() {
-        return new HashSet<>(teacherRepository.findAll());
+        Set<Teacher> result = new HashSet<>();
+        teacherRepository.findAll().forEach(result::add);
+        return result;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.theopus.knucaTelegram.service.data.impl;
 
 import com.theopus.knucaTelegram.entity.schedule.Group;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import com.theopus.knucaTelegram.entity.schedule.SimpleLesson;
 import com.theopus.knucaTelegram.entity.schedule.Teacher;
 import com.theopus.knucaTelegram.service.LessonSimplifier;
@@ -22,6 +23,11 @@ public class SimpleLessonServiceImpl implements SimpleLessonService {
     private LessonService lessonService;
     @Resource
     private LessonSimplifier simplifier;
+
+    @Override
+    public List<SimpleLesson> getById(Date date, long id) {
+        return simplifier.simplify(lessonService.getById(id),date);
+    }
 
     @Override
     public List<SimpleLesson> getByGroup(Date date, Group group) {

@@ -1,6 +1,7 @@
 package com.theopus.knucaTelegram.service.data;
 
 import com.theopus.knucaTelegram.entity.schedule.Group;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import com.theopus.knucaTelegram.entity.schedule.SimpleLesson;
 import com.theopus.knucaTelegram.entity.schedule.Teacher;
 
@@ -10,6 +11,8 @@ import java.util.Map;
 import java.util.Set;
 
 public interface SimpleLessonService {
+
+    List<SimpleLesson> getById(Date date, long id);
 
     List<SimpleLesson> getByGroup(Date date, Group group);
 

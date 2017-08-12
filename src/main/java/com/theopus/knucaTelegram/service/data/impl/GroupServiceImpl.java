@@ -37,7 +37,7 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public Group getById(long id) {
-        return groupRepository.getOne(id);
+        return groupRepository.findOne(id);
     }
 
     @PostConstruct
@@ -114,7 +114,9 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public Set<Group> getAll() {
-        return new HashSet<>(groupRepository.findAll());
+        HashSet<Group> result = new HashSet<>();
+        groupRepository.findAll().forEach(result::add);
+        return result;
     }
 
     private Group getGroup(Group group){
