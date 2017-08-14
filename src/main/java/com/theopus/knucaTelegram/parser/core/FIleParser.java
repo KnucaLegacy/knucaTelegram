@@ -1,10 +1,10 @@
 package com.theopus.knucaTelegram.parser.core;
 
-import com.theopus.knucaTelegram.parser.objects.entity.LessonProxy;
 import com.theopus.knucaTelegram.parser.objects.DayLessonListSheet;
 import com.theopus.knucaTelegram.parser.objects.FilePDF;
 import com.theopus.knucaTelegram.parser.objects.GroupSheet;
 import com.theopus.knucaTelegram.parser.objects.LessonLineSheet;
+import com.theopus.knucaTelegram.parser.objects.entity.LessonProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -2,9 +2,6 @@ package com.theopus.knucaTelegram.controller.resources;
 
 import com.theopus.knucaTelegram.entity.schedule.SimpleLesson;
 import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
-import com.theopus.knucaTelegram.entity.schedule.enums.LessonOrder;
-import com.theopus.knucaTelegram.entity.schedule.enums.LessonType;
-import org.springframework.hateoas.ResourceSupport;
 
 import java.util.Date;
 

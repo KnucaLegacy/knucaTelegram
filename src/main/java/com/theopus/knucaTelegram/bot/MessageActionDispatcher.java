@@ -3,6 +3,8 @@ package com.theopus.knucaTelegram.bot;
 import com.theopus.knucaTelegram.bot.action.Action;
 import com.theopus.knucaTelegram.bot.action.facrory.SendDataActionFactory;
 import com.theopus.knucaTelegram.bot.action.implsenddata.BadRequest;
+import com.theopus.knucaTelegram.bot.botanalytics.ActionType;
+import com.theopus.knucaTelegram.bot.botanalytics.BotAnalytics;
 import com.theopus.knucaTelegram.bot.util.DayOfWeekAllias;
 import com.theopus.knucaTelegram.bot.util.DayOffsetValues;
 import com.theopus.knucaTelegram.entity.schedule.Group;
@@ -33,11 +35,13 @@ public class MessageActionDispatcher {
     @Qualifier("baseDataActionFactory")
     @Resource
     private SendDataActionFactory factory;
+    @Resource
+    private BotAnalytics botAnalytics;
 
     private long chatId = 0;
     private Action action;
     private String messageText;
-    private Date currdate = new Date();
+    private Date currdate;
     private boolean reqiereWeek;
     private boolean isCallBack = false;
 
@@ -54,7 +58,7 @@ public class MessageActionDispatcher {
         this.isCallBack = isCallback;
         this.chatId = chatId;
         this.messageText = messageText;
-        this.currdate = new Date();
+        this.currdate = DayOfWeek.dateToRawDate(new Date());
         this.reqiereWeek = parseWeek(messageText);
         parseDate(extratedData);
 
@@ -236,4 +240,11 @@ public class MessageActionDispatcher {
     private String normalize(String initial){
         return StringUtils.replaceChars(initial, "Ии", "Іі").toUpperCase();
     }
+
+    private boolean isOnlyCurrentDay() {
+        return dates.size() == 1 && dates.stream().findFirst().orElse(null).equals(currdate);
+    }
+
+
+
 }
