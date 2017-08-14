@@ -39,6 +39,7 @@ public class MessageActionDispatcher {
     private String messageText;
     private Date currdate = new Date();
     private boolean reqiereWeek;
+    private boolean isCallBack = false;
 
     private Pattern exactGroupPattern = Pattern.compile("\\b[А-яІіЇїЄє]{1,6}-(\\S){1,6}\\b");
     private Pattern teacherPattern = Pattern.compile("\\b[^.,\\s\\d]+(\\s[^.,\\d\\s]\\.?)?([^.,\\d\\s]\\.?)?");
@@ -46,10 +47,11 @@ public class MessageActionDispatcher {
 
 
 
-    public synchronized Action handleMessage(String messageText, long chatId){
+    public synchronized Action handleMessage(String messageText, long chatId, boolean isCallback){
 
         String extratedData = extractData(messageText);
         System.out.println("--------------"+extratedData);
+        this.isCallBack = isCallback;
         this.chatId = chatId;
         this.messageText = messageText;
         this.currdate = new Date();

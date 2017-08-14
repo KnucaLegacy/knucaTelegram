@@ -23,6 +23,7 @@ public class GroupCommand extends BotCommand {
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         System.out.println(strings);
 
+
     }
 
     @Override

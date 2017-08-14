@@ -55,7 +55,7 @@ public class MessageActionDispatcherTest {
     public void firstCase() throws Exception {
         long chatIdmock = 0;
         String text = "иуст32";
-        SingleDirSendMessageAction act = (SingleDirSendMessageAction) messageActionDispatcher.handleMessage(text, chatIdmock);
+        SingleDirSendMessageAction act = (SingleDirSendMessageAction) messageActionDispatcher.handleMessage(text, chatIdmock, true);
         act.buildMessage().forEach(sendMessage -> {
             System.out.println(sendMessage.getText());
         });

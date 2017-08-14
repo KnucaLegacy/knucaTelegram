@@ -95,12 +95,12 @@ public enum DayOfWeek {
 
     public static Date weekDateOffset(Date date, int offset){
         long oneWeek = 1 * 1000 * 3600 * 24 * 7;
-        return new Date(date.getTime() + oneWeek * offset);
+        return dateToRawDate(new Date(date.getTime() + oneWeek * offset));
     }
 
     public static Date dayDateOffset(Date date, int offset){
         long oneDay = 1 * 1000 * 3600 * 24;
-        return new Date(dateToRawDate(date).getTime() + oneDay * offset);
+        return dateToRawDate(new Date(dateToRawDate(date).getTime() + oneDay * offset));
     }
 
     public static Date dayOfweekToDate(DayOfWeek dayOfWeek, Date date){

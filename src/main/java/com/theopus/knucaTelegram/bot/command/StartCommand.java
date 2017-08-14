@@ -24,7 +24,6 @@ public class StartCommand extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-//        commandRegistry.getRegisteredCommand("help").execute(absSender,user, chat, strings);
         StringBuilder helpMessageBuilder = new StringBuilder("");
         helpMessageBuilder.append("Что может делать этот бот? \n");
         helpMessageBuilder.append("Просто напиши свою группу :)\n");
@@ -41,10 +40,10 @@ public class StartCommand extends BotCommand {
 
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chat.getId());
-        sendMessage.setText("Для расписания на сегодня, отправь свою грппу в формате <b>[аббревиатура]-[номер] \n на укр. языке</b> , например : " +
-                "іуст-31," + "арх-12а.\n" +
-                "Также, можешь указать конкретную дату (напр.: 12.04) или несколько дат (напр.:  25.04 26.04 29.04), \n" +
-                "либо какой-то период дат (напр.: 5.05-8.05) ");
+        sendMessage.setText("Для расписания на сегодня, отправь свою грппу в формате: \n" +
+                "<b>[аббревиатура]-[номер] \n на укр. языке</b>, например : іуст-31," + "арх-12а.\n" +
+                "Также,с группой можешь указать конкретную дату (напр.: 12.04) или несколько дат (напр.:  25.04 26.04 29.04), \n" +
+                "либо какой-то период дат (напр.: 5.05-8.05).");
         sendMessage.enableHtml(true);
         try {
             absSender.sendMessage(sendMessage);

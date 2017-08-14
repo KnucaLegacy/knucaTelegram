@@ -19,15 +19,11 @@ import java.util.Set;
 public class TeacherServiceImpl implements TeacherService {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
-
     private String searchLine;
-
     @Resource
     private TeacherRepository teacherRepository;
     @Resource
     private LessonRepository lessonRepository;
-    @Resource
-    private EntityManager as;
 
     private Set<Teacher> teachersCache = new HashSet<>();
 
@@ -53,9 +49,15 @@ public class TeacherServiceImpl implements TeacherService {
     }
     @Override
     public Teacher saveOne(Teacher teacher) {
-        Teacher save = teacherRepository.save(teacher);
+        Teacher findT = teacherRepository.findByExactName(teacher.getName());
+        Teacher toSave = null;
+        if (findT != null)
+            toSave = findT;
+        else
+            toSave = teacherRepository.save(teacher);
+
         loadSearchLine();
-        return save;
+        return toSave;
     }
 
     @Override

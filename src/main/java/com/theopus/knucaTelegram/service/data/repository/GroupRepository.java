@@ -21,7 +21,4 @@ public interface GroupRepository extends PagingAndSortingRepository<Group, Long>
     @Query(value = "select g from Group g where g.name LIKE concat('%', ?1, '%') ")
     Page<Group> findNameAliesPaged(String name, Pageable pageable);
 
-
-
-
 }
