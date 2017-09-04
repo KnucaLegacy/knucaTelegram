@@ -16,5 +16,7 @@ public interface CustomService <T> {
 
     void flush();
 
+    void deleteBy(long id);
 
+    void deleteBy(T t);
 }

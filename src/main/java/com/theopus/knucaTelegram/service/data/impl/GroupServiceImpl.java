@@ -1,8 +1,11 @@
 package com.theopus.knucaTelegram.service.data.impl;
 
 import com.theopus.knucaTelegram.entity.schedule.Group;
+import com.theopus.knucaTelegram.entity.schedule.Lesson;
+import com.theopus.knucaTelegram.service.data.LessonService;
 import com.theopus.knucaTelegram.service.data.repository.GroupRepository;
 import com.theopus.knucaTelegram.service.data.GroupService;
+import com.theopus.knucaTelegram.service.data.repository.LessonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -21,17 +24,34 @@ public class GroupServiceImpl implements GroupService {
 
     private String searchLine;
 
-
     @Resource
     private GroupRepository groupRepository;
+    @Resource
+    private LessonRepository lessonRepository;
+    @Resource
+    private LessonService lessonService;
 
     private Set<Group> groupsCache = new HashSet<>();
 
     @Override
     public Group saveOne(Group group) {
-        Group save = groupRepository.save(group);
-        loadSearchLine();
-        return save;
+        Group result;
+        if (groupsCache.contains(group))
+            result = getGroup(group);
+        else {
+            Group findG = groupRepository.findByName(group.getName());
+            if (findG != null){
+                result = findG;
+                groupsCache.add(findG);
+            }
+            else{
+                Group savedG = groupRepository.save(group);
+                result = savedG;
+                groupsCache.add(savedG);
+            }
+
+        }
+        return result;
 
     }
 
@@ -56,8 +76,6 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public String getSearchLine() {
-        if (searchLine == null)
-            loadSearchLine();
         return searchLine;
     }
 
@@ -65,21 +83,7 @@ public class GroupServiceImpl implements GroupService {
     public Set<Group> saveAll(Collection<Group> groupSet) {
         Set<Group> result = new HashSet<>();
         for (Group g : groupSet) {
-            if (groupsCache.contains(g))
-                result.add(getGroup(g));
-            else {
-                Group findG = groupRepository.findByName(g.getName());
-                if (findG != null){
-                    result.add(findG);
-                    groupsCache.add(findG);
-                }
-                else{
-                    Group savedG = groupRepository.save(g);
-                    result.add(savedG);
-                    groupsCache.add(savedG);
-                }
-
-            }
+          result.add(saveOne(g));
         }
         return result;
     }
@@ -91,14 +95,7 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public Set<Group> getByAlliesName(String name) {
-        System.out.println(name);
-        try {
-            return groupRepository.findNameAlies(name);
-        }catch (Exception e){
-            log.error("GETALLIESBYNAME", e);
-        }
-        return null;
-
+        return groupRepository.findNameAlies(name);
     }
 
     @Override
@@ -109,7 +106,20 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public void flush() {
         loadSearchLine();
-        groupsCache = null;
+        groupsCache = new HashSet<>();
+    }
+
+    @Override
+    public void deleteBy(long id) {
+        deleteBy(groupRepository.findOne(id));
+    }
+
+    @Override
+    public void deleteBy(Group group) {
+        for (Lesson lesson : group.getLessons()) {
+            lesson.getGroups().remove(group);
+        }
+        groupRepository.delete(group);
     }
 
     @Override
@@ -120,10 +130,6 @@ public class GroupServiceImpl implements GroupService {
     }
 
     private Group getGroup(Group group){
-        for (Group g: groupsCache) {
-            if (g.equals(group))
-                return g;
-        }
-        return null;
+        return groupsCache.stream().filter(group1 -> group1.equals(group)).findFirst().orElse(null);
     }
 }

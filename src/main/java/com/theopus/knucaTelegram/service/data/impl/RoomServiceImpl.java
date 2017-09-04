@@ -79,6 +79,16 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
+    public void deleteBy(long id) {
+
+    }
+
+    @Override
+    public void deleteBy(Room room) {
+
+    }
+
+    @Override
     public Set<Room> saveAll(Collection<Room> rooms) {
         Set<Room> result = new HashSet<>();
         roomRepository.save(rooms).forEach(result::add);

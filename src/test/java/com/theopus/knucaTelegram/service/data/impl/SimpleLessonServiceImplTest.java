@@ -20,10 +20,9 @@ import java.util.Set;
 /**
  * Created by irina on 04.08.17.
  */
-@ContextConfiguration(classes = {PersistenceConfig.class, KnucaTelegramApplication.class})
 public class SimpleLessonServiceImplTest extends GenericDBWithDBCheck {
-    @Resource
-    private SimpleLessonService simpleLessonService;
+
+
     @Override
     public void setUp() throws Exception {
         super.setUp();
@@ -31,27 +30,17 @@ public class SimpleLessonServiceImplTest extends GenericDBWithDBCheck {
 
     @Test
     public void singleDayByGroup() throws Exception {
-        Date singleDate = new GregorianCalendar(2017, 4-1, 17).getTime();
-        Date secondDate = new GregorianCalendar(2017, 4-1, 22).getTime();
-        Group group = groupService.getById(1);
-
-        TelegramMessageFormater formater = new TelegramMessageFormater();
-
-        formater.toDaysMessage(simpleLessonService.getByGroup(singleDate,secondDate, group), group).forEach(System.out::println);
 
     }
 
     @Test
     public void loadAll() throws Exception {
-        Set<Lesson> pdsf = MainParser.parseFolder("pdfs");
-        lessonService.saveAll(pdsf);
+
     }
 
 
     @Test
     public void get() throws Exception {
-        Date singleDate = new GregorianCalendar(2017, 4-1, 17).getTime();
-        Group group = groupService.getById(76);
-        simpleLessonService.getByGroup(singleDate,group).forEach(System.out::println);
+
     }
 }

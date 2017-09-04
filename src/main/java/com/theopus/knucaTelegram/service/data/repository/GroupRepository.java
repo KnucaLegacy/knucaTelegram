@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.Set;
 
 public interface GroupRepository extends PagingAndSortingRepository<Group, Long> {
@@ -17,7 +18,10 @@ public interface GroupRepository extends PagingAndSortingRepository<Group, Long>
     @Query(value = "select g from Group g where g.name LIKE concat('%', ?1, '%') ")
     Set<Group> findNameAlies(String name);
 
-    @Query(value = "select g from Group g where g.name LIKE concat('%', ?1, '%') ")
-    Page<Group> findNameAliesPaged(String name, Pageable pageable);
+    @Query(value = "select g from Group g where g.name LIKE concat('%', :name, '%') ")
+    Page<Group> findNameAliesPaged(@Param("name") String name, Pageable pageable);
+
+    @Query(value = "select distinct g from Group g")
+    List<Group> findAll();
 
 }

@@ -125,6 +125,16 @@ public class TeacherServiceImpl implements TeacherService {
         teachersCache = null;
     }
 
+    @Override
+    public void deleteBy(long id) {
+
+    }
+
+    @Override
+    public void deleteBy(Teacher teacher) {
+
+    }
+
     private Teacher getTeacher(Teacher teacher){
         for (Teacher t: teachersCache) {
             if (t.equals(teacher))

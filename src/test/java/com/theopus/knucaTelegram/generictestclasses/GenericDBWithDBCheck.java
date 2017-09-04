@@ -40,7 +40,5 @@ public class GenericDBWithDBCheck {
 
     @Test
     public void name() throws Exception {
-        Set<Lesson> pdfs20 = MainParser.parseFolder("pdfs20");
-        lessonService.saveAll(pdfs20);
     }
 }

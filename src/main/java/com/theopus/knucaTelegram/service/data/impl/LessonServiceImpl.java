@@ -137,4 +137,16 @@ public class LessonServiceImpl implements LessonService {
         subjectService.flush();
         roomService.flush();
     }
+
+    @Override
+    public void deleteBy(long id) {
+
+    }
+
+
+
+    @Override
+    public void deleteBy(Lesson lesson) {
+
+    }
 }

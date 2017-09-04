@@ -69,6 +69,16 @@ public class SubjectServiceImpl implements SubjectService {
         subjectsCache = null;
     }
 
+    @Override
+    public void deleteBy(long id) {
+
+    }
+
+    @Override
+    public void deleteBy(Subject subject) {
+
+    }
+
     private Subject getSubject(Subject subject){
         for (Subject t: subjectsCache) {
             if (t.equals(subject))
