@@ -8,6 +8,5 @@ import java.util.Set;
 
 public interface RoomService extends CustomService<Room> {
 
-    Room saveRooms(Room room);
     Set<Room> saveAll(Collection<Room> rooms);
 }

@@ -4,10 +4,7 @@ import com.theopus.knucaTelegram.entity.schedule.Group;
 import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import com.theopus.knucaTelegram.entity.schedule.Teacher;
 import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
-import com.theopus.knucaTelegram.service.data.GroupService;
-import com.theopus.knucaTelegram.service.data.LessonService;
-import com.theopus.knucaTelegram.service.data.SubjectService;
-import com.theopus.knucaTelegram.service.data.TeacherService;
+import com.theopus.knucaTelegram.service.data.*;
 import com.theopus.knucaTelegram.service.data.repository.LessonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +25,7 @@ public class LessonServiceImpl implements LessonService {
     @Resource
     private SubjectService subjectService;
     @Resource
-    private RoomServiceImpl roomService;
+    private RoomService roomService;
     @Resource
     private LessonRepository lessonRepository;
 
@@ -39,7 +36,7 @@ public class LessonServiceImpl implements LessonService {
             lesson.setGroups(groupService.saveAll(lesson.getGroups()));
             lesson.setTeachers(teacherService.saveAll(lesson.getTeachers()));
             lesson.getCircumstances().forEach(circumstance ->{
-                circumstance.setRoom(roomService.saveRooms(circumstance.getRoom()));
+                circumstance.setRoom(roomService.saveOne(circumstance.getRoom()));
                 circumstance.setLesson(lesson);
             });
             lessonRepository.save(lesson);
@@ -54,7 +51,7 @@ public class LessonServiceImpl implements LessonService {
         lesson.setGroups(groupService.saveAll(lesson.getGroups()));
         lesson.setTeachers(teacherService.saveAll(lesson.getTeachers()));
         lesson.getCircumstances().forEach(circumstance ->{
-            circumstance.setRoom(roomService.saveRooms(circumstance.getRoom()));
+            circumstance.setRoom(roomService.saveOne(circumstance.getRoom()));
             circumstance.setLesson(lesson);
         });
         flush();

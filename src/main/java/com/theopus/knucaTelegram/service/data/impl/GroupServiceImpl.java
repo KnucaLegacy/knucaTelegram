@@ -15,6 +15,7 @@ import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -81,11 +82,7 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public Set<Group> saveAll(Collection<Group> groupSet) {
-        Set<Group> result = new HashSet<>();
-        for (Group g : groupSet) {
-          result.add(saveOne(g));
-        }
-        return result;
+        return groupSet.stream().map(this::saveOne).collect(Collectors.toSet());
     }
 
     @Override

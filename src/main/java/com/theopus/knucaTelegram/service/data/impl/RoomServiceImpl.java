@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -24,25 +25,6 @@ public class RoomServiceImpl implements RoomService {
     @Resource
     private RoomRepository roomRepository;
 
-    public Room saveRooms(Room r){
-
-        if (roomCache.contains(r))
-            return getRoom(r);
-        else {
-            Room findR = roomRepository.findByName(r.getName());
-            if (findR != null){
-                roomCache.add(findR);
-                return findR;
-            }
-            else{
-                Room saveR = roomRepository.save(r);
-                roomCache.add(saveR);
-                return saveR;
-            }
-
-        }
-    }
-
     private Room getRoom(Room subject){
         for (Room r: roomCache) {
             if (r.equals(subject))
@@ -53,7 +35,23 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public Room saveOne(Room room) {
-        return roomRepository.save(room);
+        Room result;
+        if (roomCache.contains(room))
+            result = getRoom(room);
+        else {
+            Room findR = roomRepository.findByName(room.getName());
+            if (findR != null){
+                result = findR;
+                roomCache.add(findR);
+            }
+            else{
+                Room savedR = roomRepository.save(room);
+                result = savedR;
+                roomCache.add(savedR);
+            }
+
+        }
+        return result;
     }
 
     @Override
@@ -90,8 +88,6 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public Set<Room> saveAll(Collection<Room> rooms) {
-        Set<Room> result = new HashSet<>();
-        roomRepository.save(rooms).forEach(result::add);
-        return result;
+        return rooms.stream().map(this::saveOne).collect(Collectors.toSet());
     }
 }

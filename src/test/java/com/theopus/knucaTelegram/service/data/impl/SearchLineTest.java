@@ -25,7 +25,6 @@ public class SearchLineTest extends GenericDBWithDBCheck {
                 add(new Group("Group4"));
             }
         };
-
         Set<Group> loaded = groupService.saveAll(expexcted);
         groupService.flush();
         Assert.assertEquals(";Group1;Group2;Group3;Group4;",groupService.getSearchLine());

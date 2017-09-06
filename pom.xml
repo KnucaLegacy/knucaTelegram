@@ -104,6 +104,14 @@
 			</exclusions>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.github.masahitojp/botan-core -->
+		<dependency>
+			<groupId>com.github.masahitojp</groupId>
+			<artifactId>botan-core</artifactId>
+			<version>0.6.4</version>
+		</dependency>
+
+
 
 	</dependencies>
 
