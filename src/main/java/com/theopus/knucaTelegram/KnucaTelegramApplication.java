@@ -28,5 +28,6 @@ public class KnucaTelegramApplication {
         ConfigurableApplicationContext run = SpringApplication.run(KnucaTelegramApplication.class, args);
         log.info("in main starting");
 //        run.getBean(LessonService.class).saveAll(MainParser.parseFolder("pdfs"));
+
     }
 }

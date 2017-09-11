@@ -31,7 +31,10 @@ public class LessonServiceImpl implements LessonService {
 
     @Override
     public Collection<Lesson> saveAll(Collection<Lesson> lessons) {
-        lessons.forEach(lesson ->{
+        outer: for (Lesson lesson : lessons) {
+            for (Group group : lesson.getGroups()) {
+                if (group == null) continue outer;
+            }
             lesson.setSubject(subjectService.saveOne(lesson.getSubject()));
             lesson.setGroups(groupService.saveAll(lesson.getGroups()));
             lesson.setTeachers(teacherService.saveAll(lesson.getTeachers()));
@@ -40,7 +43,7 @@ public class LessonServiceImpl implements LessonService {
                 circumstance.setLesson(lesson);
             });
             lessonRepository.save(lesson);
-        });
+        }
         flush();
         return lessons;
     }

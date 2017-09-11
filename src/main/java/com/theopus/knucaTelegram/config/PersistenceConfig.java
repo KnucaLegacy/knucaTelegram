@@ -27,16 +27,6 @@ public class PersistenceConfig {
     @Resource
     private Environment env;
 
-    private String jdbc_driverClassName="com.mysql.jdbc.Driver";
-    private String jdbc_url = "jdbc:mysql://localhost:3306/library";
-    private String jdbc_user = "root";
-    private String jdbc_pass = "root";
-
-
-    private String hibernate_dialect = "org.hibernate.dialect.MySQL5Dialect";
-    private String hibernate_show_sql = "true";
-    private String hibernate_hbm2ddl_auto = "create-drop";
-
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();

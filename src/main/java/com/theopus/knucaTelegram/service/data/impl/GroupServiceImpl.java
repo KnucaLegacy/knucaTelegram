@@ -27,10 +27,6 @@ public class GroupServiceImpl implements GroupService {
 
     @Resource
     private GroupRepository groupRepository;
-    @Resource
-    private LessonRepository lessonRepository;
-    @Resource
-    private LessonService lessonService;
 
     private Set<Group> groupsCache = new HashSet<>();
 

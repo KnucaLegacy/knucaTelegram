@@ -66,7 +66,7 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Override
     public void flush() {
-        subjectsCache = null;
+        subjectsCache = new HashSet<>();
     }
 
     @Override
