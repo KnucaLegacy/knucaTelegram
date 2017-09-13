@@ -44,7 +44,7 @@ public class SendInlineKeyboard extends SingleDirSendMessageAction {
             name = teacher.getName();
         }
         today = name;
-        tomorrow = name + " " + "tommorow";
+        tomorrow = name + " " + "tomorrow";
         week = name + " " + "week";
         nextWeek = name + " " + "nextweek";
 

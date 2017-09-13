@@ -60,11 +60,14 @@ public class GroupServiceImplTest extends GenericDBWithDBCheck {
 
     @Test
     public void getByExactName() throws Exception {
+        //before
         Group gr1 = new Group();
         gr1.setName("Group1");
         Group saved = groupService.saveOne(gr1);
+        //when
         Group loaded = groupService.getByExactName("Group1");
 
+        //then
         Assert.assertEquals(saved, loaded);
 
         groupService.flush();

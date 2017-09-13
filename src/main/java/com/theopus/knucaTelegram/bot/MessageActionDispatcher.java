@@ -54,7 +54,8 @@ public class MessageActionDispatcher {
     public synchronized Action handleMessage(String messageText, long chatId, boolean isCallback){
 
         String extratedData = extractData(messageText);
-        System.out.println("--------------"+extratedData);
+        log.info("---message---" + messageText);
+        log.info("-----------------------------------------------");
         this.isCallBack = isCallback;
         this.chatId = chatId;
         this.messageText = messageText;
@@ -174,7 +175,6 @@ public class MessageActionDispatcher {
         parseNumericDate(messageText);
         parseDOWDate(messageText);
         parseOffsetDate(messageText);
-        dates.forEach(System.out::println);
         if (dates.isEmpty())
             dates.add(currdate);
     }

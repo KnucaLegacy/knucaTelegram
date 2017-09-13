@@ -1,11 +1,16 @@
 package com.theopus.knucaTelegram.bot;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.theopus.knucaTelegram.bot.action.Action;
 import com.theopus.knucaTelegram.bot.command.HelloCommand;
 import com.theopus.knucaTelegram.bot.command.HelpCommand;
 import com.theopus.knucaTelegram.bot.command.StartCommand;
+import io.botan.sdk.Botan;
+import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
+import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -14,12 +19,15 @@ import org.telegram.telegrambots.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import javax.annotation.Resource;
+import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 
 @Component
 public class ScheduleBot extends TelegramLongPollingCommandBot {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
+
 
     @Resource
     private MessageActionDispatcher messageDispatcher;
@@ -50,16 +58,41 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
 
     @Override
     public void processNonCommandUpdate(Update update) {
+        String chatId = "";
+        String message = "";
+        boolean isDirect = true;
 
         if (update.hasMessage() && update.getMessage().hasText()) {
-            System.out.println(update.getMessage().getChat().getUserName());
+            log.info("---------------Message----------------------");
+            log.info(update.getMessage().getChat().getUserName());
             Action action = messageDispatcher.handleMessage(update.getMessage().getText(), update.getMessage().getChat().getId(), false);
             action.execute(this);
 
+            message = update.getMessage().getText();
+            chatId = update.getCallbackQuery().getId();
+            isDirect = true;
+
         } else if (update.hasCallbackQuery()){
-            System.out.println(update.getCallbackQuery().getData());
+            log.info("-----------------Callback--------------------------");
+            log.info(update.getCallbackQuery().getFrom().getUserName());
+            log.info(update.getCallbackQuery().getData());
             Action action = messageDispatcher.handleMessage(update.getCallbackQuery().getData(),  update.getCallbackQuery().getMessage().getChatId(), true);
             action.execute(this);
+
+            message = update.getCallbackQuery().getData();
+            chatId = update.getCallbackQuery().getId();
+            isDirect = false;
+        }
+
+        if (chatId.equals("")) {
+            try (CloseableHttpAsyncClient client = HttpAsyncClients.createDefault()) {
+                client.start();
+                Botan botan = new Botan(client, new ObjectMapper());
+                botan.track(token, chatId, message,
+                        isDirect ? "direct" : "callback").get();
+            } catch (IOException | InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
         }
     }
 

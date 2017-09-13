@@ -40,7 +40,6 @@ public class CorrectSelectData extends SingleDirSendMessageAction {
                 map.put(t.getName(), callback);
             }
         }
-        map.forEach((s, s2) -> System.out.println(s + "-" + s2));
         InlineKeyboardMarkup keyBoard = KeyboardBuilder.gridInlineKeyBoard(map, 3);
         Set<SendMessage> result = new LinkedHashSet<>();
         result.add(new SendMessage().enableHtml(true).setReplyMarkup(keyBoard).setText(initialString));
