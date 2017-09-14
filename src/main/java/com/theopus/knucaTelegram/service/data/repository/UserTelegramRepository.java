@@ -6,5 +6,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface UserTelegramRepository extends PagingAndSortingRepository<UserTelegram, Long > {
 
-    UserTelegram getByNickname(String nickname);
+    UserTelegram getByChatId(long chatId);
 }

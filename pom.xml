@@ -5,11 +5,10 @@
 
 	<groupId>com.theopus</groupId>
 	<artifactId>knucaTelegram</artifactId>
-	<version>0.0.7-SNAPSHOT</version>
+	<version>1.4-RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>knucaTelegram</name>
-	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
