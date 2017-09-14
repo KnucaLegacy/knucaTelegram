@@ -82,6 +82,7 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
             message = update.getCallbackQuery().getData();
             chatId = update.getCallbackQuery().getId();
             isDirect = false;
+            System.out.println("refractor");
         }
 
         if (chatId.equals("")) {
