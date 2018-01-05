@@ -10,7 +10,6 @@ import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
 import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -84,16 +83,22 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
             isDirect = false;
         }
 
-        if (chatId.equals("")) {
-            try (CloseableHttpAsyncClient client = HttpAsyncClients.createDefault()) {
-                client.start();
-                Botan botan = new Botan(client, new ObjectMapper());
-                botan.track(token, chatId, message,
-                        isDirect ? "direct" : "callback").get();
-            } catch (IOException | InterruptedException | ExecutionException e) {
-                e.printStackTrace();
+        String finalChatId = chatId;
+        String finalMessage = message;
+        boolean finalIsDirect = isDirect;
+        new Thread(()->{
+            if (finalChatId.equals("")) {
+                try (CloseableHttpAsyncClient client = HttpAsyncClients.createDefault()) {
+                    client.start();
+                    Botan botan = new Botan(client, new ObjectMapper());
+                    botan.track(token, finalChatId, finalMessage,
+                            finalIsDirect ? "direct" : "callback").get();
+                } catch (IOException | InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
             }
-        }
+        }).start();
+
     }
 
     @Override

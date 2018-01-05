@@ -1,7 +1,5 @@
 package com.theopus.knucaTelegram.entity.schedule;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import com.theopus.knucaTelegram.controller.ajax.View;
 import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
 import com.theopus.knucaTelegram.entity.schedule.enums.LessonOrder;
 import com.theopus.knucaTelegram.entity.schedule.enums.LessonType;
@@ -12,23 +10,23 @@ import java.util.Set;
 
 public class SimpleLesson {
 
-    @JsonView(View.Summary.class)
+
     private long fullid;
-    @JsonView(View.Summary.class)
+
     private DayOfWeek dayOfWeek;
-    @JsonView(View.Summary.class)
+
     private LessonOrder order;
-    @JsonView(View.Summary.class)
+
     private LessonType lessonType;
-    @JsonView(View.Summary.class)
+
     private Subject subject;
-    @JsonView(View.Summary.class)
+
     private Set<Group> groups;
-    @JsonView(View.Summary.class)
+
     private Set<Teacher> teachers;
-    @JsonView(View.Summary.class)
+
     private Set<Room> rooms;
-    @JsonView(View.Summary.class)
+
     private Date date;
 
     public SimpleLesson() {

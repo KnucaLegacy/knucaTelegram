@@ -5,7 +5,10 @@ import com.theopus.knucaTelegram.entity.schedule.Room;
 import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
 import com.theopus.knucaTelegram.entity.schedule.enums.LessonOrder;
 
-import java.util.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
 public class CircumstanceStubs {
 

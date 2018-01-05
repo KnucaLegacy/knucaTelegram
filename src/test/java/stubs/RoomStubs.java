@@ -1,9 +1,7 @@
 package stubs;
 
-import com.theopus.knucaTelegram.entity.schedule.Group;
 import com.theopus.knucaTelegram.entity.schedule.Room;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;

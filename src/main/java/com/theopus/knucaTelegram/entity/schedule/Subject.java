@@ -1,10 +1,11 @@
 package com.theopus.knucaTelegram.entity.schedule;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import com.theopus.knucaTelegram.controller.ajax.View;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Subject {
@@ -13,11 +14,10 @@ public class Subject {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
     @Column(name = "id", length = 6, nullable = false)
-    @JsonView(View.Summary.class)
+
     private long id;
 
     @Column(name = "name")
-    @JsonView(View.Summary.class)
     private String name;
 
 

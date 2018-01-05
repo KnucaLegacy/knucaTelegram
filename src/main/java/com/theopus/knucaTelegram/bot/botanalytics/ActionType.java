@@ -1,7 +1,5 @@
 package com.theopus.knucaTelegram.bot.botanalytics;
 
-import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
-
 public enum ActionType {
     NOT_FOUND_ACTION,
     TODAY_GROUP,

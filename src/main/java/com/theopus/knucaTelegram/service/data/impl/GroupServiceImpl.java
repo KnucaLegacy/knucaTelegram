@@ -2,10 +2,8 @@ package com.theopus.knucaTelegram.service.data.impl;
 
 import com.theopus.knucaTelegram.entity.schedule.Group;
 import com.theopus.knucaTelegram.entity.schedule.Lesson;
-import com.theopus.knucaTelegram.service.data.LessonService;
-import com.theopus.knucaTelegram.service.data.repository.GroupRepository;
 import com.theopus.knucaTelegram.service.data.GroupService;
-import com.theopus.knucaTelegram.service.data.repository.LessonRepository;
+import com.theopus.knucaTelegram.service.data.repository.GroupRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

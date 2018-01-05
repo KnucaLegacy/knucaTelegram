@@ -4,7 +4,6 @@ import com.theopus.knucaTelegram.entity.schedule.Group;
 import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import com.theopus.knucaTelegram.entity.schedule.Subject;
 import com.theopus.knucaTelegram.entity.schedule.Teacher;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;

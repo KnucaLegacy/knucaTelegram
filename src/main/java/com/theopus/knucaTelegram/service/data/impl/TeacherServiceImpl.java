@@ -1,16 +1,15 @@
 package com.theopus.knucaTelegram.service.data.impl;
 
 import com.theopus.knucaTelegram.entity.schedule.Teacher;
+import com.theopus.knucaTelegram.service.data.TeacherService;
 import com.theopus.knucaTelegram.service.data.repository.LessonRepository;
 import com.theopus.knucaTelegram.service.data.repository.TeacherRepository;
-import com.theopus.knucaTelegram.service.data.TeacherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import javax.persistence.EntityManager;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;

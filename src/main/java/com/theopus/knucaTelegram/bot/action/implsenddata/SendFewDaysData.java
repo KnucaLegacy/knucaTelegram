@@ -1,6 +1,5 @@
 package com.theopus.knucaTelegram.bot.action.implsenddata;
 
-import com.theopus.knucaTelegram.service.data.LessonService;
 import com.theopus.knucaTelegram.service.data.SimpleLessonService;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 

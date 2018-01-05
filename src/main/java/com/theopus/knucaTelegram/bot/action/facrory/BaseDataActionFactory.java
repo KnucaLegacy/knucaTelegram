@@ -2,12 +2,13 @@ package com.theopus.knucaTelegram.bot.action.facrory;
 
 import com.theopus.knucaTelegram.bot.action.SendDataAction;
 import com.theopus.knucaTelegram.bot.action.implsenddata.*;
-import com.theopus.knucaTelegram.service.data.LessonService;
 import com.theopus.knucaTelegram.service.data.SimpleLessonService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.*;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashSet;
 
 @Service
 public class BaseDataActionFactory extends SendDataActionFactory {

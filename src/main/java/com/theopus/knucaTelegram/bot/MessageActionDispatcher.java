@@ -3,7 +3,6 @@ package com.theopus.knucaTelegram.bot;
 import com.theopus.knucaTelegram.bot.action.Action;
 import com.theopus.knucaTelegram.bot.action.facrory.SendDataActionFactory;
 import com.theopus.knucaTelegram.bot.action.implsenddata.BadRequest;
-import com.theopus.knucaTelegram.bot.botanalytics.ActionType;
 import com.theopus.knucaTelegram.bot.botanalytics.BotAnalytics;
 import com.theopus.knucaTelegram.bot.util.DayOfWeekAllias;
 import com.theopus.knucaTelegram.bot.util.DayOffsetValues;

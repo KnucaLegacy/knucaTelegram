@@ -1,7 +1,8 @@
 <component name="libraryTable">
   <library name="sdk">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../bot/sdk/java/sdk/target/sdk.jar!/" />
+      <root url="jar://$USER_HOME$/bot/sdk/java/sdk/target/sdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../bot/sdk/java/target/sdk.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

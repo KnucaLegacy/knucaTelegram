@@ -1,7 +1,6 @@
 package com.theopus.knucaTelegram.service.data;
 
 import com.theopus.knucaTelegram.entity.schedule.Group;
-import com.theopus.knucaTelegram.entity.schedule.Lesson;
 import com.theopus.knucaTelegram.entity.schedule.SimpleLesson;
 import com.theopus.knucaTelegram.entity.schedule.Teacher;
 
