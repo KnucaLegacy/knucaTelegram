@@ -1,15 +1,17 @@
 package com.theopus.knucaTelegram.service.data;
 
-import com.theopus.knucaTelegram.entity.schedule.Group;
-import com.theopus.knucaTelegram.entity.schedule.SimpleLesson;
-import com.theopus.knucaTelegram.entity.schedule.Teacher;
+import com.theopus.knucaTelegram.entity.schedule.*;
+import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SimpleLessonServiceRest implements SimpleLessonService {
+
+
+    private static final SimpleDateFormat simp = new SimpleDateFormat("yyyy-MM-dd");
 
 
     @Override
@@ -18,12 +20,18 @@ public class SimpleLessonServiceRest implements SimpleLessonService {
     }
     @Override
     public List<SimpleLesson> getByGroup(Date date, Group group) {
-        return null;
+        RestTemplate restTemplate = new RestTemplate();
+        String dates = simp.format(date);
+        NewLesson[] forObject = restTemplate.getForObject("http://localhost:8080/lessons/" + dates + "/group/" + group.getId(), NewLesson[].class);
+        return Arrays.stream(forObject).map(this::newToSimple).collect(Collectors.toList());
     }
 
     @Override
     public List<SimpleLesson> getByTeacher(Date date, Teacher teacher) {
-        return null;
+        RestTemplate restTemplate = new RestTemplate();
+        String dates = simp.format(date);
+        NewLesson[] forObject = restTemplate.getForObject("http://localhost:8080/lessons/" + dates + "/teacher/" + teacher.getId(), NewLesson[].class);
+        return Arrays.stream(forObject).map(this::newToSimple).collect(Collectors.toList());
     }
 
     @Override
@@ -54,5 +62,17 @@ public class SimpleLessonServiceRest implements SimpleLessonService {
     @Override
     public Map<Date, List<SimpleLesson>> getByTeacher(Date from, Date to, Teacher teacher) {
         return null;
+    }
+
+    public SimpleLesson newToSimple(NewLesson lesson) {
+        SimpleLesson lesson1 = new SimpleLesson();
+        lesson1.setDate(new Date(lesson.getDate().toEpochDay()));
+        lesson1.setDayOfWeek(DayOfWeek.intToDay(lesson.getDate().getDayOfWeek().ordinal() - 1));
+        lesson1.setGroups(lesson.getGroups());
+        lesson1.setOrder(lesson.getOrder());
+        lesson1.setSubject(lesson.getCourse().getSubject());
+        lesson1.setTeachers(lesson.getCourse().getTeachers());
+        lesson1.setLessonType(lesson.getCourse().getType());
+        return lesson1;
     }
 }
