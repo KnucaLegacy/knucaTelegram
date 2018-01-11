@@ -1,21 +1,10 @@
 package com.theopus.knucaTelegram.entity.telegram;
 
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Transient;
-
-@Entity
 public class UserTelegram {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
+
     private long id;
 
-    @Transient
     private final static String no_nickname = "no_nickname";
 
     private String nickname;

@@ -1,13 +1,9 @@
 package com.theopus.knucaTelegram.bot;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.theopus.knucaTelegram.bot.action.Action;
 import com.theopus.knucaTelegram.bot.command.HelloCommand;
 import com.theopus.knucaTelegram.bot.command.HelpCommand;
 import com.theopus.knucaTelegram.bot.command.StartCommand;
-import io.botan.sdk.Botan;
-import org.apache.http.impl.nio.client.CloseableHttpAsyncClient;
-import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,8 +14,6 @@ import org.telegram.telegrambots.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
 import javax.annotation.Resource;
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
 
 
 @Component
@@ -82,23 +76,6 @@ public class ScheduleBot extends TelegramLongPollingCommandBot {
             chatId = update.getCallbackQuery().getId();
             isDirect = false;
         }
-
-        String finalChatId = chatId;
-        String finalMessage = message;
-        boolean finalIsDirect = isDirect;
-        new Thread(()->{
-            if (finalChatId.equals("")) {
-                try (CloseableHttpAsyncClient client = HttpAsyncClients.createDefault()) {
-                    client.start();
-                    Botan botan = new Botan(client, new ObjectMapper());
-                    botan.track(token, finalChatId, finalMessage,
-                            finalIsDirect ? "direct" : "callback").get();
-                } catch (IOException | InterruptedException | ExecutionException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-
     }
 
     @Override

@@ -1,27 +1,14 @@
 package com.theopus.knucaTelegram.entity.schedule;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
-
-@Entity
 public class Teacher {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id", length = 6, nullable = false)
-    private long id;
+    private Long id;
 
-    @Column(name = "name")
     private String name;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "teachers", fetch = FetchType.LAZY)
-    private Set<Lesson> lessons = new HashSet<>();
+//    @JsonIgnore
+//    @ManyToMany(mappedBy = "teachers", fetch = FetchType.LAZY)
+//    private Set<Lesson> lessons = new HashSet<>();
 
     public Teacher() {
     }
@@ -38,9 +25,9 @@ public class Teacher {
         this.name = name;
     }
 
-    public Set<Lesson> getLessons() {
-        return lessons;
-    }
+//    public Set<Lesson> getLessons() {
+//        return lessons;
+//    }
 
     @Override
     public boolean equals(Object o) {
@@ -56,9 +43,9 @@ public class Teacher {
         return id;
     }
 
-    public boolean addLesson(Lesson lesson){
-        return lessons.add(lesson);
-    }
+//    public boolean addLesson(Lesson lesson){
+//        return lessons.add(lesson);
+//    }
 
     public void setId(long id) {
         this.id = id;

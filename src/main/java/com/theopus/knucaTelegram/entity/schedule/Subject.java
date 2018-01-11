@@ -1,23 +1,10 @@
 package com.theopus.knucaTelegram.entity.schedule;
 
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
 public class Subject {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id", length = 6, nullable = false)
 
     private long id;
 
-    @Column(name = "name")
     private String name;
 
 

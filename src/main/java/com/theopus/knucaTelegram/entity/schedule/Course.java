@@ -3,8 +3,6 @@ package com.theopus.knucaTelegram.entity.schedule;
 import com.google.common.collect.Sets;
 import com.theopus.knucaTelegram.entity.schedule.enums.LessonType;
 
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -21,7 +19,6 @@ public class Course {
     private Subject subject;
     private LessonType type;
 
-    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Teacher> teachers = new HashSet<>();
 
     public Course() {

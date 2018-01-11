@@ -7,7 +7,6 @@ import com.theopus.knucaTelegram.entity.schedule.enums.LessonType;
 import java.util.Date;
 import java.util.Set;
 
-
 public class SimpleLesson {
 
 

@@ -3,7 +3,7 @@ package com.theopus.knucaTelegram.entity.schedule.enums;
 public enum LessonType {
     LECTION,
     LAB,
-    PRACT,
+    PRACTICE,
     ELSE;
 
     @Override
@@ -11,7 +11,7 @@ public enum LessonType {
         switch (this.name()){
             case "LECTION": return "Лекция" ;
             case "LAB": return "Лабораторная" ;
-            case "PRACT": return "Практика" ;
+            case "PRACTICE": return "Практика" ;
             case "ELSE": return "Что-то там" ;
             default: return null;
         }

@@ -1,41 +1,25 @@
 package com.theopus.knucaTelegram.entity.schedule;
 
 import com.theopus.knucaTelegram.entity.schedule.enums.LessonType;
-import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 public class Lesson {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id", length = 6, nullable = false)
+
     private long id;
 
-    @ManyToOne
-    @JoinColumn(name = "subject_id")
     private Subject subject;
 
-    @Column(name = "lesson_type")
+
     private LessonType lessonType;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "lesson_teacher",
-            joinColumns =@JoinColumn(name = "lesson_id"),
-            inverseJoinColumns =@JoinColumn(name = "teacher_id") )
+
     private Set<Teacher> teachers = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "lesson_group",
-            joinColumns =@JoinColumn(name = "lesson_id"),
-            inverseJoinColumns =@JoinColumn(name = "group_id") )
     private Set<Group> groups = new HashSet<>();
 
-    @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Circumstance> circumstances = new HashSet<>();
 
     public Lesson() {

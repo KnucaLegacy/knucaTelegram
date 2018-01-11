@@ -1,36 +1,24 @@
 package com.theopus.knucaTelegram.entity.schedule;
 
 import com.theopus.knucaTelegram.entity.schedule.enums.LessonOrder;
-import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 public class Circumstance {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id", length = 6, nullable = false)
     private long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "lesson_id")
+
     private Lesson lesson;
 
-    @Column(name = "lesson_order")
+
     private LessonOrder order;
 
-    @ManyToOne
-    @JoinColumn(name = "room_id")
+
     private Room room;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name="dates", joinColumns=@JoinColumn(name="circumstance_id"))
-    @Column(name="dates")
     private Set<Date> dates = new HashSet<>();
 
     public Circumstance() {

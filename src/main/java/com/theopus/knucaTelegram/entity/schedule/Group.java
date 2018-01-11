@@ -1,28 +1,15 @@
 package com.theopus.knucaTelegram.entity.schedule;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-@Table(name = "Group_p")
 public class Group {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id", length = 6, nullable = false)
     private long id;
 
-    @Column(name = "name")
 
     private String name;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "groups", fetch = FetchType.LAZY)
     private Set<Lesson> lessons = new HashSet<>();
 
     public Group() {
