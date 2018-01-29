@@ -10,6 +10,7 @@ import com.theopus.knucaTelegram.entity.schedule.NewLesson;
 import com.theopus.knucaTelegram.entity.schedule.SimpleLesson;
 import com.theopus.knucaTelegram.entity.schedule.Teacher;
 import com.theopus.knucaTelegram.entity.schedule.enums.DayOfWeek;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -27,9 +28,14 @@ import java.util.stream.Stream;
 public class SimpleLessonServiceRest implements SimpleLessonService {
 
     private RestTemplate restTemplate;
+
+
+    private String address;
     private static final SimpleDateFormat simp = new SimpleDateFormat("yyyy-MM-dd");
 
-    public SimpleLessonServiceRest() {
+
+    public SimpleLessonServiceRest(@Value("${rest.host}")String address) {
+        this.address = address;
         restTemplate = new RestTemplate();
         restTemplate.getMessageConverters().removeIf(m -> m.getClass().getName().equals(MappingJackson2HttpMessageConverter.class.getName()));
         restTemplate.getMessageConverters().add(mappingJacksonHttpMessageConverter());
@@ -43,14 +49,14 @@ public class SimpleLessonServiceRest implements SimpleLessonService {
     @Override
     public List<SimpleLesson> getByGroup(Date date, Group group) {
         String dates = simp.format(date);
-        NewLesson[] forObject = restTemplate.getForObject("http://localhost:8080/lessons/" + dates + "/group/" + group.getId(), NewLesson[].class);
+        NewLesson[] forObject = restTemplate.getForObject("http://" + address + "/lessons/" + dates + "/group/" + group.getId(), NewLesson[].class);
         return Arrays.stream(forObject).map(this::newToSimple).collect(Collectors.toList());
     }
 
     @Override
     public List<SimpleLesson> getByTeacher(Date date, Teacher teacher) {
         String dates = simp.format(date);
-        NewLesson[] forObject = restTemplate.getForObject("http://localhost:8080/lessons/" + dates + "/teacher/" + teacher.getId(), NewLesson[].class);
+        NewLesson[] forObject = restTemplate.getForObject("http://" + address + "/lessons/" + dates + "/teacher/" + teacher.getId(), NewLesson[].class);
         return Arrays.stream(forObject).map(this::newToSimple).collect(Collectors.toList());
     }
 

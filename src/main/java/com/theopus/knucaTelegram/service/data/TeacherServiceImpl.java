@@ -1,6 +1,7 @@
 package com.theopus.knucaTelegram.service.data;
 
 import com.theopus.knucaTelegram.entity.schedule.Teacher;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,12 +17,15 @@ public class TeacherServiceImpl implements TeacherService {
 
     private Map<Long, Teacher> teacherServiceMap;
 
+    private String address;
+
     private RestTemplate restTemplate;
 
-    public TeacherServiceImpl() {
+    public TeacherServiceImpl(@Value("${rest.host}")String address) {
+        this.address = address;
         teacherServiceMap = new ConcurrentSkipListMap<>();
         restTemplate = new RestTemplate();
-        Arrays.stream(restTemplate.getForObject("http://localhost:8080/teachers", Teacher[].class))
+        Arrays.stream(restTemplate.getForObject("http://" + this.address + "/teachers", Teacher[].class))
                 .forEach(t -> teacherServiceMap.put(t.getId(), t));
     }
 

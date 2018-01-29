@@ -1,0 +1,105 @@
+buildscript {
+
+    ext {
+        springBootVersion = '1.5.8.RELEASE'
+        jUnitVersion = '4.12'
+        lombokVersion = '1.16.18'
+        swaggerVersion = '2.6.1'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+version = '0.0.1-SNAPSHOT'
+mainClassName = "com.theopus.knucaTelegram.KnucaTelegramApplication"
+
+task botStartScript(type: CreateStartScripts) {
+    description "Creates OS specific scripts to call the 'other' entry point"
+    classpath = startScripts.classpath
+    outputDir = startScripts.outputDir
+    mainClassName = 'com.theopus.knucaTelegram.KnucaTelegramApplication'
+    applicationName = 'knuca-bot'
+    defaultJvmOpts = ["-Xmx128m", "-Xms32m", "-Dspring.config.location=../conf/knuca-bot.properties"]
+}
+
+applicationDistribution.into("bin") {
+    duplicatesStrategy= DuplicatesStrategy.EXCLUDE
+    from(botStartScript)
+    fileMode = 0755
+}
+
+distTar {
+    into("${project.name}-${version}/conf") {
+        from "src/main/resources/"
+        include "application.properties"
+        filter {it.replaceAll("classpath:","../conf/")}
+        rename ('application.properties', "knuca-bot.properties")
+    }
+    compression = Compression.GZIP
+}
+
+distZip {
+    into("${project.name}-${version}/conf") {
+        from "src/main/resources/"
+        include "application.properties"
+        filter {it.replaceAll("classpath:","../conf/")}
+        rename ('application.properties', "knuca-bot.properties")
+    }
+}
+
+startScripts {
+    doLast {
+        windowsScript.delete()
+        unixScript.delete()
+    }
+}
+
+task dockerfile(type: Copy){
+    delete "docker/Dockerfile"
+    from "docker/template/Dockerfile"
+    filter {it.replaceFirst("TAR\$","TAR ${project.name}-${version}.tgz")}
+    into "docker"
+}
+
+build.finalizedBy {
+    copyArtifact
+}
+
+build.finalizedBy {
+    dockerfile
+}
+
+
+task copyArtifact (type: Copy){
+    from distTar
+    into "docker/knuca-bot"
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile "org.telegram:telegrambots:3.1.0"
+    compile "org.telegram:telegrambotsextensions:3.0.2"
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+}
+
+
+
+
+

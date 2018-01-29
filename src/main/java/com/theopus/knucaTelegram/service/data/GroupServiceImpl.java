@@ -1,24 +1,30 @@
 package com.theopus.knucaTelegram.service.data;
 
 import com.theopus.knucaTelegram.entity.schedule.Group;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.stream.Collectors;
 
 @Service
 public class GroupServiceImpl implements GroupService {
 
+    private String address;
     private Map<Long, Group> groupServiceMap;
 
     private RestTemplate restTemplate;
 
-    public GroupServiceImpl() {
+    public GroupServiceImpl(@Value("${rest.host}") String address) {
+        this.address = address;
         groupServiceMap = new ConcurrentSkipListMap<>();
         restTemplate = new RestTemplate();
-        Arrays.stream(restTemplate.getForObject("http://localhost:8080/groups", Group[].class))
+        Arrays.stream(restTemplate.getForObject("http://" + this.address + "/groups", Group[].class))
                 .forEach(g -> groupServiceMap.put(g.getId(), g));
     }
 
