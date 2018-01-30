@@ -13,4 +13,4 @@ EXPOSE 8080
 
 ENV NAME knuca-bot
 
-ENTRYPOINT knuca-platform/app/bin/knuca-bot
+ENTRYPOINT knuca-bot/app/bin/knuca-bot
