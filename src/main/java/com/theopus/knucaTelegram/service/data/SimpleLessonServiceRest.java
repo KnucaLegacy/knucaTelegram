@@ -72,31 +72,32 @@ public class SimpleLessonServiceRest implements SimpleLessonService {
 
     @Override
     public Map<Date, List<SimpleLesson>> getWeekByGroup(Date date, Group group) {
-        return week(getLocalDate(date)).stream().map(this::getDate).flatMap(date1 -> getByGroup(date, group).stream())
-                .collect(Collectors.groupingBy(SimpleLesson::getDate));
+        return new TreeMap<>(week(getLocalDate(date)).stream().map(this::getDate).flatMap(date1 -> getByGroup(date1, group).stream())
+                .collect(Collectors.groupingBy(SimpleLesson::getDate)));
     }
 
     @Override
     public Map<Date, List<SimpleLesson>> getWeekByTeacher(Date date, Teacher teacher) {
-        return week(getLocalDate(date)).stream().map(this::getDate).flatMap(date1 -> getByTeacher(date, teacher).stream())
-                .collect(Collectors.groupingBy(SimpleLesson::getDate));
+        return new TreeMap<>(week(getLocalDate(date)).stream().map(this::getDate).flatMap(date1 -> getByTeacher(date1, teacher).stream())
+                .collect(Collectors.groupingBy(SimpleLesson::getDate)));
     }
 
     @Override
     public Map<Date, List<SimpleLesson>> getByGroup(Date from, Date to, Group group) {
-        return range(getLocalDate(from), getLocalDate(to)).flatMap(localDate -> getByGroup(getDate(localDate), group).stream())
-                .collect(Collectors.groupingBy(SimpleLesson::getDate));
+        return new TreeMap<>(range(getLocalDate(from), getLocalDate(to)).flatMap(localDate -> getByGroup(getDate(localDate), group).stream())
+                .collect(Collectors.groupingBy(SimpleLesson::getDate)));
     }
 
     @Override
     public Map<Date, List<SimpleLesson>> getByTeacher(Date from, Date to, Teacher teacher) {
-        return range(getLocalDate(from), getLocalDate(to)).flatMap(localDate -> getByTeacher(getDate(localDate), teacher).stream())
-                .collect(Collectors.groupingBy(SimpleLesson::getDate));
+        return new TreeMap<>(range(getLocalDate(from), getLocalDate(to)).flatMap(localDate -> getByTeacher(getDate(localDate), teacher).stream())
+                .collect(Collectors.groupingBy(SimpleLesson::getDate)));
     }
 
     private SimpleLesson newToSimple(NewLesson lesson) {
         SimpleLesson lesson1 = new SimpleLesson();
         lesson1.setDate(getDate(lesson.getDate()));
+        lesson1.setRooms(lesson.getRooms());
         lesson1.setDayOfWeek(DayOfWeek.intToDay(lesson.getDate().getDayOfWeek().ordinal() - 1));
         lesson1.setGroups(lesson.getGroups());
         lesson1.setOrder(lesson.getOrder());
@@ -129,9 +130,9 @@ public class SimpleLessonServiceRest implements SimpleLessonService {
         return converter;
     }
 
-    private static Set<LocalDate> week(LocalDate localDate) {
-        return Arrays.stream(java.time.DayOfWeek.values()).map(localDate::with)
-                .collect(Collectors.toSet());
+    private static List<LocalDate> week(LocalDate localDate) {
+        return Arrays.stream(java.time.DayOfWeek.values()).map(localDate::with).sorted()
+                .collect(Collectors.toList());
     }
 
     private static Stream<LocalDate> range(LocalDate startDate, LocalDate endDate) {
