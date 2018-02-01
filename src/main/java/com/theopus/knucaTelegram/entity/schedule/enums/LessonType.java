@@ -1,10 +1,13 @@
 package com.theopus.knucaTelegram.entity.schedule.enums;
 
 public enum LessonType {
-    LECTION,
-    LAB,
+    LECTURE,
     PRACTICE,
-    ELSE;
+    LAB,
+    EXAM,
+    INDIVIDUAL,
+    FACULTY, CONSULTATION,
+    NONE, UNIDENTIFIED;
 
     @Override
     public String toString() {
@@ -13,7 +16,7 @@ public enum LessonType {
             case "LAB": return "Лабораторная" ;
             case "PRACTICE": return "Практика" ;
             case "ELSE": return "Что-то там" ;
-            default: return null;
+            default: return this.name();
         }
     }
 }
