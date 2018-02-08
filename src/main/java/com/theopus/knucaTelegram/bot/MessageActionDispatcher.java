@@ -148,9 +148,9 @@ public class MessageActionDispatcher {
 
     private Action notExactGroupCase(String text){
         String notExactGroupName = normalize(text);
-        String searchGroupLine = groupService.getSearchLine();
+        String searchGroupLine = groupService.getSearchLine().toLowerCase();
 
-        String searchString = notExactGroupName;
+        String searchString = notExactGroupName.toLowerCase();
 
         for (int i = 0 ;
              searchString.length() >= 3;
