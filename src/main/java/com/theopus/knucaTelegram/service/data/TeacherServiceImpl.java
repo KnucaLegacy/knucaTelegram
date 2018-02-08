@@ -53,7 +53,7 @@ public class TeacherServiceImpl implements TeacherService {
     @Override
     public Teacher findByName(String name) {
         for (Teacher teacher : teacherServiceMap.values()) {
-            if (teacher.getName().equals(name)) {
+            if (teacher.getName().toUpperCase().equals(name.toUpperCase())) {
                 return teacher;
             }
         }

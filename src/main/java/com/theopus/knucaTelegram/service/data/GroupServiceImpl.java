@@ -46,7 +46,7 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public Group getByExactName(String name) {
         for (Group group : groupServiceMap.values()) {
-            if (group.getName().equals(name)) {
+            if (group.getName().toUpperCase().equals(name.toUpperCase())) {
                 return group;
             }
         }
