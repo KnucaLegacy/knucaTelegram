@@ -35,7 +35,7 @@ public abstract class SingleDirSendMessageAction implements SendDataAction {
         int l =ThreadLocalRandom.current().nextInt(100);
 
         LOG.info("Add roll = {}", l);
-        if (l < 70) {
+        if (l < 15) {
             messages.add(
                     new SendMessage(
                             0L,
