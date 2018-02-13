@@ -44,7 +44,7 @@ public class MessageActionDispatcher {
     private boolean reqiereWeek;
     private boolean isCallBack = false;
 
-    private Pattern exactGroupPattern = Pattern.compile("\\b[А-яІіЇїЄє]{1,6}-(\\S){1,6}\\b");
+    private Pattern exactGroupPattern = Pattern.compile("\\b[А-яІіЇїЄє\\s]{1,6}-?(\\S){1,6}\\b");
     private Pattern teacherPattern = Pattern.compile("\\b[^.,\\s\\d]+(\\s[^.,\\d\\s]\\.?)?([^.,\\d\\s]\\.?)?");
     private Pattern exactTeacherPattern = Pattern.compile("\\b((([^.,\\s\\d\\p{Punct}]{2,5}.)?[^.,\\s\\d\\p{Punct}]{2,4}\\.)|[^.,\\d\\s]{3,}\\.)\\s[^.,\\s\\d]+(\\s[^.,\\d\\s]\\.)?([^.,\\d\\s]\\.?)?");
 
