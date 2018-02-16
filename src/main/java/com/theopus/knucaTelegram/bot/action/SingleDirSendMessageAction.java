@@ -32,16 +32,17 @@ public abstract class SingleDirSendMessageAction implements SendDataAction {
     @Override
     public void execute(AbsSender bot) {
         this.messages = buildMessage();
-        int l =ThreadLocalRandom.current().nextInt(100);
+        int l = ThreadLocalRandom.current().nextInt(100);
 
         LOG.info("Add roll = {}", l);
         if (l < 15) {
             messages.add(
                     new SendMessage(
                             0L,
-                            "\n Предложения, вопросы? Пиши [сюда](@theopus5)."
+                            "\n Предложения, вопросы? Пиши [сюда](https://t.me/theopus5)."
                     )
                             .enableMarkdown(true)
+                            .disableWebPagePreview()
             );
         }
         messages.forEach(message -> {
