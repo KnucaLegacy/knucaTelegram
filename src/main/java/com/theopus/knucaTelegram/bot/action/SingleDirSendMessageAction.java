@@ -39,7 +39,7 @@ public abstract class SingleDirSendMessageAction implements SendDataAction {
             messages.add(
                     new SendMessage(
                             0L,
-                            "\n Предложения, вопросы? [Официальная группа бота в телеграме.](https://t.me/joinchat/Dlb5FQ7SKH1iEICDdpDN7Q)"
+                            "\n Предложения, вопросы? Пиши [сюда](@theopus5)."
                     )
                             .enableMarkdown(true)
             );
