@@ -172,7 +172,7 @@ public class MessageActionDispatcher {
     private void parseDate(String messageText) {
         dates = new LinkedHashSet<>();
         parseNumericDate(messageText);
-        parseDOWDate(messageText);
+//        parseDOWDate(messageText);
         parseOffsetDate(messageText);
         if (dates.isEmpty())
             dates.add(currdate);
