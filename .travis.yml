@@ -50,9 +50,9 @@ jobs:
     name: GCP Deploy
     script:
       - gcloud compute instances list
-      - gcloud compute ssh knuca-telegram --zone europe-west1-b --force-key-file-overwrite -- 'sudo docker ps && \
-        sudo docker rm -f knuca-telegram || true && \
-        sudo docker pull theopus/knuca-telegram && \
-        sudo docker run --name="knuca-telegram" -d --net="host" theopus/knuca-telegram && \
+      - gcloud compute ssh knuca-telegram --zone europe-west1-b --force-key-file-overwrite -- 'sudo docker ps &&
+        sudo docker rm -f knuca-telegram || true &&
+        sudo docker pull theopus/knuca-telegram &&
+        sudo docker run --name="knuca-telegram" -d --net="host" theopus/knuca-telegram &&
         echo done'
 
